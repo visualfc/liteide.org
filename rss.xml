@@ -1,0 +1,13 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<rss version="2.0">  <channel>
+    <title>LiteIDE</title>
+    <link>https://visualfc.github.io/liteide.org</link>
+    <pubDate>15 Mar 17 23:30 CST</pubDate>
+    <item>
+      <title>测试</title>
+      <link>https://visualfc.github.io/liteide.org/Blog/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>2017-03-15 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;使用 &lt;a href=&#34;https://github.com/wendal/gor&#34;&gt;https://github.com/wendal/gor&lt;/a&gt; 建立LiteIDE网站，测试。&lt;/p&gt;&#xA;</description>
+    </item>
+  </channel>
+</rss>
