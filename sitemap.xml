@@ -4,6 +4,11 @@
 		<loc>https://visualfc.github.io/liteide.org/</loc>
 	</url>
 	<url>
+		<loc>https://visualfc.github.io/liteide.org/default/cross-compile/</loc>
+		<lastmod>2017-03-17</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>https://visualfc.github.io/liteide.org/blog/goapi-index/</loc>
 		<lastmod>2017-03-16</lastmod>
 		<changefreq>weekly</changefreq>

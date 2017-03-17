@@ -124,9 +124,45 @@ LiteIDE is a simple, open source, cross-platform Go IDE.
 
 
 <div class="post">
+  <h3 class="title"><a href="/liteide.org/default/cross-compile/">cross-compile</a> <span class="date">2017-03-17</span></h3>
+
+  <h2>LiteIDE 的交叉编译设置</h2>
+
+<p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
+本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
+
+<h3>交叉编译环境选择和配置</h3>
+
+<p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
+
+<pre><code>GOROOT=$HOME/go
+#GOBIN=
+GOARCH=386
+GOOS=windows
+CGO_ENABLED=0
+
+PATH=$GOROOT/bin:$PATH
+
+LITEIDE_GDB=/usr/local/bin/gdb
+LITEIDE_MAKE=make
+LITEIDE_TERM=/usr/bin/open
+LITEIDE_TERMARGS=-a Terminal
+LITEIDE_EXEC=/usr/X11R6/bin/xterm
+LITEIDE_EXECOPT=-e
+</code></pre>
+
+
+  <div class="more">
+    <a href="/liteide.org/default/cross-compile/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/liteide.org/blog/goapi-index/">goapi-index</a> <span class="date">2017-03-16</span></h3>
 
-  <p>最近更新了 Golang Api Index 功能，之前是通过 gotools 对 GOPATH 内的所有源码进行索引，并在用户目录中建立一个索引文件，
+  <h2>更新 Golang Api Index 功能</h2>
+
+<p>最近更新了 Golang Api Index 功能，之前是通过 gotools 对 GOPATH 内的所有源码进行索引，并在用户目录中建立一个索引文件，
 文件格式与 go/api/go1.txt 类似，这个功能的问题是使用 gotools 建立索引的速度很慢，查询功能与 Golang Doc Search 的功能也有所重复，而且我还发现 gotools 工具对于 go1.8 的源码建立索引出错。</p>
 
 <p>在最新版本中，我对 Golang Api Index 的功能重新定位，更改为只查询 go 标准库 api，即查询 go/api 目录下的文件，
