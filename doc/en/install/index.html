@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Install</title>
+      
+    <link rel="shortcut icon" href="/liteide.org/assets/media/liteide.ico">
+    <meta name="author" content="visualfc">
+
+      <link href="/liteide.org/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/liteide.org/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/liteide.org/assets/twitter/javascripts/jquery.min.js"></script>
+<script src="/liteide.org/assets/twitter/javascripts/bootstrap.min.js"></script>
+<link href="/liteide.org/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/liteide.org">Home</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/liteide.org/liteide">LiteIDE X</a></li>
+                <li><a href="/liteide.org/documents">Documents</a></li>
+                <li class="dropdown">
+                    <a href="/liteide.org/archive" class="dropdown-toggle" data-toggle="dropdown">
+                        Blog 
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/liteide.org/archive">Archive</a></li>
+                        <li><a href="/liteide.org/tags">Tags</a></li>
+                        <li><a href="/liteide.org/categories">Categories</a></li>
+                    </ul>
+                </li>
+                <li><a href="/liteide.org/about">About</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Install </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h1>Installing LiteIDE</h1>
+
+<h2>Prerequisites</h2>
+
+<p>Use LiteIDE development golang need to install the Go language development environment.</p>
+
+<h3>Go</h3>
+
+<p>Begin by installing the Go language runtime.  Detailed instructions can be found at <a href="http://golang.org/doc/install.html">http://golang.org/doc/install.html</a>.  Testing your installation before continuing is highly recommended.</p>
+
+<h2>Install from binary</h2>
+
+<p><a href="http://sourceforge.net/projects/liteide/files">http://sourceforge.net/projects/liteide/files</a></p>
+
+<h3>Windows</h3>
+
+<p>Download the archive and extract it into c:</p>
+
+<h3>Linux and MacOSX</h3>
+
+<p>Download the archive and extract it into /usr/local or $HOME</p>
+
+<h2>Building from Source</h2>
+
+<p>Source code for LiteIDE can be found at <a href="https://github.com/visualfc/liteide">https://github.com/visualfc/liteide</a>.  You will need to install Qt4/Qt5 in order to compile the source.  Qt can be obtained from <a href="https://qt-project.org/downloads">https://qt-project.org/downloads</a> or from your distribution&rsquo;s package manager. For Mac OS X, you don&rsquo;t need to install Qt from source code, but run <code>brew update &amp;&amp; brew install qt</code> which will save you several hours.</p>
+
+<h3>Windows</h3>
+
+<pre><code>&gt; git clone https://github.com/visualfc/liteide.git
+&gt; set QTDIR=c:\Qt\Qt484
+&gt; set MINGWDIR=c:\Qt\MinGW
+&gt; cd liteide/build
+&gt; update_pkg.cmd
+&gt; build_mingw.cmd
+&gt; deploy_qt4.8_webkit.cmd
+</code></pre>
+
+<h3>Linux</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ export QTDIR=$HOME/QtSDK/Desktop/Qt/484/gcc
+$ cd liteide/build
+$ ./update_pkg.sh
+$ ./build_linux.sh
+$ ./deploy_linux_qt4.8_webkit.sh
+</code></pre>
+
+<h3>Ubuntu 14.04</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ sudo apt-get update
+$ sudo apt-get install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui libqtwebkit-dev g++
+$ cd liteide/build
+$ ./update_pkg.sh
+$ QTDIR=/usr ./build_linux.sh
+
+## Run it: ##
+$ cd ~/liteide/build/liteide/bin
+$ ./liteide
+</code></pre>
+
+<h3>Ubuntu 16.04</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ sudo apt-get update
+$ sudo apt-get install qt4-dev-tools libqt4-dev libqtcore4 libqtgui4 libqtwebkit-dev g++
+$ cd liteide/build
+$ ./update_pkg.sh
+$ QTDIR=/usr ./build_linux.sh
+
+## Run it: ##
+$ cd ~/liteide/build/liteide/bin
+$ ./liteide
+</code></pre>
+
+<h3>Mac OS X</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ export QTDIR=$HOME/QtSDK/Desktop/Qt/484/gcc #If QT is installed with brew, input: export QTDIR=/usr/local/Cellar/qt/4.8.6
+$ cd liteide/build
+$ ./update_pkg.sh
+$ ./build_osx.sh
+$ ./deploy_osx_qt4.sh
+</code></pre>
+
+<h3>OpenBSD</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ export QTDIR=/usr/local/lib/qt4
+$ cd liteide/build
+$ ./update_pkg.sh
+$ ./build_openbsd.sh
+
+## Run it: ##
+$ export LD_LIBRARY_PATH=$HOME/liteide/build/liteide/bin:$LD_LIBRARY_PATH
+$ cd ~/liteide/build/liteide/bin
+$ ./liteide
+</code></pre>
+
+<h3>Raspbian Jessie</h3>
+
+<pre><code>$ sudo apt-get update
+$ sudo apt-get install qt5-default xterm
+$ git clone https://github.com/visualfc/liteide.git
+$ cd liteide/build
+$ ./update_pkg.sh
+$ QTDIR=/usr ./build_linux.sh
+The build process from a µSD card takes approx. 105 minutes on a RPi 2.
+
+## Run it: ##
+$ cd ~/liteide/build/liteide/bin
+$ ./liteide
+</code></pre>
+
+<p>Be sure to set <code>QTDIR</code> (and <code>MINGWDIR</code> for Windows users) accordingly based on your local environment.</p>
+
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+    		<p>
+            &copy; 2011-2017 visualfc <a href="http://github.com/visualfc/liteide" target="_blank" title="LiteIDE">LiteIDE X</a> 
+    		<p>
+    		<p>
+    		感谢 <a href="http://hopehook.com/" target="_blank">HopeHook</a> 提供域名赞助
+    		</p>
+      </footer>
+
+    </div>
+
+      
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+      
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-123-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>

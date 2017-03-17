@@ -2,7 +2,7 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io/liteide.org</link>
-    <pubDate>17 Mar 17 08:48 CST</pubDate>
+    <pubDate>17 Mar 17 21:34 CST</pubDate>
     <item>
       <title>cross-compile</title>
       <link>https://visualfc.github.io/liteide.org/blog/cross-compile/</link>
@@ -14,12 +14,6 @@
       <link>https://visualfc.github.io/liteide.org/blog/goapi-index/</link>
       <pubDate>2017-03-16 12:00:00 +0800</pubDate>
       <description>&lt;h2&gt;更新 Golang Api Index 功能&lt;/h2&gt;&#xA;&#xA;&lt;p&gt;最近更新了 Golang Api Index 功能，之前是通过 gotools 对 GOPATH 内的所有源码进行索引，并在用户目录中建立一个索引文件，&#xA;文件格式与 go/api/go1.txt 类似，这个功能的问题是使用 gotools 建立索引的速度很慢，查询功能与 Golang Doc Search 的功能也有所重复，而且我还发现 gotools 工具对于 go1.8 的源码建立索引出错。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;在最新版本中，我对 Golang Api Index 的功能重新定位，更改为只查询 go 标准库 api，即查询 go/api 目录下的文件，&#xA;包含 &lt;code&gt;go1.txt go1.1.txt ... except.txt next.txt&lt;/code&gt; ，&#xA;同时在查询结果列表中加入了 api 所对应的 go 版本（文件），如下图所示。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img src=&#34;/liteide.org/assets/media/2017-03-16-goapi-index/goapi-index.png&#34; alt=&#34;&#34; width=&#34;600&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;这样看起来工整多了，并且与 Golang Doc Search 有所区别。&lt;/p&gt;&#xA;</description>
-    </item>
-    <item>
-      <title>测试</title>
-      <link>https://visualfc.github.io/liteide.org/Blog/%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>2017-03-15 12:00:00 +0800</pubDate>
-      <description>&lt;p&gt;使用 &lt;a href=&#34;https://github.com/wendal/gor&#34;&gt;https://github.com/wendal/gor&lt;/a&gt; 建立LiteIDE网站，测试。&lt;/p&gt;&#xA;</description>
     </item>
   </channel>
 </rss>

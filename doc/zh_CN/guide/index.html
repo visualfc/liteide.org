@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>使用指南</title>
+      
+    <link rel="shortcut icon" href="/liteide.org/assets/media/liteide.ico">
+    <meta name="author" content="visualfc">
+
+      <link href="/liteide.org/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/liteide.org/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/liteide.org/assets/twitter/javascripts/jquery.min.js"></script>
+<script src="/liteide.org/assets/twitter/javascripts/bootstrap.min.js"></script>
+<link href="/liteide.org/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/liteide.org">Home</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/liteide.org/liteide">LiteIDE X</a></li>
+                <li><a href="/liteide.org/documents">Documents</a></li>
+                <li class="dropdown">
+                    <a href="/liteide.org/archive" class="dropdown-toggle" data-toggle="dropdown">
+                        Blog 
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/liteide.org/archive">Archive</a></li>
+                        <li><a href="/liteide.org/tags">Tags</a></li>
+                        <li><a href="/liteide.org/categories">Categories</a></li>
+                    </ul>
+                </li>
+                <li><a href="/liteide.org/about">About</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>使用指南 </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h1>LiteIDE 使用指南</h1>
+
+<h2>如何支持低版本Go1.1和Go1.2</h2>
+
+<p>LiteIDE的编译设置使用了-i编译参数。如果使用Go1.1或Go1.2则不支持此参数。选项-&gt;查看-&gt;LiteBuild 双击gosrc.xml进行编辑。修改BUILDARGS默认设置：</p>
+
+<pre><code>&lt;custom id=&quot;BuildArgsi&quot; name=&quot;BUILDARGS&quot; value=&quot;-i&quot;/&gt;
+</code></pre>
+
+<p>将value设置为空存盘重启LiteIDE即可支持Go1.1和Go1.2。</p>
+
+<h2>窗口样式设置</h2>
+
+<p>LiteIDE目前有两种窗口样式分离式和侧边栏式。</p>
+
+<p>选项-&gt;查看-&gt;LiteApp-&gt; 窗口样式。</p>
+
+<h2>环境设置</h2>
+
+<p>LiteIDE环境设置插件可以让你快速设置切换多个系统环境，以便编译构建，每个环境都可配置自己需要的环境变量。</p>
+
+<h3>选择当前环境</h3>
+
+<p>工具栏中的下拉菜单可以用来选择目前用于编译构建/运行的环境。</p>
+
+<p><img src="../images/envselect.png" alt="envselect.png" /></p>
+
+<p>主要系统的一些常用环境列表
+* Windows - win64 win32
+* Linux - linux64 linux32
+* MacOSX - darwin64 darwin32</p>
+
+<p>可选择使用交叉编译环境，请参看下面的交叉编译设置。</p>
+
+<h3>配置环境</h3>
+
+<p>环境中的变量可以通过手工进行修改。要编辑当前环境，只要按一下环境下拉列表旁的<code>编辑环境</code>按钮。</p>
+
+<p>另外，也可以<code>查看&gt;选项&gt; LiteEnv</code>面板中对所有环境进行查看和编辑。</p>
+
+<p>举例 <code>win32.env</code>:</p>
+
+<pre><code>#win32 environment
+
+GOROOT=c:\go
+#GOBIN=
+GOARCH=386
+GOOS=windows
+
+PATH=c:\mingw32\bin;%GOROOT%\bin;%PATH%
+
+LITEIDE_GDB=gdb
+LITEIDE_MAKE=mingw32-make
+LITEIDE_TERM=%COMSPEC%
+LITEIDE_TERMARGS=
+LITEIDE_EXEC=%COMSPEC%
+LITEIDE_EXECOPT=/C
+</code></pre>
+
+<p>举例 <code>linux32.env</code>:</p>
+
+<pre><code>#linux32 environment
+
+GOROOT=$HOME/go
+#GOBIN=
+GOARCH=386
+GOOS=linux
+
+PATH=$GOROOT/bin:$PATH
+
+LITEIDE_GDB=gdb
+LITEIDE_MAKE=make
+LITEIDE_TERM=/usr/bin/gnome-terminal
+LITEIDE_TERMARGS=
+LITEIDE_EXEC=/usr/bin/xterm
+LITEIDE_EXECOPT=-e
+</code></pre>
+
+<h2>快速打开窗口</h2>
+
+<ul>
+<li>快速打开 Ctrl+P</li>
+<li>快速打开文档 Ctrl+Alt+P 或者在快速打开窗口输入 ~</li>
+<li>快速跳转符号 Ctrl+Shift+O 或者在快速打开窗口输入 @</li>
+<li>快速跳转到行  Ctrl+L 或者在快速打开窗口输入 :</li>
+<li>获取帮助 在快速打开窗口输入 ?
+<br /></li>
+</ul>
+
+<h2>交叉编译 (Go1.5或更高版本)</h2>
+
+<p>选择LiteIDE的环境并设置相应的GOROOT、GOARCH、GOOS，重新编译即可。</p>
+
+<h2>交叉编译 (Go1.5之前)</h2>
+
+<p>必须先建立交叉编译器所需要的平台和架构。如果你不这样做，将出现类似下面的错误：</p>
+
+<pre><code>go build runtime: linux/amd64 must be bootstrapped using make.bat
+</code></pre>
+
+<p>请查看 &ldquo;Building compilers&rdquo; subsection for examples.</p>
+
+<h3>环境变量</h3>
+
+<p>交叉编译将把项目为编译为另一个操作系统或体系结构，需要定义环境中的以下变量：</p>
+
+<ul>
+<li><code>$GOOS</code> - 目标操作系统 (默认值等同于<code>$GOHOSTOS</code>).  可选值包括:
+
+<ul>
+<li>darwin (Mac OS X 10.6 或更高版本)</li>
+<li>freebsd</li>
+<li>linux</li>
+<li>netbsd</li>
+<li>openbsd</li>
+<li>plan9</li>
+<li>windows</li>
+</ul></li>
+<li><code>$GOARCH</code> - 目标平台体系 (默认值等同于<code>$GOHOSTARCH</code>).  可选值包括:
+
+<ul>
+<li>amd64 (64-bit x86, 最成熟)</li>
+<li>386 (32-bit x86)</li>
+<li>arm (32-bit ARM)</li>
+</ul></li>
+<li><code>$GOARM</code> - ARM 架构运行库 (默认值: 6).
+
+<ul>
+<li>设置 <code>$GOARM</code> 为5 时将导致链接器使用软件浮点实现，而不是使用硬件浮点支持。</li>
+</ul></li>
+<li><code>$CGO_ENABLED</code>
+
+<ul>
+<li>交叉编辑时值自动设置为0。</li>
+</ul></li>
+</ul>
+
+<h3>构建编译器</h3>
+
+<p>要构建编译器到交叉编译，需要转到源目录中并运行相应的脚本。下面的例子演示了如何构建一些常见的编译器，你必须自己机器上相应设置来修改环境变量。</p>
+
+<p>在Windows平台上交叉编译 64-bit Linux (使用MinGW和GCC):</p>
+
+<pre><code>&gt; set GOARCH=amd64
+&gt; set GOOS=linux
+&gt; set CGO_ENABLED=0
+&gt; cd %GOROOT%\src
+&gt; all.bat
+</code></pre>
+
+<p>在Windows平台上交叉编译 32-bit Linux (使用MinGW和GCC):</p>
+
+<pre><code>&gt; export GOARCH=386
+&gt; export GOOS=windows
+&gt; export CGO_ENABLED=0
+&gt; cd $GOROOT/src
+&gt; ./all.bash
+</code></pre>
+
+<p>在Mac OS X平台上交叉编译 ARM :</p>
+
+<pre><code>&gt; export GOARCH=arm
+&gt; export GOOS=linux
+&gt; export CGO_ENABLED=0
+&gt; cd $GOROOT/src
+&gt; ./all.bash
+</code></pre>
+
+<h2>Go语言代码格式化</h2>
+
+<p>存盘时自动格式化</p>
+
+<h3>Goimports样式格式化</h3>
+
+<p>LiteIDE 查看-&gt;选项-&gt;GolangFmt-&gt; 使用Goimports代替gofmt进行代码格式化</p>
+
+<p>这个工具自动更新您的Go语言import行，增加缺少的pkg和移除未引用的pkg。</p>
+
+<h2>Gocode代码完成</h2>
+
+<p>Go语言代码完成使用gocode <a href="https://github.com/nsf/gocode">https://github.com/nsf/gocode</a>，gocode的工作原理是从项目的依赖库.a文件中读取，所以不能代码完成时请更新项目的依赖库。</p>
+
+<h3>更新依赖库</h3>
+
+<p>更新当前项目的依赖库, 点击编译菜单或工具栏<code>Get</code>(go get)</p>
+
+<h3>自动更新依赖库</h3>
+
+<p>LiteIDE 查看-&gt;选项-&gt;Gocode-&gt; 自动更新依赖库</p>
+
+<h3>编译</h3>
+
+<p>在LiteIDE中执行交叉编译，通过选择上述相应的交叉编译环境。并且确保环境已经设置了正确的变量。包括 <code>GOARCH</code>，<code>GOOS</code>，<code>GOARM</code>和<code>CGO_ENABLED</code>，如上面所述。</p>
+
+<p>一旦交叉目标环境中已被选中并切换，只需要重新编译文件/项目即可。</p>
+
+<p>举例在Windows平台上配置交叉环境 64-bit Linux:</p>
+
+<pre><code>GOROOT=c:\go
+GOBIN=
+GOARCH=amd64
+GOOS=linux
+CGO_ENABLED=0
+
+PATH=%GOBIN%;%GOROOT%\bin;%PATH%
+...
+</code></pre>
+
+<h2>编译系统</h2>
+
+<p>LiteIDE的编译系统是高度可配置的，可使用XML文件自定义生成相应的命令操作。</p>
+
+<h3>配置编译行为</h3>
+
+<p>要修改现有的编译选项，打开<code>查看&gt;选项&gt; LiteBuild</code>。你可以在这个目录中添加自己的图片来定义新的图标。双击一个XML文件进行编辑。每个XML文件都使用Mime格式定义了针对特定文件类型的相应操作。</p>
+
+<p>举例 Go语言的 XML 配置 (<code>gosrc.xml</code>):</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'&gt;
+    &lt;mime-type type=&quot;text/x-gosrc&quot; id=&quot;gosrc&quot; work=&quot;$(EDITOR_DIR)&quot; ver=&quot;1&quot;&gt;
+        &lt;config id=&quot;Go&quot; name=&quot;GO&quot; value=&quot;go&quot;/&gt;
+        &lt;config id=&quot;GoExec&quot; name=&quot;GOEXEC&quot; value=&quot;$(LITEAPPDIR)/goexec&quot;/&gt;
+        &lt;config id=&quot;ErrRegex&quot; name=&quot;ERRREGEX&quot; value=&quot;(\w?:?[\w\d_\-\\/\.]+):(\d+):&quot;/&gt;
+        &lt;custom id=&quot;TargetArgs&quot; name=&quot;TARGETARGS&quot; value=&quot;&quot;/&gt;
+        &lt;custom id=&quot;BuildArgs&quot; name=&quot;BUILDARGS&quot; value=&quot;&quot;/&gt;
+        &lt;custom id=&quot;InstallArgs&quot; name=&quot;INSTALLARGS&quot; value=&quot;&quot;/&gt;
+        &lt;action id=&quot;Build&quot; img=&quot;blue/build.png&quot; key=&quot;Ctrl+B;F7&quot; cmd=&quot;$(GO)&quot; args=&quot;build $(BUILDARGS)&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
+        &lt;action id=&quot;Install&quot; menu=&quot;Build&quot; img=&quot;blue/install.png&quot; key=&quot;Ctrl+F8&quot; cmd=&quot;$(GO)&quot; args=&quot;install $(INSTALLARGS)&quot; save=&quot;all&quot; output=&quot;true&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
+        &lt;action id=&quot;BuildTests&quot; menu=&quot;Build&quot; img=&quot;blue/buildtest.png&quot; cmd=&quot;$(GO)&quot; args=&quot;test -c -gcflags &amp;quot;-N -l&amp;quot;&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;&quot; regex=&quot;$(ERRREGEX)&quot;/&gt;
+        &lt;action id=&quot;Clean&quot; menu=&quot;Build&quot; img=&quot;blue/clean.png&quot; cmd=&quot;$(GO)&quot; args=&quot;clean&quot; save=&quot;all&quot; output=&quot;true&quot;/&gt;
+        &lt;action id=&quot;CleanAll&quot; menu=&quot;Build&quot; img=&quot;blue/cleanall.png&quot; cmd=&quot;$(GO)&quot; args=&quot;clean -i&quot; save=&quot;all&quot; output=&quot;true&quot;/&gt;
+        &lt;action id=&quot;BuildAndRun&quot; img=&quot;blue/buildrun.png&quot; key=&quot;Ctrl+R;Ctrl+F7&quot; task=&quot;Build;Run&quot; killold=&quot;true&quot;/&gt;
+        &lt;action id=&quot;Run&quot; menu=&quot;BuildAndRun&quot; img=&quot;blue/run.png&quot; key=&quot;Ctrl+F5&quot; cmd=&quot;$(EDITOR_DIRNAME_GO)&quot; args=&quot;$(TARGETARGS)&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; readline=&quot;true&quot;/&gt;
+        &lt;action id=&quot;RunTerm&quot; menu=&quot;BuildAndRun&quot; img=&quot;blue/runterm.png&quot; key=&quot;Ctrl+Shift+F5&quot; cmd=&quot;$(LITEIDE_EXEC)&quot; args=&quot;$(LITEIDE_EXECOPT) $(GOEXEC) $(EDITOR_DIRNAME_GO) $(TARGETARGS)&quot; output=&quot;false&quot; readline=&quot;true&quot;/&gt;
+        &lt;action id=&quot;FileRun&quot; menu=&quot;BuildAndRun&quot; img=&quot;gray/filerun.png&quot; key=&quot;Alt+F6&quot; cmd=&quot;$(GO)&quot; args=&quot;run $(EDITOR_NAME)&quot; save=&quot;editor&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; readline=&quot;true&quot;/&gt;
+        &lt;action id=&quot;Test&quot; img=&quot;blue/test.png&quot; key = &quot;Ctrl+T&quot; cmd=&quot;$(GO)&quot; args=&quot;test&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
+        &lt;action id=&quot;Bench&quot; menu=&quot;Test&quot; img=&quot;blue/testbench.png&quot; cmd=&quot;$(GO)&quot; args=&quot;test -test.bench=.*&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
+        &lt;action id=&quot;Get&quot; menu=&quot;Test&quot; img=&quot;blue/get.png&quot; cmd=&quot;$(GO)&quot; args=&quot;get -v .&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;utf-8&quot;/&gt;
+        &lt;action id=&quot;Fmt&quot; menu=&quot;Test&quot; img=&quot;blue/fmt.png&quot; cmd=&quot;$(GO)&quot; args=&quot;fmt&quot; save=&quot;all&quot; output=&quot;true&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
+        &lt;action id=&quot;Vet&quot; menu=&quot;Test&quot; img=&quot;blue/vet.png&quot; cmd=&quot;$(GO)&quot; args=&quot;vet&quot; save=&quot;all&quot; output=&quot;true&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
+        &lt;target id=&quot;Target&quot; cmd=&quot;$(EDITOR_DIRNAME_GO)&quot; args=&quot;$(TARGETARGS)&quot; work=&quot;$(EDITOR_DIR)&quot;/&gt;
+    &lt;/mime-type&gt;
+&lt;/mime-info&gt;
+</code></pre>
+
+<h2>Go文档查看</h2>
+
+<p>LiteIDE可使用godoc来输出需要Go文档并浏览。可以查看标准包文档或自定义包文档。打开使用<code>查看&gt; Godoc文档查看</code>可以查看关于此的更多细节。</p>
+
+<h2>查找和替换</h2>
+
+<p>编辑器提供了搜索和替换功能，并支持正则表达式。例如：</p>
+
+<pre><code>Find: (Colo)(u)(r)
+Replace: \1\3
+</code></pre>
+
+<p>The above example will replace all instances of <code>Colour</code> with <code>Color</code>.
+上面的例子将取代<code>Colour</code>为<code>Color</code></p>
+
+<p>文件系统的搜索功能可通过 <code>查找 -&gt; 文件搜索</code>实现.</p>
+
+<h2>调试</h2>
+
+<p>LiteIDE调试Go语言需要安装GDB(Windows上可使用MinGW).</p>
+
+<p>环境变量<code>LITEIDE_GDB</code>可指定使用哪一个gdb来执行调试。在Windows平台上，32位环境使用<code>gdb.exe</code>而64位环境默认使用<code>gdb64.exe</code>。在环境配置文件中可对这个环境变量进行手工配置。</p>
+
+<h2>键盘映射</h2>
+
+<p>您可以修改用于LiteIDE所有的功能快捷键。打开 <code>查看 -&gt; 选项 -&gt; LiteApp -&gt; 键盘</code> 并修改快捷键。双击该快捷键列表进行编辑，然后按&rsquo;应用&rsquo;以执行更改。</p>
+
+<p>快捷键必须遵循特定的格式。快捷键通常可以使用逗号（<code>，</code>）分隔，即按顺序按下对应的快捷键以启动功能。而定义支持多个快捷键则用分号（&rsquo;;&lsquo;）进行分隔。</p>
+
+<p>举例:
+* <code>Ctrl+B</code>
+* <code>Ctrl+Shift+B</code>
+* <code>Ctrl+K,Ctrl+U</code>
+* <code>Ctrl+Y;Ctrl+Shift+Z</code></p>
+
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+    		<p>
+            &copy; 2011-2017 visualfc <a href="http://github.com/visualfc/liteide" target="_blank" title="LiteIDE">LiteIDE X</a> 
+    		<p>
+    		<p>
+    		感谢 <a href="http://hopehook.com/" target="_blank">HopeHook</a> 提供域名赞助
+    		</p>
+      </footer>
+
+    </div>
+
+      
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+      
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-123-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>

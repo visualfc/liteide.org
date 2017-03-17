@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Archive</title>
+    <title>安装说明</title>
       
     <link rel="shortcut icon" href="/liteide.org/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -46,25 +46,70 @@
       <div class="content">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>安装说明 </h1>
 </div>
 
 <div class="row">
   <div class="span12">
-    
+    <h1>安装 LiteIDE</h1>
 
-  <h2>2017</h2>
+<h2>先决条件</h2>
 
-  <h3>March</h3>
-  <ul>
-  
-    <li><span>2017-03-17</span> &raquo; <a href="/liteide.org/blog/cross-compile/">cross-compile</a></li>
-  
-    <li><span>2017-03-16</span> &raquo; <a href="/liteide.org/blog/goapi-index/">goapi-index</a></li>
-  
-  </ul>
+<p>使用LiteIDE开发golang需要安装Go语言开发环境。</p>
 
+<h3>Go</h3>
 
+<p>先要安装Go语言，详细情况请参看<a href="http://golang.org/doc/install.html">http://golang.org/doc/install.html</a>.
+在安装LiteIDE之前一定要先安装Go语言。</p>
+
+<h2>安装二进制文件</h2>
+
+<p><a href="http://sourceforge.net/projects/liteide/">http://sourceforge.net/projects/liteide/</a></p>
+
+<h3>Windows</h3>
+
+<p>下载压缩包并解压至c:\盘</p>
+
+<h3>Linux and MacOSX</h3>
+
+<p>下载压缩包并解压到/usr/local或者是$HOME</p>
+
+<h2>从源代码编译</h2>
+
+<p>LiteIDE源码位于<a href="https://github.com/visualfc/liteide">https://github.com/visualfc/liteide</a>上。需要使用Qt4/Qt5来编译源代码，Qt库可以从<a href="https://qt-project.org/downloads">https://qt-project.org/downloads</a>上获取。Mac OS X用户可以不从源代码编译Qt，直接在终端中运行<code>brew update &amp;&amp; brew install qt</code>，节省大量时间。下面的编译以Qt4为例。</p>
+
+<h3>Windows</h3>
+
+<pre><code>&gt; git clone https://github.com/visualfc/liteide.git
+&gt; set QTDIR=c:\Qt\Qt484
+&gt; set MINGWDIR=c:\Qt\MinGW
+&gt; cd liteide/build
+&gt; update_pkg.cmd
+&gt; build_mingw.cmd
+&gt; deploy_qt4.8_webkit.cmd
+</code></pre>
+
+<h3>Linux</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ export QTDIR=$HOME/QtSDK/Desktop/Qt/484/gcc
+$ cd liteide/build
+$ ./update_pkg.sh
+$ ./build_linux.sh
+$ ./deploy_linux_qt4.8_webkit.sh
+</code></pre>
+
+<h3>Mac OS X</h3>
+
+<pre><code>$ git clone https://github.com/visualfc/liteide.git
+$ export QTDIR=$HOME/QtSDK/Desktop/Qt/484/gcc #如果Qt是通过brew安装，输入: export QTDIR=/usr/local/Cellar/qt/4.8.6
+$ cd liteide/build
+$ ./update_pkg.sh
+$ ./build_osx.sh
+$ ./deploy_osx_qt4.sh
+</code></pre>
+
+<p>根据自己的环境一定要设置<code>QTDIR</code>(在Windows上还需要设置<code>MINGWDIR</code>)</p>
 
   </div>
 </div>
