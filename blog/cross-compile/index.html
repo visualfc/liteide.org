@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>cross-compile</title>
+      
+    <link rel="shortcut icon" href="/liteide.org/assets/media/liteide.ico">
+    <meta name="author" content="visualfc">
+
+      <link href="/liteide.org/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/liteide.org/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/liteide.org/assets/twitter/javascripts/jquery.min.js"></script>
+<script src="/liteide.org/assets/twitter/javascripts/bootstrap.min.js"></script>
+<link href="/liteide.org/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/liteide.org">Home</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/liteide.org/liteide">LiteIDE X</a></li>
+                <li><a href="/liteide.org/documents">Documents</a></li>
+                <li class="dropdown">
+                    <a href="/liteide.org/archive" class="dropdown-toggle" data-toggle="dropdown">
+                        Blog 
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/liteide.org/archive">Archive</a></li>
+                        <li><a href="/liteide.org/tags">Tags</a></li>
+                        <li><a href="/liteide.org/categories">Categories</a></li>
+                    </ul>
+                </li>
+                <li><a href="/liteide.org/about">About</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>cross-compile </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h2>LiteIDE 的交叉编译设置</h2>
+
+<p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
+本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
+
+<h3>交叉编译环境选择和配置</h3>
+
+<p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
+
+<pre><code>GOROOT=$HOME/go
+#GOBIN=
+GOARCH=386
+GOOS=windows
+CGO_ENABLED=0
+
+PATH=$GOROOT/bin:$PATH
+
+LITEIDE_GDB=/usr/local/bin/gdb
+LITEIDE_MAKE=make
+LITEIDE_TERM=/usr/bin/open
+LITEIDE_TERMARGS=-a Terminal
+LITEIDE_EXEC=/usr/X11R6/bin/xterm
+LITEIDE_EXECOPT=-e
+</code></pre>
+
+<p>我们可以看到 GOARCH 和 GOOS 已经设置完毕，我们需要更改的是 GOROOT 和 PATH 变量，主要设置方式有两种，</p>
+
+<h4>第一种方式，不设置 GOROOT 直接设置 PATH</h4>
+
+<p>这种方式中，我们不设置 GOROOT 变量，而是通过 PATH 设置让 LiteIDE 在内部使用 go env 自动查询 GOROOT，设置如下</p>
+
+<pre><code>#GOROOT=$HOME/go
+#GOBIN=
+GOARCH=386
+GOOS=windows
+CGO_ENABLED=0
+
+PATH=$PATH:/usr/local/bin
+
+LITEIDE_GDB=/usr/local/bin/gdb
+LITEIDE_MAKE=make
+LITEIDE_TERM=/usr/bin/open
+LITEIDE_TERMARGS=-a Terminal
+LITEIDE_EXEC=/usr/X11R6/bin/xterm
+LITEIDE_EXECOPT=-e
+</code></pre>
+
+<h4>第二种方式，直接设置 GOPATH 值</h4>
+
+<p>这种方式是直接设置 GOROOT，可以通过在终端下输入 <code>go env</code> 来查询 GOROOT 位置，如果是使用官方安装，
+可能显示为</p>
+
+<pre><code>GOROOT=&quot;/usr/local/go&quot;
+</code></pre>
+
+<p>如果是使用 brew install go 安装，则可能显示为</p>
+
+<pre><code>GOROOT=&quot;/usr/local/Cellar/go/1.8/libexec&quot;
+</code></pre>
+
+<p>对于官方安装，我们编辑 cross-win32 环境对应为</p>
+
+<pre><code>GOROOT=/usr/local/go
+#GOBIN=
+GOARCH=386
+GOOS=windows
+CGO_ENABLED=0
+
+PATH=$GOROOT/bin:$PATH
+
+LITEIDE_GDB=/usr/local/bin/gdb
+LITEIDE_MAKE=make
+LITEIDE_TERM=/usr/bin/open
+LITEIDE_TERMARGS=-a Terminal
+LITEIDE_EXEC=/usr/X11R6/bin/xterm
+LITEIDE_EXECOPT=-e
+</code></pre>
+
+<p>对于 brew 安装，我们编辑 cross-win32 环境对应为</p>
+
+<pre><code>GOROOT=/usr/local/Cellar/go/1.8/libexec
+#GOBIN=
+GOARCH=386
+GOOS=windows
+CGO_ENABLED=0
+
+PATH=$GOROOT/bin:$PATH
+
+LITEIDE_GDB=/usr/local/bin/gdb
+LITEIDE_MAKE=make
+LITEIDE_TERM=/usr/bin/open
+LITEIDE_TERMARGS=-a Terminal
+LITEIDE_EXEC=/usr/X11R6/bin/xterm
+LITEIDE_EXECOPT=-e
+</code></pre>
+
+<h4>保存环境并通过 go env 查看</h4>
+
+<p>保存cross-win32.env 后，LiteIDE 自动重新加载 cross-win32 环境，打开编译输出窗口可以看到类似如下输出</p>
+
+<pre><code>/usr/local/go/bin/go env []
+GOARCH=&quot;386&quot;
+GOBIN=&quot;&quot;
+GOEXE=&quot;.exe&quot;
+GOHOSTARCH=&quot;amd64&quot;
+GOHOSTOS=&quot;darwin&quot;
+GOOS=&quot;windows&quot;
+GOPATH=&quot;/Users/vfc/goproj&quot;
+GORACE=&quot;&quot;
+GOROOT=&quot;/usr/local/go&quot;
+GOTOOLDIR=&quot;/usr/local/go/pkg/tool/darwin_amd64&quot;
+GCCGO=&quot;gccgo&quot;
+GO386=&quot;&quot;
+CC=&quot;clang&quot;
+GOGCCFLAGS=&quot;-m32 -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/2b/fhf209x571lgp5dljz593q040000gn/T/go-build420337682=/tmp/go-build -gno-record-gcc-switches&quot;
+CXX=&quot;clang++&quot;
+CGO_ENABLED=&quot;0&quot;
+PKG_CONFIG=&quot;pkg-config&quot;
+CGO_CFLAGS=&quot;-g -O2&quot;
+CGO_CPPFLAGS=&quot;&quot;
+CGO_CXXFLAGS=&quot;-g -O2&quot;
+CGO_FFLAGS=&quot;-g -O2&quot;
+CGO_LDFLAGS=&quot;-g -O2&quot;
+</code></pre>
+
+<p>注：以上环境信息也可以调用菜单 <strong>查看</strong> - <strong>执行文件</strong> （快捷键为 Command+` ）功能的输入窗口中输入 go env 来查看。</p>
+
+<h3>交叉编译时提示没有权限的处理方法</h3>
+
+<p>在 cross-win32环境下，我们打开项目中的 go 源码文件，使用工具栏上的 <strong>编译</strong> 命令或者在 <strong>执行文件</strong> 中输入 go build 进行编译测试。
+如果是使用 brew 安装，这时候就可以编译成功，如果使用 go 安装，有可能会出现以下提示</p>
+
+<pre><code>go install runtime/internal/sys: mkdir /usr/local/go/pkg/windows_386: permission denied
+</code></pre>
+
+<p>出现这个错误则说明 LiteIDE 没有 /usr/local/go 路径的写权限，遇到这种情况，我们需要在终端下先交叉编译好 go 环境。在终端下输入</p>
+
+<pre><code>$ GOOS=windows GOARCH=386 go install std
+</code></pre>
+
+<p>这里的 <code>go install std</code> 表示编译安装标准库，安装结束后，我们在 LiteIDE 中就可以正常使用 windows-386 交叉编译环境了。
+对于其他交叉编译环境，需要时可以做同样的处理。</p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+          
+            <li class="prev disabled"><a>&larr; Previous</a></li>
+          
+
+            <li><a href="/liteide.org/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/liteide.org/blog/goapi-index/" title="goapi-index">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    <!-- 
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+ -->
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2017-03-17</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/liteide.org/categories/#blog-ref"> blog <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/liteide.org/categories/#liteide-ref"> liteide <span>2</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/liteide.org/tags/#blog-ref"> blog <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/liteide.org/tags/#liteide-ref"> liteide <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/liteide.org/tags/#cross-compile-ref"> cross-compile <span>1</span></a>
+</li>
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+    		<p>
+            &copy; 2011-2017 visualfc <a href="http://github.com/visualfc/liteide" target="_blank" title="LiteIDE">LiteIDE X</a> 
+    		<p>
+    		<p>
+    		感谢 <a href="http://hopehook.com/" target="_blank">HopeHook</a> 提供域名赞助
+    		</p>
+      </footer>
+
+    </div>
+
+      
+<script src="//cdnjscn.b0.upaiyun.com/libs/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+      
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-123-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>
