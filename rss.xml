@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io/liteide.org</link>
-    <pubDate>18 Mar 17 08:17 CST</pubDate>
+    <pubDate>18 Mar 17 17:03 CST</pubDate>
+    <item>
+      <title>LiteIDE 的配置文件管理</title>
+      <link>https://visualfc.github.io/liteide.org/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/</link>
+      <pubDate>2017-03-18 12:00:00 +0800</pubDate>
+      <description>&lt;!-- ## LiteIDE 的配置文件 --&gt;&#xA;&#xA;&lt;p&gt;LiteIDE 的配置文件默认存储在当前用户目录中，我们也可以设置存储在程序本地目录中。通过 &lt;strong&gt;选项&lt;/strong&gt;（ &lt;strong&gt;偏好设置&lt;/strong&gt; ）=&amp;gt; &lt;strong&gt;LiteApp&lt;/strong&gt; =&amp;gt; &lt;strong&gt;存储&lt;/strong&gt; &lt;em&gt;存储设置到本地ini文件&lt;/em&gt; 选项来切换默认的存储位置。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;存储至当前用户配置&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;LiteIDE 的配置文件默认存储在当前用户的特定目录中，如在 macOS 下存储在当前用户目录 &lt;code&gt;/.config/liteide/liteide.ini&lt;/code&gt; 文件中,&#xA;这可以保证在 LiteIDE 更新后当前用户的配置保持不变，包括用户的 GOPATH 配置以及历史目录、历史文件等信息。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;存储至程序本地配置&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;我们也可以将 LiteIDE 的配置文件存储在 LiteIDE 的本地目录中，即 LiteIDE的 &lt;code&gt;share/liteapp/config/liteide.ini&lt;/code&gt; 文件中，&#xA;这可以保证配置信息跟随 LiteIDE 程序启用，我们可以在自己的系统中复制多份 LiteIDE，每个都保持有自己的环境信息、GOPATH 配置、历史目录等信息，&#xA;方便多个项目独立使用。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;命令行操作&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;在 LiteIDE x31 中加入了对配置文件的命令行操作行为，包括以下三种：&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;--local-setting   强制使用本地配置&lt;/li&gt;&#xA;&lt;li&gt;--user-setting    强制使用用户配置&lt;/li&gt;&#xA;&lt;li&gt;--reset-setting   重置当前配置 ( 清除配置文件 )&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;p&gt;如果在使用 LiteIDE 过程中发现出现莫名其妙的问题或者是刚启动就报错，有可能是配置文件出错，对于这种情况，除了手工删除配置文件的方法，&#xA;我们还可以通过命令行  &lt;code&gt;&amp;gt;liteide --reset-setting&lt;/code&gt; 来重置 LiteIDE 的当前配置文件。&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>LiteIDE 的交叉编译设置</title>
       <link>https://visualfc.github.io/liteide.org/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/</link>
