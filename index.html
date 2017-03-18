@@ -27,7 +27,7 @@
                 <li class="dropdown">
                     <a href="/liteide.org/archive" class="dropdown-toggle" data-toggle="dropdown">
                         Blog 
-                        <b class="caret"></b>
+                        <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="/liteide.org/archive">Archive</a></li>
@@ -53,25 +53,34 @@
   <div class="span12">
     
 <img src="/liteide.org/assets/media/liteide.png"/>
+
 <p></p>
-<p>
-LiteIDE is a simple, open source, cross-platform Go IDE. 
-</p>
+
+<p>LiteIDE is a simple, open source, cross-platform Go IDE. </p>
+
 <h2>Links</h2>
 <ul>
-<li>LiteIDE Source code
-<a href="https://github.com/visualfc/liteide">https://github.com/visualfc/liteide</a>
-</li>
-<li>Gotools Source code
-<a href="https://github.com/visualfc/gotools">https://github.com/visualfc/gotools</a>
-</li>
-<li>Release downloads
-<ul>
-<li><a href="http://sourceforge.net/projects/liteide/files">http://sourceforge.net/projects/liteide/files</a></li>
-<li><a href="https://github.com/visualfc/liteide/releases/latest">https://github.com/visualfc/liteide/releases/latest</a></li>
-</ul>
-<li>Google group
-<a href="https://groups.google.com/group/liteide-dev">https://groups.google.com/group/liteide-dev</a></li>
+	<li>LiteIDE Source code <a href="https://github.com/visualfc/liteide">https://github.com/visualfc/liteide</a></li>
+	<li>Gotools Source code <a href="https://github.com/visualfc/gotools">https://github.com/visualfc/gotools</a></li>
+	<li>Release downloads
+		<ul>
+			<li><a href="http://sourceforge.net/projects/liteide/files">http://sourceforge.net/projects/liteide/files</a></li>
+			<li><a href="https://github.com/visualfc/liteide/releases/latest">https://github.com/visualfc/liteide/releases/latest</a></li>
+		</ul>
+	</li>
+	<li>Google group <a href="https://groups.google.com/group/liteide-dev">https://groups.google.com/group/liteide-dev</a></li>
+	<li>How to Install 
+		<a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/install.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/install.md
+		</a>
+	</li>
+	<li>FAQ
+		<a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/guide.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/guide.md
+		</a>
+	</li>
+	<li>Changes
+		<a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/changes.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/changes.md
+		</a>
+	</li>
 </ul>
 
 <h2><a href="/liteide.org/Documents">Quick Start</a></h2>
@@ -81,10 +90,11 @@ LiteIDE is a simple, open source, cross-platform Go IDE.
 <h2>最近更新</h2>
 
 
-<div class="post">
-  <h3 class="title"><a href="/liteide.org/blog/cross-compile/">cross-compile</a> <span class="date">2017-03-17</span></h3>
 
-  <h2>LiteIDE 的交叉编译设置</h2>
+<div class="post">
+  <h3 class="title"><a href="/liteide.org/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/">LiteIDE 的交叉编译设置</a> <span class="date">2017-03-17</span></h3>
+
+  <!-- ## LiteIDE 的交叉编译设置 -->
 
 <p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
 本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
@@ -93,32 +103,18 @@ LiteIDE is a simple, open source, cross-platform Go IDE.
 
 <p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
 
-<pre><code class="language-text">GOROOT=$HOME/go
-#GOBIN=
-GOARCH=386
-GOOS=windows
-CGO_ENABLED=0
-
-PATH=$GOROOT/bin:$PATH
-
-LITEIDE_GDB=/usr/local/bin/gdb
-LITEIDE_MAKE=make
-LITEIDE_TERM=/usr/bin/open
-LITEIDE_TERMARGS=-a Terminal
-LITEIDE_EXEC=/usr/X11R6/bin/xterm
-LITEIDE_EXECOPT=-e
-</code></pre>
-
 
   <div class="more">
-    <a href="/liteide.org/blog/cross-compile/" class="btn">read more..</a>
+    <a href="/liteide.org/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/" class="btn">read more..</a>
   </div>
 </div>
 
-<div class="post">
-  <h3 class="title"><a href="/liteide.org/blog/goapi-index/">goapi-index</a> <span class="date">2017-03-16</span></h3>
 
-  <h2>更新 Golang Api Index 功能</h2>
+
+<div class="post">
+  <h3 class="title"><a href="/liteide.org/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/">更新 Golang Api Index 功能</a> <span class="date">2017-03-16</span></h3>
+
+  <!-- ## 更新 Golang Api Index 功能 -->
 
 <p>最近更新了 Golang Api Index 功能，之前是通过 gotools 对 GOPATH 内的所有源码进行索引，并在用户目录中建立一个索引文件，
 文件格式与 go/api/go1.txt 类似，这个功能的问题是使用 gotools 建立索引的速度很慢，查询功能与 Golang Doc Search 的功能也有所重复，而且我还发现 gotools 工具对于 go1.8 的源码建立索引出错。</p>
@@ -127,15 +123,14 @@ LITEIDE_EXECOPT=-e
 包含 <code>go1.txt go1.1.txt ... except.txt next.txt</code> ，
 同时在查询结果列表中加入了 api 所对应的 go 版本（文件），如下图所示。</p>
 
-<p><img src="/liteide.org/assets/media/2017-03-16-goapi-index/goapi-index.png" alt="" width="600"></p>
-
-<p>这样看起来工整多了，并且与 Golang Doc Search 有所区别。</p>
-
 
   <div class="more">
-    <a href="/liteide.org/blog/goapi-index/" class="btn">read more..</a>
+    <a href="/liteide.org/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/" class="btn">read more..</a>
   </div>
 </div>
+
+
+
 
   </div>
 </div>

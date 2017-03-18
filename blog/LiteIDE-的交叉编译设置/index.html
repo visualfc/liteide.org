@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>cross-compile</title>
+    <title>LiteIDE 的交叉编译设置</title>
       
     <link rel="shortcut icon" href="/liteide.org/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -27,7 +27,7 @@
                 <li class="dropdown">
                     <a href="/liteide.org/archive" class="dropdown-toggle" data-toggle="dropdown">
                         Blog 
-                        <b class="caret"></b>
+                        <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="/liteide.org/archive">Archive</a></li>
@@ -45,12 +45,12 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>cross-compile </h1>
+  <h1>LiteIDE 的交叉编译设置 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <h2>LiteIDE 的交叉编译设置</h2>
+    <!-- ## LiteIDE 的交叉编译设置 -->
 
 <p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
 本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
@@ -59,7 +59,7 @@
 
 <p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
 
-<pre><code class="language-text">GOROOT=$HOME/go
+<pre><code>GOROOT=$HOME/go
 #GOBIN=
 GOARCH=386
 GOOS=windows
@@ -81,7 +81,7 @@ LITEIDE_EXECOPT=-e
 
 <p>这种方式中，我们不设置 GOROOT 变量，而是通过 PATH 设置让 LiteIDE 在内部使用 go env 自动查询 GOROOT，设置如下</p>
 
-<pre><code class="language-text">#GOROOT=$HOME/go
+<pre><code>#GOROOT=$HOME/go
 #GOBIN=
 GOARCH=386
 GOOS=windows
@@ -102,17 +102,17 @@ LITEIDE_EXECOPT=-e
 <p>这种方式是直接设置 GOROOT，可以通过在终端下输入 <code>go env</code> 来查询 GOROOT 位置，如果是使用官方安装，
 可能显示为</p>
 
-<pre><code class="language-text">GOROOT=&quot;/usr/local/go&quot;
+<pre><code>GOROOT=&quot;/usr/local/go&quot;
 </code></pre>
 
 <p>如果是使用 brew install go 安装，则可能显示为</p>
 
-<pre><code class="language-text">GOROOT=&quot;/usr/local/Cellar/go/1.8/libexec&quot;
+<pre><code>GOROOT=&quot;/usr/local/Cellar/go/1.8/libexec&quot;
 </code></pre>
 
 <p>对于官方安装，我们编辑 cross-win32 环境对应为</p>
 
-<pre><code class="language-text">GOROOT=/usr/local/go
+<pre><code>GOROOT=/usr/local/go
 #GOBIN=
 GOARCH=386
 GOOS=windows
@@ -130,7 +130,7 @@ LITEIDE_EXECOPT=-e
 
 <p>对于 brew 安装，我们编辑 cross-win32 环境对应为</p>
 
-<pre><code class="language-text">GOROOT=/usr/local/Cellar/go/1.8/libexec
+<pre><code>GOROOT=/usr/local/Cellar/go/1.8/libexec
 #GOBIN=
 GOARCH=386
 GOOS=windows
@@ -150,7 +150,7 @@ LITEIDE_EXECOPT=-e
 
 <p>保存cross-win32.env 后，LiteIDE 自动重新加载 cross-win32 环境，打开编译输出窗口可以看到类似如下输出</p>
 
-<pre><code class="language-text">/usr/local/go/bin/go env []
+<pre><code>/usr/local/go/bin/go env []
 GOARCH=&quot;386&quot;
 GOBIN=&quot;&quot;
 GOEXE=&quot;.exe&quot;
@@ -182,12 +182,12 @@ CGO_LDFLAGS=&quot;-g -O2&quot;
 <p>在 cross-win32环境下，我们打开项目中的 go 源码文件，使用工具栏上的 <strong>编译</strong> 命令或者在 <strong>执行文件</strong> 中输入 go build 进行编译测试。
 如果是使用 brew 安装，这时候就可以编译成功，如果使用 go 安装，有可能会出现以下提示</p>
 
-<pre><code class="language-text">go install runtime/internal/sys: mkdir /usr/local/go/pkg/windows_386: permission denied
+<pre><code>go install runtime/internal/sys: mkdir /usr/local/go/pkg/windows_386: permission denied
 </code></pre>
 
 <p>出现这个错误则说明 LiteIDE 没有 /usr/local/go 路径的写权限，遇到这种情况，我们需要在终端下先交叉编译好 go 环境。在终端下输入</p>
 
-<pre><code class="language-text">$ GOOS=windows GOARCH=386 go install std
+<pre><code>$ GOOS=windows GOARCH=386 go install std
 </code></pre>
 
 <p>这里的 <code>go install std</code> 表示编译安装标准库，安装结束后，我们在 LiteIDE 中就可以正常使用 windows-386 交叉编译环境了。
@@ -205,7 +205,7 @@ CGO_LDFLAGS=&quot;-g -O2&quot;
             <li><a href="/liteide.org/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/liteide.org/blog/goapi-index/" title="goapi-index">Next &rarr;</a></li>
+            <li class="next"><a href="/liteide.org/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/" title="更新 Golang Api Index 功能">Next &rarr;</a></li>
           
           
         </ul>
