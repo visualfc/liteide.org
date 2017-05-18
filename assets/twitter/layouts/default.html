@@ -10,6 +10,27 @@
     <meta name="author" content="{{ site.author.name }}">
 
       {{{ assets }}} 
+
+    <script type="text/javascript">
+      function Go(obj){
+        var url = obj.getAttribute("url");
+        var currentPath = location.pathname;
+        var destination = "";
+        if (currentPath.indexOf("{{site.home}}/cn") >= 0){
+            destination = "{{site.home}}/cn/" + url;
+        } else {
+            destination = "{{site.home}}/en/" + url;
+        }
+        location.href = destination;
+      }
+
+      function GoHome(obj){
+        var url = obj.getAttribute("url");
+        setCookie("LITEIDE_LANGUAGE", url, 7);
+        location.href = "{{site.home}}/" + url;
+      }
+    </script>
+
   </head>
 
   <body>
@@ -17,27 +38,30 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="{{site.home}}">Home</a>
             <ul class="nav navbar-nav">
-                <li><a href="{{site.home}}/liteide">LiteIDE X</a></li>
-                <li><a href="{{site.home}}/documents">Documents</a></li>
-                <li><a href="{{site.home}}/download">Download</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="" class="logo"></a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="" class="brand">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="liteide">LiteIDE X</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="documents">Documents</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="download">Download</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="blog">Blog</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="about">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav right">
                 <li class="dropdown">
-                    <a href="{{site.home}}/archive" class="dropdown-toggle" data-toggle="dropdown">
-                        Blog 
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{site.home}}/archive">Archive</a></li>
-                        <li><a href="{{site.home}}/tags">Tags</a></li>
-                        <li><a href="{{site.home}}/categories">Categories</a></li>
-                    </ul>
+                     <a href="{{site.home}}/cn" class="dropdown-toggle" data-toggle="dropdown">
+                         Language
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0);" onclick="GoHome(this)" url="cn">简体中文</a></li>
+                        <li><a href="javascript:void(0);" onclick="GoHome(this)" url="en">English</a></li>
+                     </ul>
                 </li>
-                <li><a href="{{site.home}}/about">About</a></li>
             </ul>
         </div>
       </div>
     </div>
+
 
     <div class="container">
 
@@ -50,7 +74,7 @@
             &copy; 2011-2017 {{ site.author.name }} <a href="http://github.com/visualfc/liteide" target="_blank" title="LiteIDE">LiteIDE X</a> 
     		<p>
     		<p>
-    		感谢 <a href="http://hopehook.com/" target="_blank">HopeHook</a> 提供域名赞助
+    		    Thanks to <a href="http://hopehook.com/" target="_blank">HopeHook</a>
     		</p>
       </footer>
 

@@ -6,13 +6,14 @@
     ],
    
     "widgets" : {
-      "google_prettify" : "twitter-bootstrap.css"
+      "google_prettify" : "twitter-bootstrap-fixed.css"
     }
     
   },
 
   "javascripts" : {
     "default" : [
+      "default.js",
       "jquery.min.js",
       "bootstrap.min.js"
     ]

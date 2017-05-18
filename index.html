@@ -9,10 +9,32 @@
 
       <link href="/liteide.org/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
 <link href="/liteide.org/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/liteide.org/assets/twitter/javascripts/default.js"></script>
 <script src="/liteide.org/assets/twitter/javascripts/jquery.min.js"></script>
 <script src="/liteide.org/assets/twitter/javascripts/bootstrap.min.js"></script>
-<link href="/liteide.org/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/liteide.org/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap-fixed.css" type="text/css" rel="stylesheet" media="all">
  
+
+    <script type="text/javascript">
+      function Go(obj){
+        var url = obj.getAttribute("url");
+        var currentPath = location.pathname;
+        var destination = "";
+        if (currentPath.indexOf("/liteide.org/cn") >= 0){
+            destination = "/liteide.org/cn/" + url;
+        } else {
+            destination = "/liteide.org/en/" + url;
+        }
+        location.href = destination;
+      }
+
+      function GoHome(obj){
+        var url = obj.getAttribute("url");
+        setCookie("LITEIDE_LANGUAGE", url, 7);
+        location.href = "/liteide.org/" + url;
+      }
+    </script>
+
   </head>
 
   <body>
@@ -20,27 +42,30 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="/liteide.org">Home</a>
             <ul class="nav navbar-nav">
-                <li><a href="/liteide.org/liteide">LiteIDE X</a></li>
-                <li><a href="/liteide.org/documents">Documents</a></li>
-                <li><a href="/liteide.org/download">Download</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="" class="logo"></a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="" class="brand">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="liteide">LiteIDE X</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="documents">Documents</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="download">Download</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="blog">Blog</a></li>
+                <li><a href="javascript:void(0);" onclick="Go(this)" url="about">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav right">
                 <li class="dropdown">
-                    <a href="/liteide.org/archive" class="dropdown-toggle" data-toggle="dropdown">
-                        Blog 
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/liteide.org/archive">Archive</a></li>
-                        <li><a href="/liteide.org/tags">Tags</a></li>
-                        <li><a href="/liteide.org/categories">Categories</a></li>
-                    </ul>
+                     <a href="/liteide.org/cn" class="dropdown-toggle" data-toggle="dropdown">
+                         Language
+                     </a>
+                     <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0);" onclick="GoHome(this)" url="cn">简体中文</a></li>
+                        <li><a href="javascript:void(0);" onclick="GoHome(this)" url="en">English</a></li>
+                     </ul>
                 </li>
-                <li><a href="/liteide.org/about">About</a></li>
             </ul>
         </div>
       </div>
     </div>
+
 
     <div class="container">
 
@@ -53,6 +78,49 @@
 <div class="row">
   <div class="span12">
     
+
+<script type="text/javascript">
+$(document).ready(function(){
+	Home();
+});
+
+
+function Home(){
+	var enUrl = "/liteide.org/en/";
+	var cnUrl = "/liteide.org/cn/";
+
+	// 优先cookie中用户设定的语言
+	var lang = getCookie("LITEIDE_LANGUAGE");
+	if (lang != null && lang != ""){
+		if (lang == "cn"){
+		 	window.location.href = cnUrl;
+		 	return;
+		} else if (lang == "en"){
+			window.location.href = enUrl;
+			return;
+		}
+	}
+
+	// 然后根据浏览器的语言跳转
+	var type = navigator.appName;
+	if (type == "Netscape"){
+		lang = navigator.language.toLowerCase();
+	} else {
+		lang = navigator.userLanguage.toLowerCase();
+	}
+	// 取得浏览器语言的前两个字母
+	lang = lang.substr(0,2);
+	if (lang == "zh"){
+	 	window.location.href = cnUrl;
+	 	return;
+	} else {
+		window.location.href = enUrl;
+		return;
+	}
+}
+</script>
+
+
 <img src="/liteide.org/assets/media/liteide.png"/>
 
 <p></p>
@@ -65,96 +133,29 @@
 	<li>Gotools Source code <a href="https://github.com/visualfc/gotools">https://github.com/visualfc/gotools</a></li>
 	<li>Release downloads
 		<ul>
-			<li><a href="http://sourceforge.net/projects/liteide/files">http://sourceforge.net/projects/liteide/files</a></li>
-			<li><a href="https://github.com/visualfc/liteide/releases/latest">https://github.com/visualfc/liteide/releases/latest</a></li>
+			<li>
+				<a href="http://sourceforge.net/projects/liteide/files">
+				http://sourceforge.net/projects/liteide/files
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/visualfc/liteide/releases/latest">
+				https://github.com/visualfc/liteide/releases/latest
+				</a>
+			</li>
 		</ul>
 	</li>
 	<li>Google group <a href="https://groups.google.com/group/liteide-dev">https://groups.google.com/group/liteide-dev</a></li>
-	<li>How to Install 
-		<a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/install.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/install.md
-		</a>
-	</li>
-	<li>FAQ
-		<a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/guide.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/guide.md
-		</a>
-	</li>
-	<li>Changes
-		<a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/changes.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/changes.md
-		</a>
-	</li>
 </ul>
 
-<h2><a href="/liteide.org/Documents">Quick Start</a></h2>
-<p></p>
-<p></p>
-
-<h2>最近更新</h2>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/liteide.org/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">LiteIDE 的配置文件管理</a> <span class="date">2017-03-18</span></h3>
-
-  <!-- ## LiteIDE 的配置文件 -->
-
-<p>LiteIDE 的配置文件默认存储在当前用户目录中，我们也可以设置存储在程序本地目录中。通过 <strong>选项</strong>（ <strong>偏好设置</strong> ）=&gt; <strong>LiteApp</strong> =&gt; <strong>存储</strong> <em>存储设置到本地ini文件</em> 选项来切换默认的存储位置。</p>
-
-<h3>存储至当前用户配置</h3>
-
-<p>LiteIDE 的配置文件默认存储在当前用户的特定目录中，如在 macOS 下存储在当前用户目录 <code>/.config/liteide/liteide.ini</code> 文件中,
-这可以保证在 LiteIDE 更新后当前用户的配置保持不变，包括用户的 GOPATH 配置以及历史目录、历史文件等信息。</p>
-
-<h3>存储至程序本地配置</h3>
-
-<p>我们也可以将 LiteIDE 的配置文件存储在 LiteIDE 的本地目录中，即 LiteIDE的 <code>share/liteapp/config/liteide.ini</code> 文件中，
-这可以保证配置信息跟随 LiteIDE 程序启用，我们可以在自己的系统中复制多份 LiteIDE，每个都保持有自己的环境信息、GOPATH 配置、历史目录等信息，
-方便多个项目独立使用。</p>
-
-
-  <div class="more">
-    <a href="/liteide.org/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="btn">read more..</a>
-  </div>
-</div>
+<h2>Quick Start</h2>
+<ul>
+	<li> <a href="/liteide.org/en/doc/install">How to install</a> </li>
+    <div class="more"> <a href="/liteide.org/en/Documents" class="btn">Read more</a> </div>
+</ul>
 
 
 
-<div class="post">
-  <h3 class="title"><a href="/liteide.org/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/">LiteIDE 的交叉编译设置</a> <span class="date">2017-03-17</span></h3>
-
-  <!-- ## LiteIDE 的交叉编译设置 -->
-
-<p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
-本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
-
-<h3>交叉编译环境选择和配置</h3>
-
-<p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
-
-
-  <div class="more">
-    <a href="/liteide.org/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/" class="btn">read more..</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/liteide.org/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/">更新 Golang Api Index 功能</a> <span class="date">2017-03-16</span></h3>
-
-  <!-- ## 更新 Golang Api Index 功能 -->
-
-<p>最近更新了 Golang Api Index 功能，之前是通过 gotools 对 GOPATH 内的所有源码进行索引，并在用户目录中建立一个索引文件，
-文件格式与 go/api/go1.txt 类似，这个功能的问题是使用 gotools 建立索引的速度很慢，查询功能与 Golang Doc Search 的功能也有所重复，而且我还发现 gotools 工具对于 go1.8 的源码建立索引出错。</p>
-
-<p>在最新版本中，我对 Golang Api Index 的功能重新定位，更改为只查询 go 标准库 api，即查询 go/api 目录下的文件，
-包含 <code>go1.txt go1.1.txt ... except.txt next.txt</code> ，
-同时在查询结果列表中加入了 api 所对应的 go 版本（文件），如下图所示。</p>
-
-
-  <div class="more">
-    <a href="/liteide.org/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/" class="btn">read more..</a>
-  </div>
-</div>
 
 
 
@@ -169,7 +170,7 @@
             &copy; 2011-2017 visualfc <a href="http://github.com/visualfc/liteide" target="_blank" title="LiteIDE">LiteIDE X</a> 
     		<p>
     		<p>
-    		感谢 <a href="http://hopehook.com/" target="_blank">HopeHook</a> 提供域名赞助
+    		    Thanks to <a href="http://hopehook.com/" target="_blank">HopeHook</a>
     		</p>
       </footer>
 
