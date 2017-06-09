@@ -81,6 +81,138 @@
 
 <p>LiteIDE is a simple, open source, cross-platform Go IDE.</p>
 
+<h3>2017.6.12 Ver X32</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>support folder build config custom GOPATH</li>
+<li>support folder build config BUILDFLAGS -tags setup</li>
+<li>support folder build config TARGETBASENAME setup</li>
+<li>support session switching for folder/editor</li>
+<li>support load custom icon library from liteapp/qrc folder (default and folder)</li>
+<li>reimplemented multifolder model, it took me a long time :)</li>
+<li>add macOS session menu for native dock menu</li>
+<li>recent menu sync for multi windows</li>
+<li>gotools support +build source navigate (single file or -tags setup)</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>add the session switching function</li>
+<li>add autosavedocument emit message option</li>
+<li>add max editor tab count option</li>
+<li>add option action to standard toolbar</li>
+<li>add tool window use shortcuts option for unstandard keyboard option</li>
+<li>add exit liteide ctrl+q on windows</li>
+<li>add themes (carbon.qss gray.qss sublime.qss) for liteide &amp; beautify old themes, thanks for hope hook</li>
+<li>editor tab context add open terminal here action</li>
+<li>folders context menu add open in new windows action (new folder session)</li>
+<li>folder view add show showdetails action</li>
+<li>fix folder sync editor incorrect on macOS</li>
+<li>fix webview and debug console qss</li>
+<li>fix folders tool window enter key to jump</li>
+<li>fix exit error save session by ctrl+q on macos</li>
+<li>fix newfile dialog space name</li>
+<li>update folder tool window showInExporer showInShell action text</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>find files add auto swith current folder checkbox</li>
+<li>find in editor add show replace mode checkbox</li>
+<li>filesearch enable replace whitespace or empty</li>
+<li>editor replace all in one edit block for ctrl+z once undo</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>add custom GOPATH in build config for build/debug/GolangEdit</li>
+<li>add custom share-value BUILDFLAGS in build config for build/debug/GolangEdit</li>
+<li>add custom TARGETBASENAME in build config for build/debug</li>
+<li>support BUILDFLAGS -tags for build/debug/GolangEdit</li>
+<li>update gosrc.xml to export custom value and share-value</li>
+<li>folders tool window context menu add Go build configuration action</li>
+<li>folders tool window context go tool use Go build configuration setup</li>
+<li>fix stop action for kill process</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>console use editor color scheme</li>
+<li>support LiteBuild folder build config BUILDFLAGS/BUILDARGS -tags flag setup</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix process identify for auto exit</li>
+</ul></li>
+<li>LiteEnv
+
+<ul>
+<li>default env /usr/local/go on macosx</li>
+<li>update macosx cross env GOROOT for system</li>
+</ul></li>
+<li>LiteEditor<br />
+
+<ul>
+<li>context menu add convert case menu</li>
+<li>go.snippet add iferr</li>
+<li>update sublime.xml / sublime-bold.xml, thanks for hopehook <a href="mailto:hopehook@qq.com">hopehook@qq.com</a></li>
+<li>alt+backspace delete serial whitespaces</li>
+<li>option font QComboBox to QFontComboBox, add restore DefaultFont action</li>
+<li>option add show monospace font check</li>
+<li>option file types sort mimetype, show custom extsition first</li>
+</ul></li>
+<li>GolangPackage
+
+<ul>
+<li>gopath setup add use sysgopath/litegopath check</li>
+</ul></li>
+<li>GolangPlay
+
+<ul>
+<li>fix goplay use goenvironment</li>
+</ul></li>
+<li>GolangDoc
+
+<ul>
+<li>change golang api index search for go/api folder</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>add go root source readonly setup option</li>
+<li>support folder go build config BUILDFLAGS/BUILDARGS -tags flag setup</li>
+<li>fix interface type by gotools</li>
+<li>fix find process stop and run</li>
+<li>fix lookup guru for source query</li>
+</ul></li>
+<li>GolangAst
+
+<ul>
+<li>fix astview enter key to jump</li>
+</ul></li>
+<li>FileBorwser
+
+<ul>
+<li>fix file system enter key to jump</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>fix types interface method</li>
+<li>types support +build for single source</li>
+<li>types support -tags flag</li>
+</ul></li>
+<li>tools
+
+<ul>
+<li>add new exportqrc tool for export liteide all build-in images</li>
+</ul></li>
+</ul>
+
 <h3>2017.3.9 Ver X31.1</h3>
 
 <ul>

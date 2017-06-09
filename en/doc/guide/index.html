@@ -77,7 +77,7 @@
 
 <div class="row">
   <div class="span12">
-    <h1>LiteIDE User Guide</h1>
+    <h1>LiteIDE Feature Guide</h1>
 
 <h2>How to use the low version Go1.1 and Go1.2</h2>
 
@@ -217,6 +217,28 @@ LITEIDE_EXECOPT=-e
 
 <p>To build the compilers for cross-compilation, run the appropriate script from the Go sources directory.  The examples below demonstrate how to build some common compilers; you must modify the environment variables appropriately.</p>
 
+<p><strong>go1.5 or high (go1.8 cross-compile CGO_ENABLED auto set 0)</strong></p>
+
+<p>Building cross-compiler for 64-bit Linux on Windows (in MinGW with GCC):</p>
+
+<pre><code>&gt; set GOARCH=amd64
+&gt; set GOOS=linux
+&gt; set CGO_ENABLED=0
+&gt; go build std
+</code></pre>
+
+<p>Building cross-compiler for 32-bit Windows on macOS:</p>
+
+<pre><code>&gt; GOARCH=386 GOOS=window CGO_ENABLED=0 go build std
+</code></pre>
+
+<p>Building cross-compiler for Linux ARM on macOS:</p>
+
+<pre><code>&gt; GOARCH=arm GOOS=linux CGO_ENABLED=0 go build std
+</code></pre>
+
+<p><strong>go 1.0 go1.1 go1.2 go1.3 go1.4</strong></p>
+
 <p>Building cross-compiler for 64-bit Linux on Windows (in MinGW with GCC):</p>
 
 <pre><code>&gt; set GOARCH=amd64
@@ -226,7 +248,7 @@ LITEIDE_EXECOPT=-e
 &gt; all.bat
 </code></pre>
 
-<p>Building cross-compiler for 32-bit Windows on Linux:</p>
+<p>Building cross-compiler for 32-bit Windows on macOS:</p>
 
 <pre><code>&gt; export GOARCH=386
 &gt; export GOOS=windows
@@ -235,7 +257,7 @@ LITEIDE_EXECOPT=-e
 &gt; ./all.bash
 </code></pre>
 
-<p>Building cross-compiler for Linux ARM on Mac OS X:</p>
+<p>Building cross-compiler for Linux ARM on macOS:</p>
 
 <pre><code>&gt; export GOARCH=arm
 &gt; export GOOS=linux
@@ -293,33 +315,15 @@ removing unreferenced ones.</p>
 
 <p>To modify the available build options, open <code>View &gt; Options &gt; LiteBuild</code>.  You can add your own images in this directory to define new icons.  Any XML files in this directory are read to load action buttons.  Double click on an XML file to edit it.  Each XML file defines all of the build actions for one particular type of file.</p>
 
-<p>Example XML for Go (<code>gosrc.xml</code>):</p>
+<p>Example XML for Lua (<code>lua.xml</code>):</p>
 
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'&gt;
-    &lt;mime-type type=&quot;text/x-gosrc&quot; id=&quot;gosrc&quot; work=&quot;$(EDITOR_DIR)&quot; ver=&quot;1&quot;&gt;
-        &lt;config id=&quot;Go&quot; name=&quot;GO&quot; value=&quot;go&quot;/&gt;
-        &lt;config id=&quot;GoExec&quot; name=&quot;GOEXEC&quot; value=&quot;$(LITEAPPDIR)/goexec&quot;/&gt;
-        &lt;config id=&quot;ErrRegex&quot; name=&quot;ERRREGEX&quot; value=&quot;(\w?:?[\w\d_\-\\/\.]+):(\d+):&quot;/&gt;
-        &lt;custom id=&quot;TargetArgs&quot; name=&quot;TARGETARGS&quot; value=&quot;&quot;/&gt;
-        &lt;custom id=&quot;BuildArgs&quot; name=&quot;BUILDARGS&quot; value=&quot;&quot;/&gt;
-        &lt;custom id=&quot;InstallArgs&quot; name=&quot;INSTALLARGS&quot; value=&quot;&quot;/&gt;
-        &lt;action id=&quot;Build&quot; img=&quot;blue/build.png&quot; key=&quot;Ctrl+B;F7&quot; cmd=&quot;$(GO)&quot; args=&quot;build $(BUILDARGS)&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
-        &lt;action id=&quot;Install&quot; menu=&quot;Build&quot; img=&quot;blue/install.png&quot; key=&quot;Ctrl+F8&quot; cmd=&quot;$(GO)&quot; args=&quot;install $(INSTALLARGS)&quot; save=&quot;all&quot; output=&quot;true&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
-        &lt;action id=&quot;BuildTests&quot; menu=&quot;Build&quot; img=&quot;blue/buildtest.png&quot; cmd=&quot;$(GO)&quot; args=&quot;test -c -gcflags &amp;quot;-N -l&amp;quot;&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;&quot; regex=&quot;$(ERRREGEX)&quot;/&gt;
-        &lt;action id=&quot;Clean&quot; menu=&quot;Build&quot; img=&quot;blue/clean.png&quot; cmd=&quot;$(GO)&quot; args=&quot;clean&quot; save=&quot;all&quot; output=&quot;true&quot;/&gt;
-        &lt;action id=&quot;CleanAll&quot; menu=&quot;Build&quot; img=&quot;blue/cleanall.png&quot; cmd=&quot;$(GO)&quot; args=&quot;clean -i&quot; save=&quot;all&quot; output=&quot;true&quot;/&gt;
-        &lt;action id=&quot;BuildAndRun&quot; img=&quot;blue/buildrun.png&quot; key=&quot;Ctrl+R;Ctrl+F7&quot; task=&quot;Build;Run&quot; killold=&quot;true&quot;/&gt;
-        &lt;action id=&quot;Run&quot; menu=&quot;BuildAndRun&quot; img=&quot;blue/run.png&quot; key=&quot;Ctrl+F5&quot; cmd=&quot;$(EDITOR_DIRNAME_GO)&quot; args=&quot;$(TARGETARGS)&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; readline=&quot;true&quot;/&gt;
-        &lt;action id=&quot;RunTerm&quot; menu=&quot;BuildAndRun&quot; img=&quot;blue/runterm.png&quot; key=&quot;Ctrl+Shift+F5&quot; cmd=&quot;$(LITEIDE_EXEC)&quot; args=&quot;$(LITEIDE_EXECOPT) $(GOEXEC) $(EDITOR_DIRNAME_GO) $(TARGETARGS)&quot; output=&quot;false&quot; readline=&quot;true&quot;/&gt;
-        &lt;action id=&quot;FileRun&quot; menu=&quot;BuildAndRun&quot; img=&quot;gray/filerun.png&quot; key=&quot;Alt+F6&quot; cmd=&quot;$(GO)&quot; args=&quot;run $(EDITOR_NAME)&quot; save=&quot;editor&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; readline=&quot;true&quot;/&gt;
-        &lt;action id=&quot;Test&quot; img=&quot;blue/test.png&quot; key = &quot;Ctrl+T&quot; cmd=&quot;$(GO)&quot; args=&quot;test&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
-        &lt;action id=&quot;Bench&quot; menu=&quot;Test&quot; img=&quot;blue/testbench.png&quot; cmd=&quot;$(GO)&quot; args=&quot;test -test.bench=.*&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
-        &lt;action id=&quot;Get&quot; menu=&quot;Test&quot; img=&quot;blue/get.png&quot; cmd=&quot;$(GO)&quot; args=&quot;get -v .&quot; save=&quot;all&quot; output=&quot;true&quot; codec=&quot;utf-8&quot;/&gt;
-        &lt;action id=&quot;Fmt&quot; menu=&quot;Test&quot; img=&quot;blue/fmt.png&quot; cmd=&quot;$(GO)&quot; args=&quot;fmt&quot; save=&quot;all&quot; output=&quot;true&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
-        &lt;action id=&quot;Vet&quot; menu=&quot;Test&quot; img=&quot;blue/vet.png&quot; cmd=&quot;$(GO)&quot; args=&quot;vet&quot; save=&quot;all&quot; output=&quot;true&quot; regex=&quot;$(ERRREGEX)&quot; navigate=&quot;true&quot;/&gt;
-        &lt;target id=&quot;Target&quot; cmd=&quot;$(EDITOR_DIRNAME_GO)&quot; args=&quot;$(TARGETARGS)&quot; work=&quot;$(EDITOR_DIR)&quot;/&gt;
-    &lt;/mime-type&gt;
+	&lt;mime-type type=&quot;text/x-lua&quot; id=&quot;lua&quot; work=&quot;$(EDITOR_DIR_PATH)&quot; lock=&quot;file&quot; ver=&quot;2&quot;&gt;
+		&lt;config id=&quot;GoTools&quot; name=&quot;GOTOOLS&quot; value=&quot;$(LITEIDE_TOOL_PATH)/gotools&quot;/&gt;
+		&lt;action id=&quot;Run&quot; key=&quot;Ctrl+R&quot; img=&quot;run.png&quot; cmd=&quot;lua&quot; args=&quot;-e io.stdout:setvbuf('no') $(EDITOR_FILE_NAME)&quot; save=&quot;editor&quot; output=&quot;true&quot; codec=&quot;utf-8&quot; regex=&quot;([\w\d:_\-\\/\.]+):(\d+)&quot; readline=&quot;true&quot; /&gt;
+		&lt;action id=&quot;RunTerm&quot; key=&quot;Ctrl+Shift+F5&quot; img=&quot;runterm.png&quot; cmd=&quot;$(LITEIDE_EXEC)&quot; args=&quot;$(LITEIDE_EXECOPT) $(GOTOOLS) runcmd lua -e io.stdout:setvbuf(&amp;quot;no&amp;quot;) $(EDITOR_FILE_NAME)&quot; save=&quot;editor&quot; output=&quot;false&quot; readline=&quot;true&quot;/&gt;
+	&lt;/mime-type&gt;
 &lt;/mime-info&gt;
 </code></pre>
 
