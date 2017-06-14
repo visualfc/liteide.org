@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE 的交叉编译设置</title>
+    <title>LiteIDE X32 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,167 +83,173 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE 的交叉编译设置 </h1>
+  <h1>LiteIDE X32 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <!-- ## LiteIDE 的交叉编译设置 -->
+    <p>Go 语言开发工具 LiteIDE X32 正式发布。</p>
 
-<p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
-本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
+<p>历经三个月，200 多次源码提交，LiteIDE终于完成了新版本的发布，<a href="http://liteide.org">liteide.org</a> 网站在 <a href="http://hopehook.com/">HopeHook</a> 的帮助下也正式推出。</p>
 
-<h3>交叉编译环境选择和配置</h3>
+<p>LiteIDE X32 在界面会话、编译系统、源码编辑、代码分析等方面有了很大改进，从去年开始重写的 MulitFolderModel 也终于完成合并到 LiteIDE 的目录窗口中。</p>
 
-<p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
+<ul>
+<li>提供了更多的界面主题和编辑器配色，感谢 <a href="http://hopehook.com/">HopeHook</a></li>
+<li>支持外部图标加载功能</li>
+<li>支持会话切换功能（会话保持自己的目录和文件）</li>
+<li>编译目录支持自定义 GOPATH</li>
+<li>编译目录支持更多的设置</li>
+<li>调试插件/Go编辑插件支持编译目录的 BUILDFLAGS -tags 设定</li>
+<li>完善 Go 代码导航和重构功能</li>
+<li>更多的功能更新和 BUG 修复见历史记录</li>
+</ul>
 
-<pre><code>GOROOT=$HOME/go
-#GOBIN=
-GOARCH=386
-GOOS=windows
-CGO_ENABLED=0
+<h3>2017.6.12 Ver X32</h3>
 
-PATH=$GOROOT/bin:$PATH
+<ul>
+<li>LiteIDE
 
-LITEIDE_GDB=/usr/local/bin/gdb
-LITEIDE_MAKE=make
-LITEIDE_TERM=/usr/bin/open
-LITEIDE_TERMARGS=-a Terminal
-LITEIDE_EXEC=/usr/X11R6/bin/xterm
-LITEIDE_EXECOPT=-e
-</code></pre>
+<ul>
+<li>support folder build config custom GOPATH</li>
+<li>support folder build config BUILDFLAGS -tags setup</li>
+<li>support folder build config TARGETBASENAME setup</li>
+<li>support session switching for folder/editor</li>
+<li>support load custom icon library from liteapp/qrc folder (default and folder)</li>
+<li>reimplemented multifolder model, it took me a long time :)</li>
+<li>add macOS session menu for native dock menu</li>
+<li>recent menu sync for multi windows</li>
+<li>gotools support +build source navigate (single file or -tags setup)</li>
+</ul></li>
+<li>LiteApp
 
-<p>我们可以看到 GOARCH 和 GOOS 已经设置完毕，我们需要更改的是 GOROOT 和 PATH 变量，主要设置方式有两种，</p>
+<ul>
+<li>add the session switching function</li>
+<li>add autosavedocument emit message option</li>
+<li>add max editor tab count option</li>
+<li>add option action to standard toolbar</li>
+<li>add tool window use shortcuts option for unstandard keyboard option</li>
+<li>add exit liteide ctrl+q on windows</li>
+<li>add themes (carbon.qss gray.qss sublime.qss) for liteide &amp; beautify old themes, thanks for hope hook</li>
+<li>editor tab context add open terminal here action</li>
+<li>folders context menu add open in new windows action (new folder session)</li>
+<li>folder view add show showdetails action</li>
+<li>fix folder sync editor incorrect on macOS</li>
+<li>fix webview and debug console qss</li>
+<li>fix folders tool window enter key to jump</li>
+<li>fix exit error save session by ctrl+q on macos</li>
+<li>fix newfile dialog space name</li>
+<li>update folder tool window showInExporer showInShell action text</li>
+</ul></li>
+<li>LiteFind
 
-<h4>第一种方式，不设置 GOROOT 直接设置 PATH</h4>
+<ul>
+<li>find files add auto swith current folder checkbox</li>
+<li>find in editor add show replace mode checkbox</li>
+<li>filesearch enable replace whitespace or empty</li>
+<li>editor replace all in one edit block for ctrl+z once undo</li>
+</ul></li>
+<li>LiteBuild
 
-<p>这种方式中，我们不设置 GOROOT 变量，而是通过 PATH 设置让 LiteIDE 在内部使用 go env 自动查询 GOROOT，设置如下</p>
+<ul>
+<li>add custom GOPATH in build config for build/debug/GolangEdit</li>
+<li>add custom share-value BUILDFLAGS in build config for build/debug/GolangEdit</li>
+<li>add custom TARGETBASENAME in build config for build/debug</li>
+<li>support BUILDFLAGS -tags for build/debug/GolangEdit</li>
+<li>update gosrc.xml to export custom value and share-value</li>
+<li>folders tool window context menu add Go build configuration action</li>
+<li>folders tool window context go tool use Go build configuration setup</li>
+<li>fix stop action for kill process</li>
+</ul></li>
+<li>LiteDebug
 
-<pre><code>#GOROOT=$HOME/go
-#GOBIN=
-GOARCH=386
-GOOS=windows
-CGO_ENABLED=0
+<ul>
+<li>console use editor color scheme</li>
+<li>support LiteBuild folder build config BUILDFLAGS/BUILDARGS -tags flag setup</li>
+</ul></li>
+<li>DlvDebugger
 
-PATH=$PATH:/usr/local/bin
+<ul>
+<li>fix process identify for auto exit</li>
+</ul></li>
+<li>LiteEnv
 
-LITEIDE_GDB=/usr/local/bin/gdb
-LITEIDE_MAKE=make
-LITEIDE_TERM=/usr/bin/open
-LITEIDE_TERMARGS=-a Terminal
-LITEIDE_EXEC=/usr/X11R6/bin/xterm
-LITEIDE_EXECOPT=-e
-</code></pre>
+<ul>
+<li>default env /usr/local/go on macosx</li>
+<li>update macosx cross env GOROOT for system</li>
+</ul></li>
+<li>LiteEditor<br />
 
-<h4>第二种方式，直接设置 GOPATH 值</h4>
+<ul>
+<li>context menu add convert case menu</li>
+<li>go.snippet add iferr</li>
+<li>update sublime.xml / sublime-bold.xml, thanks for hopehook <a href="mailto:hopehook@qq.com">hopehook@qq.com</a></li>
+<li>alt+backspace delete serial whitespaces</li>
+<li>option font QComboBox to QFontComboBox, add restore DefaultFont action</li>
+<li>option add show monospace font check</li>
+<li>option file types sort mimetype, show custom extsition first</li>
+</ul></li>
+<li>GolangPackage
 
-<p>这种方式是直接设置 GOROOT，可以通过在终端下输入 <code>go env</code> 来查询 GOROOT 位置，如果是使用官方安装，
-可能显示为</p>
+<ul>
+<li>gopath setup add use sysgopath/litegopath check</li>
+</ul></li>
+<li>GolangPlay
 
-<pre><code>GOROOT=&quot;/usr/local/go&quot;
-</code></pre>
+<ul>
+<li>fix goplay use goenvironment</li>
+</ul></li>
+<li>GolangDoc
 
-<p>如果是使用 brew install go 安装，则可能显示为</p>
+<ul>
+<li>change golang api index search for go/api folder</li>
+</ul></li>
+<li>GolangEdit
 
-<pre><code>GOROOT=&quot;/usr/local/Cellar/go/1.8/libexec&quot;
-</code></pre>
+<ul>
+<li>add go root source readonly setup option</li>
+<li>support folder go build config BUILDFLAGS/BUILDARGS -tags flag setup</li>
+<li>fix interface type by gotools</li>
+<li>fix find process stop and run</li>
+<li>fix lookup guru for source query</li>
+</ul></li>
+<li>GolangAst
 
-<p>对于官方安装，我们编辑 cross-win32 环境对应为</p>
+<ul>
+<li>fix astview enter key to jump</li>
+</ul></li>
+<li>FileBorwser
 
-<pre><code>GOROOT=/usr/local/go
-#GOBIN=
-GOARCH=386
-GOOS=windows
-CGO_ENABLED=0
+<ul>
+<li>fix file system enter key to jump</li>
+</ul></li>
+<li>gotools
 
-PATH=$GOROOT/bin:$PATH
+<ul>
+<li>fix types interface method</li>
+<li>types support +build for single source</li>
+<li>types support -tags flag</li>
+</ul></li>
+<li>tools
 
-LITEIDE_GDB=/usr/local/bin/gdb
-LITEIDE_MAKE=make
-LITEIDE_TERM=/usr/bin/open
-LITEIDE_TERMARGS=-a Terminal
-LITEIDE_EXEC=/usr/X11R6/bin/xterm
-LITEIDE_EXECOPT=-e
-</code></pre>
-
-<p>对于 brew 安装，我们编辑 cross-win32 环境对应为</p>
-
-<pre><code>GOROOT=/usr/local/Cellar/go/1.8/libexec
-#GOBIN=
-GOARCH=386
-GOOS=windows
-CGO_ENABLED=0
-
-PATH=$GOROOT/bin:$PATH
-
-LITEIDE_GDB=/usr/local/bin/gdb
-LITEIDE_MAKE=make
-LITEIDE_TERM=/usr/bin/open
-LITEIDE_TERMARGS=-a Terminal
-LITEIDE_EXEC=/usr/X11R6/bin/xterm
-LITEIDE_EXECOPT=-e
-</code></pre>
-
-<h4>保存环境并通过 go env 查看</h4>
-
-<p>保存cross-win32.env 后，LiteIDE 自动重新加载 cross-win32 环境，打开编译输出窗口可以看到类似如下输出</p>
-
-<pre><code>/usr/local/go/bin/go env []
-GOARCH=&quot;386&quot;
-GOBIN=&quot;&quot;
-GOEXE=&quot;.exe&quot;
-GOHOSTARCH=&quot;amd64&quot;
-GOHOSTOS=&quot;darwin&quot;
-GOOS=&quot;windows&quot;
-GOPATH=&quot;/Users/vfc/goproj&quot;
-GORACE=&quot;&quot;
-GOROOT=&quot;/usr/local/go&quot;
-GOTOOLDIR=&quot;/usr/local/go/pkg/tool/darwin_amd64&quot;
-GCCGO=&quot;gccgo&quot;
-GO386=&quot;&quot;
-CC=&quot;clang&quot;
-GOGCCFLAGS=&quot;-m32 -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/2b/fhf209x571lgp5dljz593q040000gn/T/go-build420337682=/tmp/go-build -gno-record-gcc-switches&quot;
-CXX=&quot;clang++&quot;
-CGO_ENABLED=&quot;0&quot;
-PKG_CONFIG=&quot;pkg-config&quot;
-CGO_CFLAGS=&quot;-g -O2&quot;
-CGO_CPPFLAGS=&quot;&quot;
-CGO_CXXFLAGS=&quot;-g -O2&quot;
-CGO_FFLAGS=&quot;-g -O2&quot;
-CGO_LDFLAGS=&quot;-g -O2&quot;
-</code></pre>
-
-<p>注：以上环境信息也可以调用菜单 <strong>查看</strong> - <strong>执行文件</strong> （快捷键为 Command+` ）功能的输入窗口中输入 go env 来查看。</p>
-
-<h3>交叉编译时提示没有权限的处理方法</h3>
-
-<p>在 cross-win32环境下，我们打开项目中的 go 源码文件，使用工具栏上的 <strong>编译</strong> 命令或者在 <strong>执行文件</strong> 中输入 go build 进行编译测试。
-如果是使用 brew 安装，这时候就可以编译成功，如果使用 go 安装，有可能会出现以下提示</p>
-
-<pre><code>go install runtime/internal/sys: mkdir /usr/local/go/pkg/windows_386: permission denied
-</code></pre>
-
-<p>出现这个错误则说明 LiteIDE 没有 /usr/local/go 路径的写权限，遇到这种情况，我们需要在终端下先交叉编译好 go 环境。在终端下输入</p>
-
-<pre><code>$ sudo GOOS=windows GOARCH=386 go install std
-</code></pre>
-
-<p>这里的 <code>go install std</code> 表示编译安装标准库，安装结束后，我们在 LiteIDE 中就可以正常使用 windows-386 交叉编译环境了。
-对于其他交叉编译环境，需要时可以做同样的处理。</p>
+<ul>
+<li>add new exportqrc tool for export liteide all build-in images</li>
+</ul></li>
+</ul>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="LiteIDE 的配置文件管理">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/" title="更新 Golang Api Index 功能">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" title="LiteIDE 的配置文件管理">Next &rarr;</a></li>
           
           
         </ul>
@@ -269,7 +275,7 @@ CGO_LDFLAGS=&quot;-g -O2&quot;
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-03-17</span></div>
+    <div class="date"><span>2017-06-12</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
@@ -293,10 +299,6 @@ CGO_LDFLAGS=&quot;-g -O2&quot;
     
       <li>
   <a href="/tags/#liteide-ref"> liteide <span>4</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#cross-compile-ref"> cross-compile <span>1</span></a>
 </li>
     
     </ul>
