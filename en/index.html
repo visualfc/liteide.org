@@ -127,6 +127,124 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X32.2-Released/">LiteIDE X32.2 Released</a> <span class="date">2017-07-18</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X32.2 正式发布，这个版本解决了编辑器监控外部文件多次修改后监控失效的问题，调试插件启用了保存断点功能，修复了调试测试用例功能，修复了 Dlv 调试进程工作路径问题。</p>
+
+<h3>2017.7.18 Ver X32.2</h3>
+
+<ul>
+<li>LiteApp
+
+<ul>
+<li>fix editor file watcher is invalid for many change</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix TODO/BUG/FIXME comment syntax</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix dlv headless process workdir</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>fix debug tests action</li>
+<li>fix load and save breakpoint for editor</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X32.2-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X32.1-Released/">LiteIDE X32.1 Released</a> <span class="date">2017-07-10</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X32.1 正式发布，新版本修复了 X32 版本的一些错误，优化了环境设置的加载；项目自定义 GOPATH 设置实现了子目录自动继承上级目录设置；Gocode 代码自动完成插件也已支持项目的自定义 GOPATH 设置；Dlv 调试插件启用了服务器模式(dlv headless mode)，实现了应用输出和调试信息输出的分离。</p>
+
+<h3>2017.7.7 Ver X32.1</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>build config custom gopath support inherit parent path&rsquo;s  gopath setup</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>update gocode lib-path by build config custom gopath</li>
+</ul></li>
+<li>LiteEnv
+
+<ul>
+<li>optimization check go enviroment</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>build config custom gopath inherit parent path</li>
+<li>fix BuildAndRun kill old on window</li>
+<li>fix build config custom gopath action</li>
+</ul></li>
+<li>GolangPackage
+
+<ul>
+<li>fix load package treeview error</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>dlv use headless mode</li>
+<li>fix dlv kill process</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X32.1-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X32-Released/">LiteIDE X32 Released</a> <span class="date">2017-06-12</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X32 正式发布。</p>
+
+<p>历经三个月，200 多次源码提交，LiteIDE终于完成了新版本的发布，<a href="http://liteide.org">liteide.org</a> 网站在 <a href="http://hopehook.com/">HopeHook</a> 的帮助下也正式推出。</p>
+
+<p>LiteIDE X32 在界面会话、编译系统、源码编辑、代码分析等方面有了很大改进，从去年开始重写的 MulitFolderModel 也终于完成合并到 LiteIDE 的目录窗口中。</p>
+
+<ul>
+<li>提供了更多的界面主题和编辑器配色，感谢 <a href="http://hopehook.com/">HopeHook</a></li>
+<li>支持外部图标加载功能</li>
+<li>支持会话切换功能（会话保持自己的目录和文件）</li>
+<li>编译目录支持自定义 GOPATH</li>
+<li>编译目录支持更多的设置</li>
+<li>调试插件/Go编辑插件支持编译目录的 BUILDFLAGS -tags 设定</li>
+<li>完善 Go 代码导航和重构功能</li>
+<li>更多的功能更新和 BUG 修复见历史记录</li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X32-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">LiteIDE 的配置文件管理</a> <span class="date">2017-03-18</span></h3>
 
   <!-- ## LiteIDE 的配置文件 -->
@@ -167,26 +285,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/">更新 Golang Api Index 功能</a> <span class="date">2017-03-16</span></h3>
-
-  <!-- ## 更新 Golang Api Index 功能 -->
-
-<p>最近更新了 Golang Api Index 功能，之前是通过 gotools 对 GOPATH 内的所有源码进行索引，并在用户目录中建立一个索引文件，
-文件格式与 go/api/go1.txt 类似，这个功能的问题是使用 gotools 建立索引的速度很慢，查询功能与 Golang Doc Search 的功能也有所重复，而且我还发现 gotools 工具对于 go1.8 的源码建立索引出错。</p>
-
-<p>在最新版本中，我对 Golang Api Index 的功能重新定位，更改为只查询 go 标准库 api，即查询 go/api 目录下的文件，
-包含 <code>go1.txt go1.1.txt ... except.txt next.txt</code> ，
-同时在查询结果列表中加入了 api 所对应的 go 版本（文件），如下图所示。</p>
-
-
-  <div class="more">
-    <a href="/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/" class="btn">Read more</a>
   </div>
 </div>
 
