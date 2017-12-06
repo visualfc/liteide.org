@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE 的配置文件管理</title>
+    <title>支持 Quick Open Command</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,52 +83,105 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE 的配置文件管理 </h1>
+  <h1>支持 Quick Open Command </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <!-- ## LiteIDE 的配置文件 -->
+    <!-- ## 实现 Quick Open Command -->
 
-<p>LiteIDE 的配置文件默认存储在当前用户目录中，我们也可以设置存储在程序本地目录中。通过 <strong>选项</strong>（ <strong>偏好设置</strong> ）=&gt; <strong>LiteApp</strong> =&gt; <strong>存储</strong> <em>存储设置到本地ini文件</em> 选项来切换默认的存储位置。</p>
+<p>Sublime 和 VSCode 都有命令面板功能，方便快速调用命令。
+LiteIDE 在 2016年7月发布的 X30 版本开始实现了 QuickOpen 插件，
+目前支持 文件/编辑器/符号/行号 的快速跳转，但未实现菜单命令的快速跳转功能。</p>
 
-<h3>存储至当前用户配置</h3>
+<p>在最新的开发版本中，LiteIDE 加入了菜单命令的快速跳转功能 - Quick Open Command，
+快捷键为 Ctrl+Shift+P / Command+Shift+P (macos)。</p>
 
-<p>LiteIDE 的配置文件默认存储在当前用户的特定目录中，如在 macOS 下存储在当前用户目录 <code>/.config/liteide/liteide.ini</code> 文件中,
-这可以保证在 LiteIDE 更新后当前用户的配置保持不变，包括用户的 GOPATH 配置以及历史目录、历史文件等信息。</p>
+<p>如下图显示，显示当前文件可用的菜单命令。
+<img src="/assets/media/2017-12-04-quickopen-command/quickopencommand.png" alt="" width="600"></p>
 
-<h3>存储至程序本地配置</h3>
+<p>菜单与命令之间没有使用:分隔，而是用.来分隔，这样方便输入筛选。
+<img src="/assets/media/2017-12-04-quickopen-command/quickopencommand-filter.png" alt="" width="600"></p>
 
-<p>我们也可以将 LiteIDE 的配置文件存储在 LiteIDE 的本地目录中，即 LiteIDE的 <code>share/liteapp/config/liteide.ini</code> 文件中，
-这可以保证配置信息跟随 LiteIDE 程序启用，我们可以在自己的系统中复制多份 LiteIDE，每个都保持有自己的环境信息、GOPATH 配置、历史目录等信息，
-这样可以方便多个项目独立使用。</p>
+<p>回车将直接执行选中的命令。</p>
 
-<h3>命令行操作</h3>
+<h3>实现 Quick Open Command 功能</h3>
 
-<p>在 LiteIDE x31 中加入了对配置文件的命令行操作行为，包括以下三种：</p>
+<p>LiteIDE 的 QuickOpen 接口 API 位于 <a href="https://github.com/visualfc/liteide/blob/master/liteidex/src/api/quickopenapi/quickopenapi.h">liteidex/src/api/quickopenapi/quickopenapi.h</a> 文件中。</p>
 
-<ul>
-<li>--local-setting   强制使用本地配置</li>
-<li>--user-setting    强制使用用户配置</li>
-<li>--reset-setting   重置当前配置 ( 清除配置文件 )</li>
-</ul>
+<p>接口如下</p>
 
-<p>如果在使用 LiteIDE 过程中发现出现莫名其妙的问题或者是刚启动就报错，有可能是配置文件出错，对于这种情况，除了手工删除配置文件的方法，
-我们还可以通过命令行  <code>&gt;liteide --reset-setting</code> 来重置 LiteIDE 的当前配置文件。</p>
+<pre><code>class IQuickOpen : public QObject
+{
+    Q_OBJECT
+public:
+    IQuickOpen(QObject *parent = 0) : QObject(parent) {}
+    virtual QString id() const = 0;
+    virtual QString info() const = 0;
+    virtual void activate() = 0;
+    virtual QAbstractItemModel *model() const = 0;
+    virtual void updateModel() = 0;
+    virtual QModelIndex filterChanged(const QString &amp;text) = 0;
+    virtual void indexChanged(const QModelIndex &amp;index) = 0;
+    virtual bool selected(const QString &amp;text, const QModelIndex &amp;index) = 0;
+    virtual void cancel() = 0;
+};
+</code></pre>
+
+<p>其中 updateModel 函数负责更新数据，实现流程一下:</p>
+
+<h4>获取当前所有菜单 ID 列表</h4>
+
+<pre><code>LiteApi::IActionManager *manager = m_liteApp-&gt;actionManager();
+QStringList menuIdList = manager-&gt;menuList();
+(&quot;menu/build&quot;, &quot;menu/debug&quot;, &quot;menu/edit&quot;, &quot;menu/file&quot;, &quot;menu/find&quot;, &quot;menu/help&quot;, &quot;menu/recent&quot;, &quot;menu/view&quot;)
+</code></pre>
+
+<h4>获取菜单的 Aciton 列表</h4>
+
+<p>根据 id 取得 QMenu</p>
+
+<pre><code>QMenu *menu = manager-&gt;loadMenu(idMenu);
+</code></pre>
+
+<p>注意，因为 Edit / Build 菜单都是动态加载的，直接使用 menu-&gt;action()是无法获得完整列表的。
+可以通过以下代码获取。</p>
+
+<pre><code>QAction *menuAct = menu-&gt;menuAction();
+QMenu *realMenu = menuAct-&gt;menu();
+QList&lt;QAction*&gt; actionList = realMenu-&gt;actions();
+</code></pre>
+
+<h4>获取 Action 的 id, text, shortcut</h4>
+
+<p>在写 QuickOpenCommand 之前，大部分 QAction 是无法获取 id 的，但因为 LiteIDE 中的 Action 通过</p>
+
+<p>IActionManager 注册以支持 自定义快捷键功能，所以在通过 IActionContext::regAction 函数注册 Aciton 时的 id/shortcut 时加入 act-&gt;setData(id) 将 Aciton 注册用 id 保存下来，这样就可以通过 act-&gt;data() 可以获取到 id, act-&gt;text() 获取翻译后的文本，act-&gt;shortcut() 获取 快捷键。</p>
+
+<p>将获取的 id,text,shortcut 加入列表中即可。</p>
+
+<h4>注册</h4>
+
+<p>通过 IQuickOpenManager::addFilter(const QString &amp;sym, IQuickOpen *filter) 函数可以注册 QuickOpen，QuickOpenCommand 的 sym 选用的是 &gt; ,在 view 菜单中加入相应 Action，快捷键是 Ctrl+Shift+P / Command+Shift+P 。</p>
+
+<h4>实现代码</h4>
+
+<p>实现代码位于 <a href="https://github.com/visualfc/liteide/tree/master/liteidex/src/plugins/quickopen">liteidex/src/plugins/quickopen</a>
+目录下 quickopenation.h 和 quickopenaction.cpp 文件中。</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X32-Released/" title="LiteIDE X32 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/" title="LiteIDE 的交叉编译设置">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/" title="支持 gomodifytags">Next &rarr;</a></li>
           
           
         </ul>
@@ -154,13 +207,17 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-03-18</span></div>
+    <div class="date"><span>2017-12-04</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
   <a href="/categories/#blog-ref"> blog <span>10</span></a>
+</li>
+    
+      <li>
+  <a href="/categories/#dev-ref"> dev <span>3</span></a>
 </li>
     
       <li>
@@ -178,10 +235,6 @@
     
       <li>
   <a href="/tags/#liteide-ref"> liteide <span>10</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#setting-ref"> setting <span>1</span></a>
 </li>
     
     </ul>

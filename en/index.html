@@ -127,6 +127,49 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a> <span class="date">2017-12-04</span></h3>
+
+  <!-- ## 实现 Quick Open Command -->
+
+<p>Sublime 和 VSCode 都有命令面板功能，方便快速调用命令。
+LiteIDE 在 2016年7月发布的 X30 版本开始实现了 QuickOpen 插件，
+目前支持 文件/编辑器/符号/行号 的快速跳转，但未实现菜单命令的快速跳转功能。</p>
+
+<p>在最新的开发版本中，LiteIDE 加入了菜单命令的快速跳转功能 - Quick Open Command，
+快捷键为 Ctrl+Shift+P / Command+Shift+P (macos)。</p>
+
+
+  <div class="more">
+    <a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/">支持 gomodifytags</a> <span class="date">2017-12-02</span></h3>
+
+  <!-- ## 实现 gomodifytags -->
+
+<p>在 LiteIDE 最新的开发版本中，加入了对 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 的支持，
+gomodifytags 的主要功能是对 Go语言结构体字段 (go struct field) 的 tags 进行增删和修改，比如 json, xml 以及其他自定义 tag 。</p>
+
+<h3>结构体的选择</h3>
+
+<ul>
+<li>当光标于结构内部时，Add Tags 和 Remove Tags 功能对应于当前光标下的整个结构体进行操作。</li>
+<li>当光标对结构体中字段进行选择时，Add Tags 和 Remove Tags 功能对于于光标所选中的行范围内字段进行操作。</li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/fix-liteide-libpng-warning/">fix liteide libpng warning</a> <span class="date">2017-11-23</span></h3>
 
   <!-- ## fix liteide libpng warning -->
@@ -297,85 +340,6 @@ libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permit
 
   <div class="more">
     <a href="/blog/LiteIDE-X32.2-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X32.1-Released/">LiteIDE X32.1 Released</a> <span class="date">2017-07-10</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X32.1 正式发布，新版本修复了 X32 版本的一些错误，优化了环境设置的加载；项目自定义 GOPATH 设置实现了子目录自动继承上级目录设置；Gocode 代码自动完成插件也已支持项目的自定义 GOPATH 设置；Dlv 调试插件启用了服务器模式(dlv headless mode)，实现了应用输出和调试信息输出的分离。</p>
-
-<h3>2017.7.7 Ver X32.1</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>build config custom gopath support inherit parent path&rsquo;s  gopath setup</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>update gocode lib-path by build config custom gopath</li>
-</ul></li>
-<li>LiteEnv
-
-<ul>
-<li>optimization check go enviroment</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>build config custom gopath inherit parent path</li>
-<li>fix BuildAndRun kill old on window</li>
-<li>fix build config custom gopath action</li>
-</ul></li>
-<li>GolangPackage
-
-<ul>
-<li>fix load package treeview error</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>dlv use headless mode</li>
-<li>fix dlv kill process</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X32.1-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X32-Released/">LiteIDE X32 Released</a> <span class="date">2017-06-12</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X32 正式发布。</p>
-
-<p>历经三个月，200 多次源码提交，LiteIDE终于完成了新版本的发布，<a href="http://liteide.org">liteide.org</a> 网站在 <a href="http://hopehook.com/">HopeHook</a> 的帮助下也正式推出。</p>
-
-<p>LiteIDE X32 在界面会话、编译系统、源码编辑、代码分析等方面有了很大改进，从去年开始重写的 MulitFolderModel 也终于完成合并到 LiteIDE 的目录窗口中。</p>
-
-<ul>
-<li>提供了更多的界面主题和编辑器配色，感谢 <a href="http://hopehook.com/">HopeHook</a></li>
-<li>支持外部图标加载功能</li>
-<li>支持会话切换功能（会话保持自己的目录和文件）</li>
-<li>编译目录支持自定义 GOPATH</li>
-<li>编译目录支持更多的设置</li>
-<li>调试插件/Go编辑插件支持编译目录的 BUILDFLAGS -tags 设定</li>
-<li>完善 Go 代码导航和重构功能</li>
-<li>更多的功能更新和 BUG 修复见历史记录</li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X32-Released/" class="btn">Read more</a>
   </div>
 </div>
 

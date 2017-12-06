@@ -4,6 +4,16 @@
 		<loc>https://visualfc.github.io/</loc>
 	</url>
 	<url>
+		<loc>https://visualfc.github.io/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/</loc>
+		<lastmod>2017-12-04</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>https://visualfc.github.io/blog/%E6%94%AF%E6%8C%81-gomodifytags/</loc>
+		<lastmod>2017-12-02</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>https://visualfc.github.io/blog/fix-liteide-libpng-warning/</loc>
 		<lastmod>2017-11-23</lastmod>
 		<changefreq>weekly</changefreq>
