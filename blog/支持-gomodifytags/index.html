@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE 的配置文件管理</title>
+    <title>支持 gomodifytags</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,52 +83,96 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE 的配置文件管理 </h1>
+  <h1>支持 gomodifytags </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <!-- ## LiteIDE 的配置文件 -->
+    <!-- ## 实现 gomodifytags -->
 
-<p>LiteIDE 的配置文件默认存储在当前用户目录中，我们也可以设置存储在程序本地目录中。通过 <strong>选项</strong>（ <strong>偏好设置</strong> ）=&gt; <strong>LiteApp</strong> =&gt; <strong>存储</strong> <em>存储设置到本地ini文件</em> 选项来切换默认的存储位置。</p>
+<p>在 LiteIDE 最新的开发版本中，加入了对 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 的支持，
+gomodifytags 的主要功能是对 Go语言结构体字段 (go struct field) 的 tags 进行增删和修改，比如 json, xml 以及其他自定义 tag 。</p>
 
-<h3>存储至当前用户配置</h3>
-
-<p>LiteIDE 的配置文件默认存储在当前用户的特定目录中，如在 macOS 下存储在当前用户目录 <code>/.config/liteide/liteide.ini</code> 文件中,
-这可以保证在 LiteIDE 更新后当前用户的配置保持不变，包括用户的 GOPATH 配置以及历史目录、历史文件等信息。</p>
-
-<h3>存储至程序本地配置</h3>
-
-<p>我们也可以将 LiteIDE 的配置文件存储在 LiteIDE 的本地目录中，即 LiteIDE的 <code>share/liteapp/config/liteide.ini</code> 文件中，
-这可以保证配置信息跟随 LiteIDE 程序启用，我们可以在自己的系统中复制多份 LiteIDE，每个都保持有自己的环境信息、GOPATH 配置、历史目录等信息，
-这样可以方便多个项目独立使用。</p>
-
-<h3>命令行操作</h3>
-
-<p>在 LiteIDE x31 中加入了对配置文件的命令行操作行为，包括以下三种：</p>
+<h3>结构体的选择</h3>
 
 <ul>
-<li>--local-setting   强制使用本地配置</li>
-<li>--user-setting    强制使用用户配置</li>
-<li>--reset-setting   重置当前配置 ( 清除配置文件 )</li>
+<li>当光标于结构内部时，Add Tags 和 Remove Tags 功能对应于当前光标下的整个结构体进行操作。</li>
+<li>当光标对结构体中字段进行选择时，Add Tags 和 Remove Tags 功能对于于光标所选中的行范围内字段进行操作。</li>
 </ul>
 
-<p>如果在使用 LiteIDE 过程中发现出现莫名其妙的问题或者是刚启动就报错，有可能是配置文件出错，对于这种情况，除了手工删除配置文件的方法，
-我们还可以通过命令行  <code>&gt;liteide --reset-setting</code> 来重置 LiteIDE 的当前配置文件。</p>
+<p>在 LiteIDE 中的 Add Tags Dialog / Remove Tags Dialog 中会有相应的提示。</p>
+
+<h3>为结构体字段增加和修改 Tags</h3>
+
+<p>以下面结构体为例</p>
+
+<pre><code>type Server struct {
+    Name        string
+    Port        int
+    EnableLogs  bool
+    BaseDomain  string
+    Credentials struct {
+        Username string
+        Password string
+    }
+}
+</code></pre>
+
+<p>在 LiteIDE 中将光标置于 Name 到 } 结尾之间任意一处， 编辑菜单或右键调用 Add Tags 将对 Server 结构体全部字段进行操作。
+如下图所示，选中 json 和 xml :
+<img src="/assets/media/2017-12-02-gomodifytags/goaddtags1.png" alt="" width="600"></p>
+
+<p>确认将获得下面结果</p>
+
+<pre><code>type Server struct {
+    Name        string `json:&quot;name&quot; xml:&quot;name&quot;`
+    Port        int    `json:&quot;port&quot; xml:&quot;port&quot;`
+    EnableLogs  bool   `json:&quot;enable_logs&quot; xml:&quot;enable_logs&quot;`
+    BaseDomain  string `json:&quot;base_domain&quot; xml:&quot;base_domain&quot;`
+    Credentials struct {
+        Username string `json:&quot;username&quot; xml:&quot;username&quot;`
+        Password string `json:&quot;password&quot; xml:&quot;password&quot;`
+    } `json:&quot;credentials&quot; xml:&quot;credentials&quot;`
+}
+</code></pre>
+
+<p>json 和 xml 都可以自定义选项，多个选项以 , 作为分隔。</p>
+
+<h3>删除结构体字段的 Tags</h3>
+
+<p>如果要删除上例中的 xml tags，同样将光标位于 Name 到 } 之间任意一处，编辑菜单或右键调用 Remove Tags 命令进行操作。
+如下图所示，选中 json
+<img src="/assets/media/2017-12-02-gomodifytags/goremovetags1.png" alt="" width="600"></p>
+
+<p>确认将删除 xml tags， 所下图所示。</p>
+
+<pre><code>type Server struct {
+    Name        string `json:&quot;name&quot;`
+    Port        int    `json:&quot;port&quot;`
+    EnableLogs  bool   `json:&quot;enable_logs&quot;`
+    BaseDomain  string `json:&quot;base_domain&quot;`
+    Credentials struct {
+        Username string `json:&quot;username&quot;`
+        Password string `json:&quot;password&quot;`
+    } `json:&quot;credentials&quot;`
+}
+</code></pre>
+
+<p>删除也可以删除 tags 对应的选项，根据需要操作即可。</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X32-Released/" title="LiteIDE X32 Released">&larr; Previous</a></li>
+            <li class="prev"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" title="支持 Quick Open Command">&larr; Previous</a></li>
           
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/" title="LiteIDE 的交叉编译设置">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/fix-liteide-libpng-warning/" title="fix liteide libpng warning">Next &rarr;</a></li>
           
           
         </ul>
@@ -154,13 +198,17 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-03-18</span></div>
+    <div class="date"><span>2017-12-02</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
   <a href="/categories/#blog-ref"> blog <span>10</span></a>
+</li>
+    
+      <li>
+  <a href="/categories/#dev-ref"> dev <span>3</span></a>
 </li>
     
       <li>
@@ -178,10 +226,6 @@
     
       <li>
   <a href="/tags/#liteide-ref"> liteide <span>10</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#setting-ref"> setting <span>1</span></a>
 </li>
     
     </ul>

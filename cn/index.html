@@ -127,6 +127,186 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a> <span class="date">2017-12-04</span></h3>
+
+  <!-- ## 实现 Quick Open Command -->
+
+<p>Sublime 和 VSCode 都有命令面板功能，方便快速调用命令。
+LiteIDE 在 2016年7月发布的 X30 版本开始实现了 QuickOpen 插件，
+目前支持 文件/编辑器/符号/行号 的快速跳转，但未实现菜单命令的快速跳转功能。</p>
+
+<p>在最新的开发版本中，LiteIDE 加入了菜单命令的快速跳转功能 - Quick Open Command，
+快捷键为 Ctrl+Shift+P / Command+Shift+P (macos)。</p>
+
+
+  <div class="more">
+    <a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/">支持 gomodifytags</a> <span class="date">2017-12-02</span></h3>
+
+  <!-- ## 实现 gomodifytags -->
+
+<p>在 LiteIDE 最新的开发版本中，加入了对 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 的支持，
+gomodifytags 的主要功能是对 Go语言结构体字段 (go struct field) 的 tags 进行增删和修改，比如 json, xml 以及其他自定义 tag 。</p>
+
+<h3>结构体的选择</h3>
+
+<ul>
+<li>当光标于结构内部时，Add Tags 和 Remove Tags 功能对应于当前光标下的整个结构体进行操作。</li>
+<li>当光标对结构体中字段进行选择时，Add Tags 和 Remove Tags 功能对于于光标所选中的行范围内字段进行操作。</li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/fix-liteide-libpng-warning/">fix liteide libpng warning</a> <span class="date">2017-11-23</span></h3>
+
+  <!-- ## fix liteide libpng warning -->
+
+<h3>liteide issues #867</h3>
+
+<p>Start LiteIDE build for Qt5 version suggests libpng warning. <a href="https://github.com/visualfc/liteide/issues/867">liteide issues #867</a></p>
+
+<pre><code>libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: cHRM chunk does not match sRGB
+libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
+libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
+libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
+libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
+...
+</code></pre>
+
+
+  <div class="more">
+    <a href="/blog/fix-liteide-libpng-warning/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X33-Released/">LiteIDE X33 Released</a> <span class="date">2017-11-02</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X33 正式发布。这个版本优化了编辑器功能，读取文件支持 codec 自动检测，重新加载文件使用 diff 方式进行优化，重新实现 Mark API 并增加了新的 Bookmarks 插件；Go 语言视图和大纲增加了 TodoList 显示；修复了 GolangEdit 的 查找使用 偶而无效错误， 代码查询 guru (备份使用内置oracle) 增加了 GOPATH 内查询接口功能。调试和查找插件也有所增强……。更多的功能实现和错误修复详见更新记录。</p>
+
+<h3>2017.11.2 Ver X33</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>optimization editor plugin, load file check codec, reload file by diff</li>
+<li>add astview TodoList</li>
+<li>add new bookmarks plugin</li>
+<li>fix liteapp clean plugin order</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>filemanager auto reload file default YesToAll</li>
+<li>fix liteapp clean plugins reverse order</li>
+<li>fix #832, sidebar change action by combox</li>
+<li>fix folder sync editor same prefix error</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>reload file use diff to keep state and mark</li>
+<li>load file check is binary and report</li>
+<li>load file check codec use libucd if utf8 decode failed.</li>
+<li>load file check decode error and report</li>
+<li>load file is readonly set editor widget readonly</li>
+<li>load and save file support utf8 bom</li>
+<li>add codec and lineend info on statusbar</li>
+<li>add copied text into the clipboard as HTML option</li>
+<li>add Solarized Dark color theme, thanks xgdgsc</li>
+<li>reimplemented editor mark api</li>
+<li>fix copy to clipboard tab escape</li>
+</ul></li>
+<li>GolangAst
+
+<ul>
+<li>add TodoList for classview and outline</li>
+<li>fix #848, astwidget double clicked index check.</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>update pkglist to go1.9</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>add stop source query action</li>
+<li>add source query action implement_GOPATH for GOPATH scope</li>
+<li>fix golang lexer parser folding end</li>
+<li>fix GolangHighlighter fold indent error set</li>
+<li>fix findUsage wordUnderCursor offset</li>
+<li>fix find usages findStart signal late</li>
+</ul></li>
+<li>GolangFmt
+
+<ul>
+<li>load diff check modify current block text</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>fix update gopath process stop and wait</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>fix cmd to native separator</li>
+<li>build target add -a build flag</li>
+<li>change debug targget name to target.debug (custom by LiteBuild)</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>add custom debug name in build config</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>fix memory leak by GolangEdit GolangFileSearch</li>
+<li>fix findInFiles berore saveAllEditor</li>
+<li>fix FindEditor replace all</li>
+</ul></li>
+<li>Bookmarks
+
+<ul>
+<li>new plugin for show open editors bookmarks and jump</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>update stdlib for go1.9.1</li>
+<li>astview add TodoList support</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X33-Released/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X32.2-Released/">LiteIDE X32.2 Released</a> <span class="date">2017-07-18</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X32.2 正式发布，这个版本解决了编辑器监控外部文件多次修改后监控失效的问题，调试插件启用了保存断点功能，修复了调试测试用例功能，修复了 Dlv 调试进程工作路径问题。</p>
@@ -160,131 +340,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X32.2-Released/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X32.1-Released/">LiteIDE X32.1 Released</a> <span class="date">2017-07-10</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X32.1 正式发布，新版本修复了 X32 版本的一些错误，优化了环境设置的加载；项目自定义 GOPATH 设置实现了子目录自动继承上级目录设置；Gocode 代码自动完成插件也已支持项目的自定义 GOPATH 设置；Dlv 调试插件启用了服务器模式(dlv headless mode)，实现了应用输出和调试信息输出的分离。</p>
-
-<h3>2017.7.7 Ver X32.1</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>build config custom gopath support inherit parent path&rsquo;s  gopath setup</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>update gocode lib-path by build config custom gopath</li>
-</ul></li>
-<li>LiteEnv
-
-<ul>
-<li>optimization check go enviroment</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>build config custom gopath inherit parent path</li>
-<li>fix BuildAndRun kill old on window</li>
-<li>fix build config custom gopath action</li>
-</ul></li>
-<li>GolangPackage
-
-<ul>
-<li>fix load package treeview error</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>dlv use headless mode</li>
-<li>fix dlv kill process</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X32.1-Released/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X32-Released/">LiteIDE X32 Released</a> <span class="date">2017-06-12</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X32 正式发布。</p>
-
-<p>历经三个月，200 多次源码提交，LiteIDE终于完成了新版本的发布，<a href="http://liteide.org">liteide.org</a> 网站在 <a href="http://hopehook.com/">HopeHook</a> 的帮助下也正式推出。</p>
-
-<p>LiteIDE X32 在界面会话、编译系统、源码编辑、代码分析等方面有了很大改进，从去年开始重写的 MulitFolderModel 也终于完成合并到 LiteIDE 的目录窗口中。</p>
-
-<ul>
-<li>提供了更多的界面主题和编辑器配色，感谢 <a href="http://hopehook.com/">HopeHook</a></li>
-<li>支持外部图标加载功能</li>
-<li>支持会话切换功能（会话保持自己的目录和文件）</li>
-<li>编译目录支持自定义 GOPATH</li>
-<li>编译目录支持更多的设置</li>
-<li>调试插件/Go编辑插件支持编译目录的 BUILDFLAGS -tags 设定</li>
-<li>完善 Go 代码导航和重构功能</li>
-<li>更多的功能更新和 BUG 修复见历史记录</li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X32-Released/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">LiteIDE 的配置文件管理</a> <span class="date">2017-03-18</span></h3>
-
-  <!-- ## LiteIDE 的配置文件 -->
-
-<p>LiteIDE 的配置文件默认存储在当前用户目录中，我们也可以设置存储在程序本地目录中。通过 <strong>选项</strong>（ <strong>偏好设置</strong> ）=&gt; <strong>LiteApp</strong> =&gt; <strong>存储</strong> <em>存储设置到本地ini文件</em> 选项来切换默认的存储位置。</p>
-
-<h3>存储至当前用户配置</h3>
-
-<p>LiteIDE 的配置文件默认存储在当前用户的特定目录中，如在 macOS 下存储在当前用户目录 <code>/.config/liteide/liteide.ini</code> 文件中,
-这可以保证在 LiteIDE 更新后当前用户的配置保持不变，包括用户的 GOPATH 配置以及历史目录、历史文件等信息。</p>
-
-<h3>存储至程序本地配置</h3>
-
-<p>我们也可以将 LiteIDE 的配置文件存储在 LiteIDE 的本地目录中，即 LiteIDE的 <code>share/liteapp/config/liteide.ini</code> 文件中，
-这可以保证配置信息跟随 LiteIDE 程序启用，我们可以在自己的系统中复制多份 LiteIDE，每个都保持有自己的环境信息、GOPATH 配置、历史目录等信息，
-这样可以方便多个项目独立使用。</p>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/">LiteIDE 的交叉编译设置</a> <span class="date">2017-03-17</span></h3>
-
-  <!-- ## LiteIDE 的交叉编译设置 -->
-
-<p>LiteIDE 通过使用环境配置文件来支持 go 语言的交叉编译，对于 windows 和 linux 下相对简单，对于 macOS 可能会复杂一些，
-本文以 macOS 交叉编译 windows-386 可执行文件为例，简要介绍如何在 LiteIDE 中配置和实现交叉编译功能。</p>
-
-<h3>交叉编译环境选择和配置</h3>
-
-<p>首先选择环境，在工具栏环境选择中选择  cross-win32 切换至 windows-386 交对编译环境，我们点击工具栏上的 <strong>编辑当前环境</strong> 按钮，对当前使用的环境即 cross-win32.env 文件进行编辑，默认设置如下：</p>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/" class="btn">阅读全文</a>
   </div>
 </div>
 
