@@ -127,6 +127,66 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X33.1-Released/">LiteIDE X33.1 Released</a> <span class="date">2017-12-12</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X33.1 正式发布。
+新版本对菜单进行调整和规范，新增了工具菜单，编辑菜单保持可见，重命名了部分工具窗口。
+修复了编辑器内查找功能的全文替换错误，
+对快速打开文件操作 ( ctrl+p / command+p ) 改用线程方式重新实现，新增了快速打开命令功能 ( ctrl+shift+p / command+shift+p )，集成了 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 并提供GUI界面实现对结构体 Tags 的快速增删功能。</p>
+
+<h3>2017.12.12 Ver X33.1</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>support quick open command</li>
+<li>support gomodifytags</li>
+<li>fix libpng warning on qt5 build</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>add tools menu for quick open actions</li>
+<li>standard and rename tool window title</li>
+<li>enable edit menu anytime, fix edit menu disable on editor lost focus.</li>
+<li>fix editor load large file bad_alloc recover</li>
+</ul></li>
+<li>LiteEnv
+
+<ul>
+<li>add select env to tools menu<br /></li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>check and not open large file</li>
+<li>fix edit hide edit sub menu &lsquo;setup&rsquo; on macos</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>fix find editor replace all wrap around* GolangEdit</li>
+<li>Integrated <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> and gui tools support gomodifytags all options</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>add quick open command action (ctrl+shift+p/command+shift+p)</li>
+<li>quickopenfiles use thread for fast and cancel</li>
+<li>fix quickopenfile cancel loading for esc or liteapp quit</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X33.1-Released/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a> <span class="date">2017-12-04</span></h3>
 
   <!-- ## 实现 Quick Open Command -->
@@ -301,45 +361,6 @@ libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permit
 
   <div class="more">
     <a href="/blog/LiteIDE-X33-Released/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X32.2-Released/">LiteIDE X32.2 Released</a> <span class="date">2017-07-18</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X32.2 正式发布，这个版本解决了编辑器监控外部文件多次修改后监控失效的问题，调试插件启用了保存断点功能，修复了调试测试用例功能，修复了 Dlv 调试进程工作路径问题。</p>
-
-<h3>2017.7.18 Ver X32.2</h3>
-
-<ul>
-<li>LiteApp
-
-<ul>
-<li>fix editor file watcher is invalid for many change</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>fix TODO/BUG/FIXME comment syntax</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>fix dlv headless process workdir</li>
-</ul></li>
-<li>LiteDebug
-
-<ul>
-<li>fix debug tests action</li>
-<li>fix load and save breakpoint for editor</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X32.2-Released/" class="btn">阅读全文</a>
   </div>
 </div>
 

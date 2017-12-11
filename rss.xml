@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>08 Dec 17 21:45 CST</pubDate>
+    <pubDate>11 Dec 17 23:16 CST</pubDate>
+    <item>
+      <title>LiteIDE X33.1 Released</title>
+      <link>https://visualfc.github.io/blog/LiteIDE-X33.1-Released/</link>
+      <pubDate>2017-12-12 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;Go 语言开发工具 LiteIDE X33.1 正式发布。&#xA;新版本对菜单进行调整和规范，新增了工具菜单，编辑菜单保持可见，重命名了部分工具窗口。&#xA;修复了编辑器内查找功能的全文替换错误，&#xA;对快速打开文件操作 ( ctrl+p / command+p ) 改用线程方式重新实现，新增了快速打开命令功能 ( ctrl+shift+p / command+shift+p )，集成了 &lt;a href=&#34;https://github.com/fatih/gomodifytags&#34;&gt;gomodifytags&lt;/a&gt; 并提供GUI界面实现对结构体 Tags 的快速增删功能。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;2017.12.12 Ver X33.1&lt;/h3&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;LiteIDE&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;support quick open command&lt;/li&gt;&#xA;&lt;li&gt;support gomodifytags&lt;/li&gt;&#xA;&lt;li&gt;fix libpng warning on qt5 build&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteApp&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add tools menu for quick open actions&lt;/li&gt;&#xA;&lt;li&gt;standard and rename tool window title&lt;/li&gt;&#xA;&lt;li&gt;enable edit menu anytime, fix edit menu disable on editor lost focus.&lt;/li&gt;&#xA;&lt;li&gt;fix editor load large file bad_alloc recover&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteEnv&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add select env to tools menu&lt;br /&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteEditor&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;check and not open large file&lt;/li&gt;&#xA;&lt;li&gt;fix edit hide edit sub menu &amp;lsquo;setup&amp;rsquo; on macos&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteFind&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;fix find editor replace all wrap around* GolangEdit&lt;/li&gt;&#xA;&lt;li&gt;Integrated &lt;a href=&#34;https://github.com/fatih/gomodifytags&#34;&gt;gomodifytags&lt;/a&gt; and gui tools support gomodifytags all options&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;QuickOpen&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add quick open command action (ctrl+shift+p/command+shift+p)&lt;/li&gt;&#xA;&lt;li&gt;quickopenfiles use thread for fast and cancel&lt;/li&gt;&#xA;&lt;li&gt;fix quickopenfile cancel loading for esc or liteapp quit&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+    </item>
     <item>
       <title>支持 Quick Open Command</title>
       <link>https://visualfc.github.io/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/</link>
