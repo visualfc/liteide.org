@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>11 Dec 17 23:48 CST</pubDate>
+    <pubDate>15 Dec 17 12:09 CST</pubDate>
+    <item>
+      <title>解决升级 xcode 后 Qt5.6.3 不能编译的问题</title>
+      <link>https://visualfc.github.io/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>2017-12-15 12:00:00 +0800</pubDate>
+      <description>&lt;!-- ## 解决升级 xcode 后 Qt5.6.3 不能编译的问题 --&gt;&#xA;&#xA;&lt;p&gt;升级 xcode 后，Qt5.6.3 不能编译，提示类似下列错误&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;clang: warning: no such sysroot directory: &#39;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk&#39; [-Wmissing-sysroot]&#xA;&#xA;In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/QObject:1:&#xA;In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qobject.h:40:&#xA;In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qobjectdefs.h:41:&#xA;In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qnamespace.h:37:&#xA;In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qglobal.h:75:&#xA;/Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qsystemdetection.h:197:12: fatal error: &#39;TargetConditionals.h&#39; file not found&#xA;#  include &amp;lt;TargetConditionals.h&amp;gt;&#xA;           ^~~~~~~~~~~~~~~~~~~~~~&#xA;1 error generated.&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;解决方法&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;$cd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs&#xA;$sudo ln -s MacOSX.sdk MacOSX10.12.sdk&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+    </item>
     <item>
       <title>LiteIDE X33.1 Released</title>
       <link>https://visualfc.github.io/blog/LiteIDE-X33.1-Released/</link>

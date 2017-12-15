@@ -127,6 +127,34 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/">解决升级 xcode 后 Qt5.6.3 不能编译的问题</a> <span class="date">2017-12-15</span></h3>
+
+  <!-- ## 解决升级 xcode 后 Qt5.6.3 不能编译的问题 -->
+
+<p>升级 xcode 后，Qt5.6.3 不能编译，提示类似下列错误</p>
+
+<pre><code>clang: warning: no such sysroot directory: '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk' [-Wmissing-sysroot]
+
+In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/QObject:1:
+In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qobject.h:40:
+In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qobjectdefs.h:41:
+In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qnamespace.h:37:
+In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qglobal.h:75:
+/Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qsystemdetection.h:197:12: fatal error: 'TargetConditionals.h' file not found
+#  include &lt;TargetConditionals.h&gt;
+           ^~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+</code></pre>
+
+
+  <div class="more">
+    <a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X33.1-Released/">LiteIDE X33.1 Released</a> <span class="date">2017-12-12</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X33.1 正式发布。
@@ -253,116 +281,6 @@ libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permit
 
   <div class="more">
     <a href="/blog/fix-liteide-libpng-warning/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X33-Released/">LiteIDE X33 Released</a> <span class="date">2017-11-02</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X33 正式发布。这个版本优化了编辑器功能，读取文件支持 codec 自动检测，重新加载文件使用 diff 方式进行优化，重新实现 Mark API 并增加了新的 Bookmarks 插件；Go 语言视图和大纲增加了 TodoList 显示；修复了 GolangEdit 的 查找使用 偶而无效错误， 代码查询 guru (备份使用内置oracle) 增加了 GOPATH 内查询接口功能。调试和查找插件也有所增强……。更多的功能实现和错误修复详见更新记录。</p>
-
-<h3>2017.11.2 Ver X33</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>optimization editor plugin, load file check codec, reload file by diff</li>
-<li>add astview TodoList</li>
-<li>add new bookmarks plugin</li>
-<li>fix liteapp clean plugin order</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>filemanager auto reload file default YesToAll</li>
-<li>fix liteapp clean plugins reverse order</li>
-<li>fix #832, sidebar change action by combox</li>
-<li>fix folder sync editor same prefix error</li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>reload file use diff to keep state and mark</li>
-<li>load file check is binary and report</li>
-<li>load file check codec use libucd if utf8 decode failed.</li>
-<li>load file check decode error and report</li>
-<li>load file is readonly set editor widget readonly</li>
-<li>load and save file support utf8 bom</li>
-<li>add codec and lineend info on statusbar</li>
-<li>add copied text into the clipboard as HTML option</li>
-<li>add Solarized Dark color theme, thanks xgdgsc</li>
-<li>reimplemented editor mark api</li>
-<li>fix copy to clipboard tab escape</li>
-</ul></li>
-<li>GolangAst
-
-<ul>
-<li>add TodoList for classview and outline</li>
-<li>fix #848, astwidget double clicked index check.</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>update pkglist to go1.9</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>add stop source query action</li>
-<li>add source query action implement_GOPATH for GOPATH scope</li>
-<li>fix golang lexer parser folding end</li>
-<li>fix GolangHighlighter fold indent error set</li>
-<li>fix findUsage wordUnderCursor offset</li>
-<li>fix find usages findStart signal late</li>
-</ul></li>
-<li>GolangFmt
-
-<ul>
-<li>load diff check modify current block text</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>fix update gopath process stop and wait</li>
-</ul></li>
-<li>LiteDebug
-
-<ul>
-<li>fix cmd to native separator</li>
-<li>build target add -a build flag</li>
-<li>change debug targget name to target.debug (custom by LiteBuild)</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>add custom debug name in build config</li>
-</ul></li>
-<li>LiteFind
-
-<ul>
-<li>fix memory leak by GolangEdit GolangFileSearch</li>
-<li>fix findInFiles berore saveAllEditor</li>
-<li>fix FindEditor replace all</li>
-</ul></li>
-<li>Bookmarks
-
-<ul>
-<li>new plugin for show open editors bookmarks and jump</li>
-</ul></li>
-<li>gotools
-
-<ul>
-<li>update stdlib for go1.9.1</li>
-<li>astview add TodoList support</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X33-Released/" class="btn">阅读全文</a>
   </div>
 </div>
 
