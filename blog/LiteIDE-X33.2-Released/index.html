@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X33.1 Released</title>
+    <title>LiteIDE X33.2 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,59 +83,42 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X33.1 Released </h1>
+  <h1>LiteIDE X33.2 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X33.1 正式发布。
-新版本对菜单进行调整和规范，新增了工具菜单，编辑菜单保持可见，重命名了部分工具窗口。
-修复了编辑器内查找功能的全文替换错误，
-对快速打开文件操作 ( ctrl+p / command+p ) 改用线程方式重新实现，新增了快速打开命令功能 ( ctrl+shift+p / command+shift+p )，集成了 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 并提供GUI界面实现对结构体 Tags 的快速增删功能。</p>
+    <p>Go 语言开发工具 LiteIDE X33.2 发布, 仅以此版本献给我曾经的岁月。</p>
 
-<p>LiteIDE X33.1 使用 go1.10beta1 编译, 支持 Go1.9 / Go1.10beta1 或者更低的 Go 版本。</p>
+<p><strong>三十功名尘与土，八千里路云和月。</strong></p>
 
-<h3>2017.12.12 Ver X33.1</h3>
+<h3>2018.02.14 Ver X33.2</h3>
 
 <ul>
 <li>LiteIDE
 
 <ul>
-<li>support quick open command</li>
-<li>support gomodifytags</li>
-<li>fix libpng warning on qt5 build</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>add tools menu for quick open actions</li>
-<li>standard and rename tool window title</li>
-<li>enable edit menu anytime, fix edit menu disable on editor lost focus.</li>
-<li>fix editor load large file bad_alloc recover</li>
-</ul></li>
-<li>LiteEnv
-
-<ul>
-<li>add select env to tools menu<br /></li>
+<li>add folder tool window split mode swith</li>
+<li>add archlinux makepkg</li>
+<li>add tcl syntax and build</li>
 </ul></li>
 <li>LiteEditor
 
 <ul>
-<li>check and not open large file</li>
-<li>fix edit hide edit sub menu &lsquo;setup&rsquo; on macos</li>
+<li>support function color, thanks <a href="https://github.com/discoverfly">discoverfly</a></li>
+<li>add default-func color theme</li>
+<li>add style for scroll bars in sublime.qss, thanks <a href="https://github.com/hauke96">hauke96</a></li>
+<li>add marks for selections and findings, thanks <a href="https://github.com/jinq0123">jinq0123</a></li>
 </ul></li>
 <li>LiteFind
 
 <ul>
-<li>fix find editor replace all wrap around* GolangEdit</li>
-<li>Integrated <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> and gui tools support gomodifytags all options</li>
+<li>fix editor regexp replace</li>
 </ul></li>
-<li>QuickOpen
+<li>LiteBuild
 
 <ul>
-<li>add quick open command action (ctrl+shift+p/command+shift+p)</li>
-<li>quickopenfiles use thread for fast and cancel</li>
-<li>fix quickopenfile cancel loading for esc or liteapp quit</li>
+<li>add context menu go tool action</li>
 </ul></li>
 </ul>
 
@@ -144,14 +127,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="解决升级 xcode 后 Qt5.6.3 不能编译的问题">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" title="支持 Quick Open Command">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="解决升级 xcode 后 Qt5.6.3 不能编译的问题">Next &rarr;</a></li>
           
           
         </ul>
@@ -177,7 +160,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-12-12</span></div>
+    <div class="date"><span>2018-02-14</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">

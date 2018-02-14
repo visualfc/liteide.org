@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>15 Dec 17 12:09 CST</pubDate>
+    <pubDate>14 Feb 18 09:04 CST</pubDate>
+    <item>
+      <title>LiteIDE X33.2 Released</title>
+      <link>https://visualfc.github.io/blog/LiteIDE-X33.2-Released/</link>
+      <pubDate>2018-02-14 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;Go 语言开发工具 LiteIDE X33.2 发布, 仅以此版本献给我曾经的岁月。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;三十功名尘与土，八千里路云和月。&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;2018.02.14 Ver X33.2&lt;/h3&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;LiteIDE&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add folder tool window split mode swith&lt;/li&gt;&#xA;&lt;li&gt;add archlinux makepkg&lt;/li&gt;&#xA;&lt;li&gt;add tcl syntax and build&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteEditor&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;support function color, thanks &lt;a href=&#34;https://github.com/discoverfly&#34;&gt;discoverfly&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;add default-func color theme&lt;/li&gt;&#xA;&lt;li&gt;add style for scroll bars in sublime.qss, thanks &lt;a href=&#34;https://github.com/hauke96&#34;&gt;hauke96&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;add marks for selections and findings, thanks &lt;a href=&#34;https://github.com/jinq0123&#34;&gt;jinq0123&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteFind&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;fix editor regexp replace&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteBuild&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add context menu go tool action&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+    </item>
     <item>
       <title>解决升级 xcode 后 Qt5.6.3 不能编译的问题</title>
       <link>https://visualfc.github.io/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/</link>
