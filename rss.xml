@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>18 Feb 18 07:58 CST</pubDate>
+    <pubDate>08 Mar 18 08:52 CST</pubDate>
+    <item>
+      <title>LiteIDE X33.2 Instructions and thanks</title>
+      <link>https://visualfc.github.io/blog/LiteIDE-X33.2-Instructions-and-thanks/</link>
+      <pubDate>2018-03-06 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;LiteIDE X33.2 在 2.14 日正式发布。但直到昨天所有版本 macOS / Linux / Windows 才上传完毕，在此记录说明，并对大家一直以来的关心和帮助表示感谢。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt; LiteIDE 的日常开发一直是使用老大赠送的 macbook air 进行，而各个平台上的编译测试和发布则在台式机上完成。由于年前离职的原因没有了原来的台式电脑，现在 LiteIDE 的发布编译工作也放在 macbook air 上进行了。因此最初的时候 LiteIDE x33.2 只有 macOS 版本发布。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt; 年后通过在 macOS 上使用 VirtualBox 安装了 Ubuntu 16.04 的 64位和 32位版本，编译了 LiteIDE X33 的 linux 版本并上传。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt; 由于受 macbook 空间和资源所限，无法在 VBOX 虚拟机中安装和运行 win7 64 系统, 所以只能安装了 Window XP 和 Qt4, 编译了 LiteIDE Qt4 for Windows 版本上传，未能完成 Qt5 版本编译。一直到昨天，在网友的启发下，测试了官方的 Qt5.6.2 可以在 Windows XP 上安装，终于完成 LiteIDE Qt5 for Windows 版本的编译上传。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;Thanks&lt;/strong&gt; LiteIDE 从 2011 年开始开发公布，到目前已经开发了八年时间，发布过 70 多个版本，版本号目前达到 X33，期间很多人都给予了帮助，感谢所有曾经帮助过我的人。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;Last&lt;/strong&gt; 最后附上 LiteIDE 的捐赠列表，感谢所有我认识和不认识的人。&#xA;&lt;a href=&#34;http://visualfc.github.io/support/&#34;&gt;http://visualfc.github.io/support/&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;2018.02.14 Ver X33.2&lt;/h3&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;LiteIDE&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add folder tool window split mode swith&lt;/li&gt;&#xA;&lt;li&gt;add archlinux makepkg&lt;/li&gt;&#xA;&lt;li&gt;add tcl syntax and build&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteEditor&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;support function color, thanks &lt;a href=&#34;https://github.com/discoverfly&#34;&gt;discoverfly&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;add default-func color theme&lt;/li&gt;&#xA;&lt;li&gt;add style for scroll bars in sublime.qss, thanks &lt;a href=&#34;https://github.com/hauke96&#34;&gt;hauke96&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;add marks for selections and findings, thanks &lt;a href=&#34;https://github.com/jinq0123&#34;&gt;jinq0123&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteFind&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;fix editor regexp replace&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;li&gt;LiteBuild&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add context menu go tool action&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+    </item>
     <item>
       <title>LiteIDE X33.2 Released</title>
       <link>https://visualfc.github.io/blog/LiteIDE-X33.2-Released/</link>
