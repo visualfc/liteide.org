@@ -127,6 +127,84 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X33.3-Released/">LiteIDE X33.3 Released</a> <span class="date">2018-04-23</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X33.3 发布, 新版本支持导入行的包文件列表跳转，代码完成支持 GOPATH / vendor 包列表提示。重构了调试行为，Go 代码 Debug/DebugTest 移入编译菜单中，编译调试版本时可根据当前 Go 版本自动选择适应的 gcflags 编译设置，以更好的支持 Go1.10。</p>
+
+<h3>2018.04.23 Ver X33.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>support import jump to package source file</li>
+<li>support import hints for all package on code completer</li>
+<li>add build &amp; debug action to build menu</li>
+<li>fix build debug gcflags for go version</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix tab style sheet for Qt5.9 on macOS</li>
+<li>project wizard add gocmdex/gopkgex for anywhere</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>build config file add debug support</li>
+<li>golang build add debug/debugtest action</li>
+<li>fix golang build debug gcflags depends for go version</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>filesystem add debug file action</li>
+<li>remove internal golang build function</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>reimplemented backspace quotes audo insert/remove action</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>parser import package for GOPATH</li>
+<li>fix vendor import for code completer</li>
+<li>add import hints for all package option (default)</li>
+<li>add parser cgo completer list on editor</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix import line navigate show link source</li>
+<li>add import line jump to package file list</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>add quickopenfolder implement</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>add new debugflag action for print debug gcflags for go version</li>
+<li>types find import dir check vendor</li>
+<li>types add import info and doc</li>
+<li>fix astview pkg nil check
+<br /></li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X33.3-Released/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X33.2-Instructions-and-thanks/">LiteIDE X33.2 Instructions and thanks</a> <span class="date">2018-03-06</span></h3>
 
   <p>LiteIDE X33.2 在 2.14 日正式发布。但直到昨天所有版本 macOS / Linux / Windows 才上传完毕，在此记录说明，并对大家一直以来的关心和帮助表示感谢。</p>
@@ -277,26 +355,6 @@ In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/He
 
   <div class="more">
     <a href="/blog/LiteIDE-X33.1-Released/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a> <span class="date">2017-12-04</span></h3>
-
-  <!-- ## 实现 Quick Open Command -->
-
-<p>Sublime 和 VSCode 都有命令面板功能，方便快速调用命令。
-LiteIDE 在 2016年7月发布的 X30 版本开始实现了 QuickOpen 插件，
-目前支持 文件/编辑器/符号/行号 的快速跳转，但未实现菜单命令的快速跳转功能。</p>
-
-<p>在最新的开发版本中，LiteIDE 加入了菜单命令的快速跳转功能 - Quick Open Command，
-快捷键为 Ctrl+Shift+P / Command+Shift+P (macos)。</p>
-
-
-  <div class="more">
-    <a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" class="btn">阅读全文</a>
   </div>
 </div>
 
