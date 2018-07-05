@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE Introduction</title>
+    <title>LiteIDE X33.4 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -82,117 +82,116 @@
     <div class="container">
 
       <div class="content">
-        
-<div class="page-header">
-  <h1>LiteIDE Introduction </h1>
+        <div class="page-header">
+  <h1>LiteIDE X33.4 Released </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    <h1>LiteIDE X</h1>
+  <div class="span8">
+    <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本代码完成使用 mdempsky/gocode 以支持 go1.11beta1 。
+增强了 DlvDebugger 插件功能 ( variable, watch, threads, goroutines, registers)，以支持 Delve 调试时的更多信息显示。</p>
 
-<h3>Introduction</h3>
-
-<p><em>LiteIDE is a simple, open source, cross-platform Go IDE.</em></p>
-
-<ul>
-<li>Version: X33.4</li>
-<li>Author: <a href="mailto:visualfc@gmail.com">visualfc</a></li>
-</ul>
-
-<h3>Features</h3>
+<h3>2018.07.04 Ver X33.4</h3>
 
 <ul>
-<li>Core features
+<li>LiteIDE
 
 <ul>
-<li>System environment management</li>
-<li>Configurable build commands</li>
-<li>Simple and open debug system</li>
-<li>Kate format for auto-completion and theming</li>
-<li>Configurable auto-completion with WordApi</li>
-<li>MIME type based system</li>
-<li>Plugin support</li>
+<li>update gocode for mdempsky/gocode support go1.11</li>
+<li>update DlvDebugger plugin for Delve detail information</li>
 </ul></li>
-<li>Golang support
+<li>LiteDebug
 
 <ul>
-<li>Package browser</li>
-<li>Class view and outline</li>
-<li>Document browser</li>
-<li><a href="https://github.com/nsf/gocode">Gocode</a> support</li>
-<li>GOPATH API index</li>
-<li>View Expression Info</li>
-<li>Jump to Declaration</li>
-<li>Find Usages</li>
-<li>Code Refactor</li>
-<li>Go playground</li>
+<li>add threads/goroutines/registers view</li>
+<li>watch view support double clicked change and update</li>
 </ul></li>
-<li>Markdown support
+<li>DlvDebugger
 
 <ul>
-<li>Live preview and synchronized scroll</li>
-<li>Custom CSS with themes</li>
-<li>Export Markdown as HTML or PDF</li>
-<li>Markdown batch conversion with optional merging</li>
+<li>add dlv rcp-mode for get more info</li>
+<li>variable and watch support detail information</li>
+<li>watch support local/package variable</li>
+<li>support threads/gorountines/registers model</li>
 </ul></li>
-<li>Golang Present support
+<li>GolangCode
 
 <ul>
-<li>Present syntax editor</li>
-<li>Auto verify at save time</li>
-<li>Export to html</li>
+<li>support <a href="https://github.com/mdempsky/gocode">https://github.com/mdempsky/gocode</a></li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>add dly filter editor for optimize many files search</li>
+<li>fix quick open symbol action</li>
 </ul></li>
 </ul>
 
-<h3>Supported Systems</h3>
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+          
+            <li class="prev disabled"><a>&larr; Previous</a></li>
+          
 
-<ul>
-<li>Windows x86 (32-bit or 64-bit)</li>
-<li>Linux x86 (32-bit or 64-bit)</li>
-<li>MacOS X10.6</li>
-</ul>
+            <!-- <li><a href="/blog">Blog</a></li> -->
 
-<h3>LiteIDE Command Line</h3>
-
-<pre><code>liteide [files|folder] [--select-env id] [--local-setting] [--user-setting] [--reset-setting]
-
---select-env [system|win32|cross-linux64|...]     select init environment id
---local-setting   force use local setting
---user-setting    force use user setting
---reset-setting   reset current setting ( clear setting file)
-</code></pre>
-
-<h3>Website</h3>
-
-<ul>
-<li>Source code
-
-<ul>
-<li><a href="https://github.com/visualfc/liteide">https://github.com/visualfc/liteide</a></li>
-</ul></li>
-<li>Binary downloads
-
-<ul>
-<li><a href="http://sourceforge.net/projects/liteide/files">http://sourceforge.net/projects/liteide/files</a></li>
-</ul></li>
-<li>Google group
-
-<ul>
-<li><a href="https://groups.google.com/group/liteide-dev">https://groups.google.com/group/liteide-dev</a></li>
-</ul></li>
-<li>FAQ
-
-<ul>
-<li><a href="https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/guide.md">https://github.com/visualfc/liteide/blob/master/liteidex/deploy/welcome/en/guide.md</a></li>
-</ul></li>
-<li>Support LiteIDE
-
-<ul>
-<li><a href="http://visualfc.github.com/support">http://visualfc.github.com/support</a></li>
-</ul></li>
-</ul>
-
+          
+            <li class="next"><a href="/blog/LiteIDE-X33.3-Released/" title="LiteIDE X33.3 Released">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    <!-- 
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+ -->
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2018-07-04</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#blog-ref"> blog <span>16</span></a>
+</li>
+    
+      <li>
+  <a href="/categories/#liteide-ref"> liteide <span>16</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#blog-ref"> blog <span>16</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#liteide-ref"> liteide <span>16</span></a>
+</li>
+    
+    </ul>
   </div>
 </div>
 

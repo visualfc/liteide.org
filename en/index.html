@@ -127,6 +127,56 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X33.4-Released/">LiteIDE X33.4 Released</a> <span class="date">2018-07-04</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本代码完成使用 mdempsky/gocode 以支持 go1.11beta1 。
+增强了 DlvDebugger 插件功能 ( variable, watch, threads, goroutines, registers)，以支持 Delve 调试时的更多信息显示。</p>
+
+<h3>2018.07.04 Ver X33.4</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>update gocode for mdempsky/gocode support go1.11</li>
+<li>update DlvDebugger plugin for Delve detail information</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>add threads/goroutines/registers view</li>
+<li>watch view support double clicked change and update</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>add dlv rcp-mode for get more info</li>
+<li>variable and watch support detail information</li>
+<li>watch support local/package variable</li>
+<li>support threads/gorountines/registers model</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>support <a href="https://github.com/mdempsky/gocode">https://github.com/mdempsky/gocode</a></li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>add dly filter editor for optimize many files search</li>
+<li>fix quick open symbol action</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X33.4-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X33.3-Released/">LiteIDE X33.3 Released</a> <span class="date">2018-04-23</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X33.3 发布, 新版本支持导入行的包文件列表跳转，代码完成支持 GOPATH / vendor 包列表提示。重构了调试行为，Go 代码 Debug/DebugTest 移入编译菜单中，编译调试版本时可根据当前 Go 版本自动选择适应的 gcflags 编译设置，以更好的支持 Go1.10。</p>
@@ -293,68 +343,6 @@ In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/He
 
   <div class="more">
     <a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X33.1-Released/">LiteIDE X33.1 Released</a> <span class="date">2017-12-12</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X33.1 正式发布。
-新版本对菜单进行调整和规范，新增了工具菜单，编辑菜单保持可见，重命名了部分工具窗口。
-修复了编辑器内查找功能的全文替换错误，
-对快速打开文件操作 ( ctrl+p / command+p ) 改用线程方式重新实现，新增了快速打开命令功能 ( ctrl+shift+p / command+shift+p )，集成了 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 并提供GUI界面实现对结构体 Tags 的快速增删功能。</p>
-
-<p>LiteIDE X33.1 使用 go1.10beta1 编译, 支持 Go1.9 / Go1.10beta1 或者更低的 Go 版本。</p>
-
-<h3>2017.12.12 Ver X33.1</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>support quick open command</li>
-<li>support gomodifytags</li>
-<li>fix libpng warning on qt5 build</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>add tools menu for quick open actions</li>
-<li>standard and rename tool window title</li>
-<li>enable edit menu anytime, fix edit menu disable on editor lost focus.</li>
-<li>fix editor load large file bad_alloc recover</li>
-</ul></li>
-<li>LiteEnv
-
-<ul>
-<li>add select env to tools menu<br /></li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>check and not open large file</li>
-<li>fix edit hide edit sub menu &lsquo;setup&rsquo; on macos</li>
-</ul></li>
-<li>LiteFind
-
-<ul>
-<li>fix find editor replace all wrap around* GolangEdit</li>
-<li>Integrated <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> and gui tools support gomodifytags all options</li>
-</ul></li>
-<li>QuickOpen
-
-<ul>
-<li>add quick open command action (ctrl+shift+p/command+shift+p)</li>
-<li>quickopenfiles use thread for fast and cancel</li>
-<li>fix quickopenfile cancel loading for esc or liteapp quit</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X33.1-Released/" class="btn">Read more</a>
   </div>
 </div>
 
