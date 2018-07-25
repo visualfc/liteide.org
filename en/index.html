@@ -127,6 +127,87 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X34-Released/">LiteIDE X34 Released</a> <span class="date">2018-07-26</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本支持 go1.11beta2 的 Go Modules 机制。
+更新了 gotools 和 gocode (github.com/visualfc/gocode) 以支持 Go Modules 机制。</p>
+
+<h3>2018.07.26 Ver X34</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>update gotools support go1.11 modules</li>
+<li>update gocode for <a href="https://github.com/visualfc/gocode">https://github.com/visualfc/gocode</a> support go1.11 modules</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>refactor folder model code, remove depends</li>
+<li>fix dock widget for Qt5.9.6 bug</li>
+<li>move view godoc from folderview to litebuild</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>update BUILDARGS, remove -i for go1.11 build</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>change to github.com/visualfc/gocode for support go1.11 modules</li>
+</ul></li>
+<li>GolangDoc
+
+<ul>
+<li>pdoc support real ImportPath display for Go modules or vendor</li>
+<li>fix docs.html $.GoogleCN code</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>support go1.11 modules, view info / jump / find usages</li>
+<li>support parser import path for Go modules or vendor for godoc view</li>
+</ul></li>
+<li>GolangPackage
+
+<ul>
+<li>add pkg/mod tree for Go modules</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>fix view pos for editor manager</li>
+<li>support open file with fullpath on editor input</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix continue</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>types support go1.11 modules</li>
+<li>add pkgcheck support modules or vendor check</li>
+</ul></li>
+<li>gocode
+
+<ul>
+<li>clone <a href="https://github.com/nsf/gocode">https://github.com/nsf/gocode</a> support go1.11 modules</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X34-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X33.4-Released/">LiteIDE X33.4 Released</a> <span class="date">2018-07-04</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本代码完成使用 mdempsky/gocode 以支持 go1.11beta1 。
@@ -315,34 +396,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X33.2-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/">解决升级 xcode 后 Qt5.6.3 不能编译的问题</a> <span class="date">2017-12-15</span></h3>
-
-  <!-- ## 解决升级 xcode 后 Qt5.6.3 不能编译的问题 -->
-
-<p>升级 xcode 后，Qt5.6.3 不能编译，提示类似下列错误</p>
-
-<pre><code>clang: warning: no such sysroot directory: '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk' [-Wmissing-sysroot]
-
-In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/QObject:1:
-In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qobject.h:40:
-In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qobjectdefs.h:41:
-In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qnamespace.h:37:
-In file included from /Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qglobal.h:75:
-/Users/user/Qt5.6.3/5.6.3/clang_64/lib/QtCore.framework/Headers/qsystemdetection.h:197:12: fatal error: 'TargetConditionals.h' file not found
-#  include &lt;TargetConditionals.h&gt;
-           ^~~~~~~~~~~~~~~~~~~~~~
-1 error generated.
-</code></pre>
-
-
-  <div class="more">
-    <a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/" class="btn">Read more</a>
   </div>
 </div>
 

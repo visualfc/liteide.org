@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Categories</title>
+    <title>LiteIDE X34 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -82,122 +82,147 @@
     <div class="container">
 
       <div class="content">
-        
-<div class="page-header">
-  <h1>Categories </h1>
+        <div class="page-header">
+  <h1>LiteIDE X34 Released </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    
-<ul class="tag_box inline">
+  <div class="span8">
+    <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本支持 go1.11beta2 的 Go Modules 机制。
+更新了 gotools 和 gocode (github.com/visualfc/gocode) 以支持 Go Modules 机制。</p>
 
-  <li>
-  <a href="/categories/#blog-ref"> blog <span>17</span></a>
-</li>
+<h3>2018.07.26 Ver X34</h3>
 
-  <li>
-  <a href="/categories/#dev-ref"> dev <span>4</span></a>
-</li>
+<ul>
+<li>LiteIDE
 
-  <li>
-  <a href="/categories/#liteide-ref"> liteide <span>17</span></a>
-</li>
+<ul>
+<li>update gotools support go1.11 modules</li>
+<li>update gocode for <a href="https://github.com/visualfc/gocode">https://github.com/visualfc/gocode</a> support go1.11 modules</li>
+</ul></li>
+<li>LiteApp
 
+<ul>
+<li>refactor folder model code, remove depends</li>
+<li>fix dock widget for Qt5.9.6 bug</li>
+<li>move view godoc from folderview to litebuild</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>update BUILDARGS, remove -i for go1.11 build</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>change to github.com/visualfc/gocode for support go1.11 modules</li>
+</ul></li>
+<li>GolangDoc
+
+<ul>
+<li>pdoc support real ImportPath display for Go modules or vendor</li>
+<li>fix docs.html $.GoogleCN code</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>support go1.11 modules, view info / jump / find usages</li>
+<li>support parser import path for Go modules or vendor for godoc view</li>
+</ul></li>
+<li>GolangPackage
+
+<ul>
+<li>add pkg/mod tree for Go modules</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>fix view pos for editor manager</li>
+<li>support open file with fullpath on editor input</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix continue</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>types support go1.11 modules</li>
+<li>add pkgcheck support modules or vendor check</li>
+</ul></li>
+<li>gocode
+
+<ul>
+<li>clone <a href="https://github.com/nsf/gocode">https://github.com/nsf/gocode</a> support go1.11 modules</li>
+</ul></li>
 </ul>
 
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+          
+            <li class="prev disabled"><a>&larr; Previous</a></li>
+          
 
-  <h2 id="blog-ref">blog (17)</h2>
-  <ul>
-    
-      <li><a href="/blog/LiteIDE-X34-Released/">LiteIDE X34 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.4-Released/">LiteIDE X33.4 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.3-Released/">LiteIDE X33.3 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.2-Instructions-and-thanks/">LiteIDE X33.2 Instructions and thanks</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.2-Released/">LiteIDE X33.2 Released</a></li>
-    
-      <li><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/">解决升级 xcode 后 Qt5.6.3 不能编译的问题</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.1-Released/">LiteIDE X33.1 Released</a></li>
-    
-      <li><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a></li>
-    
-      <li><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/">支持 gomodifytags</a></li>
-    
-      <li><a href="/blog/fix-liteide-libpng-warning/">fix liteide libpng warning</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33-Released/">LiteIDE X33 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X32.2-Released/">LiteIDE X32.2 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X32.1-Released/">LiteIDE X32.1 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X32-Released/">LiteIDE X32 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">LiteIDE 的配置文件管理</a></li>
-    
-      <li><a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/">LiteIDE 的交叉编译设置</a></li>
-    
-      <li><a href="/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/">更新 Golang Api Index 功能</a></li>
-    
-  </ul>
+            <!-- <li><a href="/blog">Blog</a></li> -->
 
-  <h2 id="dev-ref">dev (4)</h2>
-  <ul>
+          
+            <li class="next"><a href="/blog/LiteIDE-X33.4-Released/" title="LiteIDE X33.4 Released">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    <!-- 
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+ -->
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2018-07-26</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
     
-      <li><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/">解决升级 xcode 后 Qt5.6.3 不能编译的问题</a></li>
+      <li>
+  <a href="/categories/#blog-ref"> blog <span>17</span></a>
+</li>
     
-      <li><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a></li>
+      <li>
+  <a href="/categories/#liteide-ref"> liteide <span>17</span></a>
+</li>
     
-      <li><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/">支持 gomodifytags</a></li>
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
     
-      <li><a href="/blog/fix-liteide-libpng-warning/">fix liteide libpng warning</a></li>
+      <li>
+  <a href="/tags/#blog-ref"> blog <span>17</span></a>
+</li>
     
-  </ul>
-
-  <h2 id="liteide-ref">liteide (17)</h2>
-  <ul>
+      <li>
+  <a href="/tags/#liteide-ref"> liteide <span>17</span></a>
+</li>
     
-      <li><a href="/blog/LiteIDE-X34-Released/">LiteIDE X34 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.4-Released/">LiteIDE X33.4 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.3-Released/">LiteIDE X33.3 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.2-Instructions-and-thanks/">LiteIDE X33.2 Instructions and thanks</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.2-Released/">LiteIDE X33.2 Released</a></li>
-    
-      <li><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/">解决升级 xcode 后 Qt5.6.3 不能编译的问题</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33.1-Released/">LiteIDE X33.1 Released</a></li>
-    
-      <li><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a></li>
-    
-      <li><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/">支持 gomodifytags</a></li>
-    
-      <li><a href="/blog/fix-liteide-libpng-warning/">fix liteide libpng warning</a></li>
-    
-      <li><a href="/blog/LiteIDE-X33-Released/">LiteIDE X33 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X32.2-Released/">LiteIDE X32.2 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X32.1-Released/">LiteIDE X32.1 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-X32-Released/">LiteIDE X32 Released</a></li>
-    
-      <li><a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">LiteIDE 的配置文件管理</a></li>
-    
-      <li><a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/">LiteIDE 的交叉编译设置</a></li>
-    
-      <li><a href="/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/">更新 Golang Api Index 功能</a></li>
-    
-  </ul>
-
+    </ul>
   </div>
 </div>
 
