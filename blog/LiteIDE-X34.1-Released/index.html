@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X33.4 Released</title>
+    <title>LiteIDE X34.1 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,47 +83,33 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X33.4 Released </h1>
+  <h1>LiteIDE X34.1 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本代码完成使用 mdempsky/gocode 以支持 go1.11beta1 。
-增强了 DlvDebugger 插件功能 ( variable, watch, threads, goroutines, registers)，以支持 Delve 调试时的更多信息显示。</p>
+    <p>Go 语言开发工具 LiteIDE X34.1 发布, 新版本更新了 gocode ，通过源码分析支持 Go1.11 modules 和 vendor 机制。</p>
 
-<h3>2018.07.04 Ver X33.4</h3>
+<h3>2018.08.12 Ver X34.1</h3>
 
 <ul>
 <li>LiteIDE
 
 <ul>
-<li>update gocode for mdempsky/gocode support go1.11</li>
-<li>update DlvDebugger plugin for Delve detail information</li>
+<li>update gotools support go1.11 modules</li>
+<li>update gocode support go1.11 modules and vendor</li>
 </ul></li>
-<li>LiteDebug
+<li>LiteEditor
 
 <ul>
-<li>add threads/goroutines/registers view</li>
-<li>watch view support double clicked change and update</li>
+<li>enable open binary file for editor</li>
+<li>change widget readonly by binary file (ignore text file)</li>
 </ul></li>
-<li>DlvDebugger
+<li>gocode
 
 <ul>
-<li>add dlv rcp-mode for get more info</li>
-<li>variable and watch support detail information</li>
-<li>watch support local/package variable</li>
-<li>support threads/gorountines/registers model</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>support <a href="https://github.com/mdempsky/gocode">https://github.com/mdempsky/gocode</a></li>
-</ul></li>
-<li>QuickOpen
-
-<ul>
-<li>add dly filter editor for optimize many files search</li>
-<li>fix quick open symbol action</li>
+<li>change parser by source use gotools/types</li>
+<li>fix parser vendor &amp; modules</li>
 </ul></li>
 </ul>
 
@@ -132,14 +118,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X34-Released/" title="LiteIDE X34 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X33.3-Released/" title="LiteIDE X33.3 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X34-Released/" title="LiteIDE X34 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -165,7 +151,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2018-07-04</span></div>
+    <div class="date"><span>2018-08-12</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
