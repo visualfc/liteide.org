@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X33.3 Released</title>
+    <title>LiteIDE X34.2 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,75 +83,58 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X33.3 Released </h1>
+  <h1>LiteIDE X34.2 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X33.3 发布, 新版本支持导入行的包文件列表跳转，代码完成支持 GOPATH / vendor 包列表提示。重构了调试行为，Go 代码 Debug/DebugTest 移入编译菜单中，编译调试版本时可根据当前 Go 版本自动选择适应的 gcflags 编译设置，以更好的支持 Go1.10。</p>
+    <p>Go 语言开发工具 LiteIDE X34.2 发布, 新版本对 X34.1 进行修复和更新，以更好的支持 Go1.11 modules。</p>
 
-<h3>2018.04.23 Ver X33.3</h3>
+<h3>2018.09.15 Ver X34.2</h3>
 
 <ul>
 <li>LiteIDE
 
 <ul>
-<li>support import jump to package source file</li>
-<li>support import hints for all package on code completer</li>
-<li>add build &amp; debug action to build menu</li>
-<li>fix build debug gcflags for go version</li>
+<li>fix gotools &amp; gocode support go1.11 modules sub folder</li>
+<li>support custom GO111MODULE setup</li>
 </ul></li>
 <li>LiteApp
 
 <ul>
-<li>fix tab style sheet for Qt5.9 on macOS</li>
-<li>project wizard add gocmdex/gopkgex for anywhere</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>build config file add debug support</li>
-<li>golang build add debug/debugtest action</li>
-<li>fix golang build debug gcflags depends for go version</li>
-</ul></li>
-<li>LiteDebug
-
-<ul>
-<li>filesystem add debug file action</li>
-<li>remove internal golang build function</li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>reimplemented backspace quotes audo insert/remove action</li>
+<li>fix #939 display right margin at column wrong</li>
+<li>change mime type check fullname first</li>
 </ul></li>
 <li>GolangCode
 
 <ul>
-<li>parser import package for GOPATH</li>
-<li>fix vendor import for code completer</li>
-<li>add import hints for all package option (default)</li>
-<li>add parser cgo completer list on editor</li>
+<li>fix #970 goplay editor cgo crash</li>
 </ul></li>
 <li>GolangEdit
 
 <ul>
-<li>fix import line navigate show link source</li>
-<li>add import line jump to package file list</li>
+<li>find usages / rename symbol add skip GOROOT actions</li>
 </ul></li>
-<li>QuickOpen
+<li>GolangPackage
 
 <ul>
-<li>add quickopenfolder implement</li>
+<li>add custom GO111MODULE setup</li>
 </ul></li>
-<li>gotools
+<li>LiteEditor
 
 <ul>
-<li>add new debugflag action for print debug gcflags for go version</li>
-<li>types find import dir check vendor</li>
-<li>types add import info and doc</li>
-<li>fix astview pkg nil check
-<br /></li>
+<li>add extra mouse navagite go back and forward</li>
+<li>add gomod.xml for go.mod syntax</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>add gomod.xml for go.mod build command</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix go1.11 modules sub folder</li>
 </ul></li>
 </ul>
 
@@ -160,14 +143,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X33.4-Released/" title="LiteIDE X33.4 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X33.2-Instructions-and-thanks/" title="LiteIDE X33.2 Instructions and thanks">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X34.1-Released/" title="LiteIDE X34.1 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -193,7 +176,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2018-04-23</span></div>
+    <div class="date"><span>2018-09-15</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
