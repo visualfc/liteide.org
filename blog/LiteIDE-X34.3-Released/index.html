@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X32.1 Released</title>
+    <title>LiteIDE X34.3 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,48 +83,50 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X32.1 Released </h1>
+  <h1>LiteIDE X34.3 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X32.1 正式发布，新版本修复了 X32 版本的一些错误，优化了环境设置的加载；项目自定义 GOPATH 设置实现了子目录自动继承上级目录设置；Gocode 代码自动完成插件也已支持项目的自定义 GOPATH 设置；Dlv 调试插件启用了服务器模式(dlv headless mode)，实现了应用输出和调试信息输出的分离。</p>
+    <p>Go 语言开发工具 LiteIDE X34.3 发布, 新版本修复 BUG ，更好的支持 Go1.11 modules。</p>
 
-<h3>2017.7.7 Ver X32.1</h3>
+<h3>2018.10.05 Ver X34.3</h3>
 
 <ul>
 <li>LiteIDE
 
 <ul>
-<li>build config custom gopath support inherit parent path&rsquo;s  gopath setup</li>
+<li>fix support go1.11 modules</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix jump import line</li>
+<li>fix find usages for import line</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>fix gocode completer item kind update</li>
 </ul></li>
 <li>GolangCode
 
 <ul>
-<li>update gocode lib-path by build config custom gopath</li>
+<li>enviroment changed to reset gocode</li>
 </ul></li>
-<li>LiteEnv
+<li>gotools &amp; gocode
 
 <ul>
-<li>optimization check go enviroment</li>
+<li>types: fix module-based project with several subpackages <a href="https://github.com/visualfc/liteide/issues/977">https://github.com/visualfc/liteide/issues/977</a></li>
+<li>types: fix redeclared file parser cursor first</li>
+<li>types: fix source file update check in stdin</li>
+<li>types: fix x test files check</li>
+<li>gomod: fix lookup module for go list</li>
 </ul></li>
-<li>LiteBuild
+<li>gocode
 
 <ul>
-<li>build config custom gopath inherit parent path</li>
-<li>fix BuildAndRun kill old on window</li>
-<li>fix build config custom gopath action</li>
-</ul></li>
-<li>GolangPackage
-
-<ul>
-<li>fix load package treeview error</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>dlv use headless mode</li>
-<li>fix dlv kill process</li>
+<li>fix gocode crash <a href="https://github.com/visualfc/liteide/issues/978">https://github.com/visualfc/liteide/issues/978</a></li>
 </ul></li>
 </ul>
 
@@ -133,14 +135,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X32.2-Released/" title="LiteIDE X32.2 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X32-Released/" title="LiteIDE X32 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X34.2-Released/" title="LiteIDE X34.2 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -166,7 +168,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-07-10</span></div>
+    <div class="date"><span>2018-10-05</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">

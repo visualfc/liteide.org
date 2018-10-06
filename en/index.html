@@ -127,6 +127,59 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X34.3-Released/">LiteIDE X34.3 Released</a> <span class="date">2018-10-05</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X34.3 发布, 新版本修复 BUG ，更好的支持 Go1.11 modules。</p>
+
+<h3>2018.10.05 Ver X34.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fix support go1.11 modules</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix jump import line</li>
+<li>fix find usages for import line</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>fix gocode completer item kind update</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>enviroment changed to reset gocode</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>types: fix module-based project with several subpackages <a href="https://github.com/visualfc/liteide/issues/977">https://github.com/visualfc/liteide/issues/977</a></li>
+<li>types: fix redeclared file parser cursor first</li>
+<li>types: fix source file update check in stdin</li>
+<li>types: fix x test files check</li>
+<li>gomod: fix lookup module for go list</li>
+</ul></li>
+<li>gocode
+
+<ul>
+<li>fix gocode crash <a href="https://github.com/visualfc/liteide/issues/978">https://github.com/visualfc/liteide/issues/978</a></li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X34.3-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X34.2-Released/">LiteIDE X34.2 Released</a> <span class="date">2018-09-15</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X34.2 发布, 新版本对 X34.1 进行修复和更新，以更好的支持 Go1.11 modules。</p>
@@ -349,84 +402,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X33.4-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X33.3-Released/">LiteIDE X33.3 Released</a> <span class="date">2018-04-23</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X33.3 发布, 新版本支持导入行的包文件列表跳转，代码完成支持 GOPATH / vendor 包列表提示。重构了调试行为，Go 代码 Debug/DebugTest 移入编译菜单中，编译调试版本时可根据当前 Go 版本自动选择适应的 gcflags 编译设置，以更好的支持 Go1.10。</p>
-
-<h3>2018.04.23 Ver X33.3</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>support import jump to package source file</li>
-<li>support import hints for all package on code completer</li>
-<li>add build &amp; debug action to build menu</li>
-<li>fix build debug gcflags for go version</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>fix tab style sheet for Qt5.9 on macOS</li>
-<li>project wizard add gocmdex/gopkgex for anywhere</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>build config file add debug support</li>
-<li>golang build add debug/debugtest action</li>
-<li>fix golang build debug gcflags depends for go version</li>
-</ul></li>
-<li>LiteDebug
-
-<ul>
-<li>filesystem add debug file action</li>
-<li>remove internal golang build function</li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>reimplemented backspace quotes audo insert/remove action</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>parser import package for GOPATH</li>
-<li>fix vendor import for code completer</li>
-<li>add import hints for all package option (default)</li>
-<li>add parser cgo completer list on editor</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>fix import line navigate show link source</li>
-<li>add import line jump to package file list</li>
-</ul></li>
-<li>QuickOpen
-
-<ul>
-<li>add quickopenfolder implement</li>
-</ul></li>
-<li>gotools
-
-<ul>
-<li>add new debugflag action for print debug gcflags for go version</li>
-<li>types find import dir check vendor</li>
-<li>types add import info and doc</li>
-<li>fix astview pkg nil check
-<br /></li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X33.3-Released/" class="btn">Read more</a>
   </div>
 </div>
 
