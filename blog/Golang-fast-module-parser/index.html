@@ -98,12 +98,12 @@ Go 为了支持 Go modules, 实现了 <code>golang.org/x/tools/go/packages</code
 <h3>issues</h3>
 
 <p>在 LiteIDE X34.2 发布后，gohugoio/hugo 作者提出问题 <a href="https://github.com/visualfc/liteide/issues/986，">https://github.com/visualfc/liteide/issues/986，</a>
-即 LiteIDE 对于类似 gohugoio/hugo 这种有上百个包依赖的 Go modules 项目解析过缓慢。</p>
+即 LiteIDE 对于类似 gohugoio/hugo 这种有上百个包依赖的 Go modules 项目解析过于缓慢。</p>
 
 <h3>fastmod</h3>
 
-<p>为了解决这个问题，对 Go1.11 的 cmd/go 命令进行测试研究，从代码出提取 module 分析部分，以只读方式对项目的 go.mod
-文件进行直接读取分析，加速解析过程。最终实现项目为 <a href="https://github.com/visualfc/fastmod">https://github.com/visualfc/fastmod</a> 提供了 go.mod 解析，
+<p>为了解决这个问题，对 Go1.11 的 cmd/go 命令进行测试研究，从代码出提取 module 文件分析部分，以只读方式对项目的 go.mod
+文件进行读取分析，以加速解析过程。最终实现项目为 <a href="https://github.com/visualfc/fastmod">https://github.com/visualfc/fastmod</a> 提供了 go.mod 解析，
 目前为了兼容考虑 go.mod 文件由命令 <code>go env GOMOD</code> 提供路径。</p>
 
 <p>使用方法如下:</p>
