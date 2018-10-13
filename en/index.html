@@ -127,6 +127,29 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/Golang-fast-module-parser/">Golang fast module parser</a> <span class="date">2018-10-12</span></h3>
+
+  <h3>LiteIDE and Go1.11 modules</h3>
+
+<p>Go1.11 modules 出来后，LiteIDE 的 gotools &amp; gocode 作了相应的支持处理。
+Go 为了支持 Go modules, 实现了 <code>golang.org/x/tools/go/packages</code> 包(内部使用 <code>go list -json -deps</code> 实现),
+而 LiteIDE 使用的 gotools/types 没有使用这个包，内部使用 <code>go list -m -json all</code> 实现对 Go modules 的解析。
+使用 <code>go list -e -json pkgname</code> 对 deps 包进行解析.</p>
+
+<h3>issues</h3>
+
+<p>在 LiteIDE X34.2 发布后，gohugoio/hugo 作者提出问题 <a href="https://github.com/visualfc/liteide/issues/986，">https://github.com/visualfc/liteide/issues/986，</a>
+即 LiteIDE 对于类似 gohugoio/hugo 这种有上百个包依赖的 Go modules 项目解析过缓慢。</p>
+
+
+  <div class="more">
+    <a href="/blog/Golang-fast-module-parser/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X34.3-Released/">LiteIDE X34.3 Released</a> <span class="date">2018-10-05</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X34.3 发布, 新版本修复 BUG ，更好的支持 Go1.11 modules。</p>
@@ -352,56 +375,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X34-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X33.4-Released/">LiteIDE X33.4 Released</a> <span class="date">2018-07-04</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本代码完成使用 mdempsky/gocode 以支持 go1.11beta1 。
-增强了 DlvDebugger 插件功能 ( variable, watch, threads, goroutines, registers)，以支持 Delve 调试时的更多信息显示。</p>
-
-<h3>2018.07.04 Ver X33.4</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>update gocode for mdempsky/gocode support go1.11</li>
-<li>update DlvDebugger plugin for Delve detail information</li>
-</ul></li>
-<li>LiteDebug
-
-<ul>
-<li>add threads/goroutines/registers view</li>
-<li>watch view support double clicked change and update</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>add dlv rcp-mode for get more info</li>
-<li>variable and watch support detail information</li>
-<li>watch support local/package variable</li>
-<li>support threads/gorountines/registers model</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>support <a href="https://github.com/mdempsky/gocode">https://github.com/mdempsky/gocode</a></li>
-</ul></li>
-<li>QuickOpen
-
-<ul>
-<li>add dly filter editor for optimize many files search</li>
-<li>fix quick open symbol action</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X33.4-Released/" class="btn">Read more</a>
   </div>
 </div>
 

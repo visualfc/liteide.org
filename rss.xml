@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>06 Oct 18 10:33 CST</pubDate>
+    <pubDate>13 Oct 18 11:25 CST</pubDate>
+    <item>
+      <title>Golang fast module parser</title>
+      <link>https://visualfc.github.io/blog/Golang-fast-module-parser/</link>
+      <pubDate>2018-10-12 12:00:00 +0800</pubDate>
+      <description>&lt;h3&gt;LiteIDE and Go1.11 modules&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;Go1.11 modules 出来后，LiteIDE 的 gotools &amp;amp; gocode 作了相应的支持处理。&#xA;Go 为了支持 Go modules, 实现了 &lt;code&gt;golang.org/x/tools/go/packages&lt;/code&gt; 包(内部使用 &lt;code&gt;go list -json -deps&lt;/code&gt; 实现),&#xA;而 LiteIDE 使用的 gotools/types 没有使用这个包，内部使用 &lt;code&gt;go list -m -json all&lt;/code&gt; 实现对 Go modules 的解析。&#xA;使用 &lt;code&gt;go list -e -json pkgname&lt;/code&gt; 对 deps 包进行解析.&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;issues&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;在 LiteIDE X34.2 发布后，gohugoio/hugo 作者提出问题 &lt;a href=&#34;https://github.com/visualfc/liteide/issues/986，&#34;&gt;https://github.com/visualfc/liteide/issues/986，&lt;/a&gt;&#xA;即 LiteIDE 对于类似 gohugoio/hugo 这种有上百个包依赖的 Go modules 项目解析过缓慢。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;fastmod&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;为了解决这个问题，对 Go1.11 的 cmd/go 命令进行测试研究，从代码出提取 module 分析部分，以只读方式对项目的 go.mod&#xA;文件进行直接读取分析，加速解析过程。最终实现项目为 &lt;a href=&#34;https://github.com/visualfc/fastmod&#34;&gt;https://github.com/visualfc/fastmod&lt;/a&gt; 提供了 go.mod 解析，&#xA;目前为了兼容考虑 go.mod 文件由命令 &lt;code&gt;go env GOMOD&lt;/code&gt; 提供路径。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;使用方法如下:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;modList := fastmod.NewModuleList(&amp;amp;build.Default)&#xA;mod, err := modList.LoadModule(dir)&#xA;if err != nil {&#xA;    return&#xA;}&#xA;path, dir := mod.Lookup(pkg)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;利用这个新实现的 fastmod，gotools &amp;amp; gocode 实现了对 gohugoio/hugo 项目的快速分析, 解决了这个 issues 。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;更新 gotools &amp;amp; gocode&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;通过以下命令可以更新 LiteIDE 的 gotools &amp;amp; gocode&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;go get -u github.com/visualfc/gotools&#xA;go get -u github.com/visualfc/gocode&#xA;&#xA;Windows/Linux: copy GOPATH/bin gotools and gocode to liteide/bin&#xA;MacOS: copy GOPATH/bin gotools and gocode to LiteIDE.app/Contents/MacOS&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+    </item>
     <item>
       <title>LiteIDE X34.3 Released</title>
       <link>https://visualfc.github.io/blog/LiteIDE-X34.3-Released/</link>

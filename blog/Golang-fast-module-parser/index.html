@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X33.4 Released</title>
+    <title>Golang fast module parser</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,63 +83,65 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X33.4 Released </h1>
+  <h1>Golang fast module parser </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X33.4 发布, 新版本代码完成使用 mdempsky/gocode 以支持 go1.11beta1 。
-增强了 DlvDebugger 插件功能 ( variable, watch, threads, goroutines, registers)，以支持 Delve 调试时的更多信息显示。</p>
+    <h3>LiteIDE and Go1.11 modules</h3>
 
-<h3>2018.07.04 Ver X33.4</h3>
+<p>Go1.11 modules 出来后，LiteIDE 的 gotools &amp; gocode 作了相应的支持处理。
+Go 为了支持 Go modules, 实现了 <code>golang.org/x/tools/go/packages</code> 包(内部使用 <code>go list -json -deps</code> 实现),
+而 LiteIDE 使用的 gotools/types 没有使用这个包，内部使用 <code>go list -m -json all</code> 实现对 Go modules 的解析。
+使用 <code>go list -e -json pkgname</code> 对 deps 包进行解析.</p>
 
-<ul>
-<li>LiteIDE
+<h3>issues</h3>
 
-<ul>
-<li>update gocode for mdempsky/gocode support go1.11</li>
-<li>update DlvDebugger plugin for Delve detail information</li>
-</ul></li>
-<li>LiteDebug
+<p>在 LiteIDE X34.2 发布后，gohugoio/hugo 作者提出问题 <a href="https://github.com/visualfc/liteide/issues/986，">https://github.com/visualfc/liteide/issues/986，</a>
+即 LiteIDE 对于类似 gohugoio/hugo 这种有上百个包依赖的 Go modules 项目解析过缓慢。</p>
 
-<ul>
-<li>add threads/goroutines/registers view</li>
-<li>watch view support double clicked change and update</li>
-</ul></li>
-<li>DlvDebugger
+<h3>fastmod</h3>
 
-<ul>
-<li>add dlv rcp-mode for get more info</li>
-<li>variable and watch support detail information</li>
-<li>watch support local/package variable</li>
-<li>support threads/gorountines/registers model</li>
-</ul></li>
-<li>GolangCode
+<p>为了解决这个问题，对 Go1.11 的 cmd/go 命令进行测试研究，从代码出提取 module 分析部分，以只读方式对项目的 go.mod
+文件进行直接读取分析，加速解析过程。最终实现项目为 <a href="https://github.com/visualfc/fastmod">https://github.com/visualfc/fastmod</a> 提供了 go.mod 解析，
+目前为了兼容考虑 go.mod 文件由命令 <code>go env GOMOD</code> 提供路径。</p>
 
-<ul>
-<li>support <a href="https://github.com/mdempsky/gocode">https://github.com/mdempsky/gocode</a></li>
-</ul></li>
-<li>QuickOpen
+<p>使用方法如下:</p>
 
-<ul>
-<li>add dly filter editor for optimize many files search</li>
-<li>fix quick open symbol action</li>
-</ul></li>
-</ul>
+<pre><code>modList := fastmod.NewModuleList(&amp;build.Default)
+mod, err := modList.LoadModule(dir)
+if err != nil {
+    return
+}
+path, dir := mod.Lookup(pkg)
+</code></pre>
+
+<p>利用这个新实现的 fastmod，gotools &amp; gocode 实现了对 gohugoio/hugo 项目的快速分析, 解决了这个 issues 。</p>
+
+<h3>更新 gotools &amp; gocode</h3>
+
+<p>通过以下命令可以更新 LiteIDE 的 gotools &amp; gocode</p>
+
+<pre><code>go get -u github.com/visualfc/gotools
+go get -u github.com/visualfc/gocode
+
+Windows/Linux: copy GOPATH/bin gotools and gocode to liteide/bin
+MacOS: copy GOPATH/bin gotools and gocode to LiteIDE.app/Contents/MacOS
+</code></pre>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X34-Released/" title="LiteIDE X34 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X33.3-Released/" title="LiteIDE X33.3 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X34.3-Released/" title="LiteIDE X34.3 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -165,7 +167,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2018-07-04</span></div>
+    <div class="date"><span>2018-10-12</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
