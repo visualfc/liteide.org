@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>LiteIDE X35 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -82,170 +82,145 @@
     <div class="container">
 
       <div class="content">
-        
-<div class="page-header">
-  <h1>Blog </h1>
+        <div class="page-header">
+  <h1>LiteIDE X35 Released </h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-    <div class="row">
-	<div class="span8">
-		
-			<h2>2018</h2>
+  <div class="span8">
+    <p>Go 语言开发工具 LiteIDE X35 发布，新版本使用缓存加速了源码信息显示和跳转功能，修复了 Delve 插件调试 BUG，提供了对 Go modules 机制的完全支持。</p>
 
-  <h3>October</h3>
-  <ul>
-  
-    <li><span>2018-10-24</span> &raquo; <a href="/blog/LiteIDE-X35-Released/">LiteIDE X35 Released</a></li>
-  
-    <li><span>2018-10-12</span> &raquo; <a href="/blog/Golang-fast-module-parser/">Golang fast module parser</a></li>
-  
-    <li><span>2018-10-05</span> &raquo; <a href="/blog/LiteIDE-X34.3-Released/">LiteIDE X34.3 Released</a></li>
-  
-  </ul>
+<h3>2018.10.24 Ver X35</h3>
 
-  <h3>September</h3>
-  <ul>
-  
-    <li><span>2018-09-15</span> &raquo; <a href="/blog/LiteIDE-X34.2-Released/">LiteIDE X34.2 Released</a></li>
-  
-  </ul>
+<ul>
+<li>LiteIDE
 
-  <h3>August</h3>
-  <ul>
-  
-    <li><span>2018-08-12</span> &raquo; <a href="/blog/LiteIDE-X34.1-Released/">LiteIDE X34.1 Released</a></li>
-  
-  </ul>
+<ul>
+<li>all support Go1.11 Go modules</li>
+<li>fast lookup types info by cache</li>
+<li>fix delve debug recurse set blocking</li>
+</ul></li>
+<li>LiteApp
 
-  <h3>July</h3>
-  <ul>
-  
-    <li><span>2018-07-26</span> &raquo; <a href="/blog/LiteIDE-X34-Released/">LiteIDE X34 Released</a></li>
-  
-    <li><span>2018-07-04</span> &raquo; <a href="/blog/LiteIDE-X33.4-Released/">LiteIDE X33.4 Released</a></li>
-  
-  </ul>
+<ul>
+<li>side window style enable move tool window to any left/right/bottom side.</li>
+<li>side window style output bar shortcut change to command+meta+number (macos) or ctrl+shift+number</li>
+</ul></li>
+<li>GolangEdit
 
-  <h3>April</h3>
-  <ul>
-  
-    <li><span>2018-04-23</span> &raquo; <a href="/blog/LiteIDE-X33.3-Released/">LiteIDE X33.3 Released</a></li>
-  
-  </ul>
+<ul>
+<li>fast lookup types info by gocode cache</li>
+<li>find all usages support Go modules work dir</li>
+<li>refactor symbol support Go module work dir</li>
+</ul></li>
+<li>GolangAst
 
-  <h3>March</h3>
-  <ul>
-  
-    <li><span>2018-03-06</span> &raquo; <a href="/blog/LiteIDE-X33.2-Instructions-and-thanks/">LiteIDE X33.2 Instructions and thanks</a></li>
-  
-  </ul>
+<ul>
+<li>support import path gopath/vendor/modules doc view</li>
+</ul></li>
+<li>LiteDebug
 
-  <h3>February</h3>
-  <ul>
-  
-    <li><span>2018-02-14</span> &raquo; <a href="/blog/LiteIDE-X33.2-Released/">LiteIDE X33.2 Released</a></li>
-  
-  </ul>
+<ul>
+<li>add automatically add breakpoint main.main when debugging option (default disable)</li>
+</ul></li>
+<li>DlvDebugger
 
-		
-			<h2>2017</h2>
+<ul>
+<li>fix dlv list variables blocking, change LoadConfig recurse to 3</li>
+</ul></li>
 
-  <h3>December</h3>
-  <ul>
-  
-    <li><span>2017-12-15</span> &raquo; <a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/">解决升级 xcode 后 Qt5.6.3 不能编译的问题</a></li>
-  
-    <li><span>2017-12-12</span> &raquo; <a href="/blog/LiteIDE-X33.1-Released/">LiteIDE X33.1 Released</a></li>
-  
-    <li><span>2017-12-04</span> &raquo; <a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/">支持 Quick Open Command</a></li>
-  
-    <li><span>2017-12-02</span> &raquo; <a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/">支持 gomodifytags</a></li>
-  
-  </ul>
+<li><p>LiteBuild</p>
 
-  <h3>November</h3>
-  <ul>
-  
-    <li><span>2017-11-23</span> &raquo; <a href="/blog/fix-liteide-libpng-warning/">fix liteide libpng warning</a></li>
-  
-    <li><span>2017-11-02</span> &raquo; <a href="/blog/LiteIDE-X33-Released/">LiteIDE X33 Released</a></li>
-  
-  </ul>
+<ul>
+<li>update gosrc.xml for support custom target workdir</li>
+</ul></li>
 
-  <h3>July</h3>
-  <ul>
-  
-    <li><span>2017-07-18</span> &raquo; <a href="/blog/LiteIDE-X32.2-Released/">LiteIDE X32.2 Released</a></li>
-  
-    <li><span>2017-07-10</span> &raquo; <a href="/blog/LiteIDE-X32.1-Released/">LiteIDE X32.1 Released</a></li>
-  
-  </ul>
+<li><p>gotools &amp; gocode</p>
 
-  <h3>June</h3>
-  <ul>
-  
-    <li><span>2017-06-12</span> &raquo; <a href="/blog/LiteIDE-X32-Released/">LiteIDE X32 Released</a></li>
-  
-  </ul>
+<ul>
+<li>import <a href="https://github/visualfc/fastmod">https://github/visualfc/fastmod</a> for fast parse go.mod depends</li>
+<li>fast parse Go modules and fix issues <a href="https://github.com/visualfc/liteide/issues/986">https://github.com/visualfc/liteide/issues/986</a></li>
+</ul></li>
 
-  <h3>March</h3>
-  <ul>
-  
-    <li><span>2017-03-18</span> &raquo; <a href="/blog/LiteIDE-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">LiteIDE 的配置文件管理</a></li>
-  
-    <li><span>2017-03-17</span> &raquo; <a href="/blog/LiteIDE-%E7%9A%84%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE/">LiteIDE 的交叉编译设置</a></li>
-  
-    <li><span>2017-03-16</span> &raquo; <a href="/blog/%E6%9B%B4%E6%96%B0-Golang-Api-Index-%E5%8A%9F%E8%83%BD/">更新 Golang Api Index 功能</a></li>
-  
-  </ul>
+<li><p>gotools</p>
 
-		
-	</div>
-	<div class="span4">
-		<h4>Categories</h4>
-		<ul class="tag_box inline">
-		
-		  <li>
+<ul>
+<li>find all usages support Go module work dir</li>
+</ul></li>
+
+<li><p>gotools</p>
+
+<ul>
+<li>fast completer for Go module project</li>
+<li>provide types info for liteide by cache</li>
+</ul></li>
+</ul>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+          
+            <li class="prev disabled"><a>&larr; Previous</a></li>
+          
+
+            <!-- <li><a href="/blog">Blog</a></li> -->
+
+          
+            <li class="next"><a href="/blog/Golang-fast-module-parser/" title="Golang fast module parser">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    <!-- 
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+ -->
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2018-10-24</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
   <a href="/categories/#blog-ref"> blog <span>22</span></a>
 </li>
-		
-		  <li>
-  <a href="/categories/#dev-ref"> dev <span>4</span></a>
-</li>
-		
-		  <li>
+    
+      <li>
   <a href="/categories/#liteide-ref"> liteide <span>22</span></a>
 </li>
-		
-		</ul>
-		<h4>Tags</h4>
-		<ul class="tag_box inline">
-		
-		  <li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
   <a href="/tags/#blog-ref"> blog <span>22</span></a>
 </li>
-		
-		  <li>
-  <a href="/tags/#cross-compile-ref"> cross-compile <span>1</span></a>
-</li>
-		
-		  <li>
-  <a href="/tags/#goapi-ref"> goapi <span>1</span></a>
-</li>
-		
-		  <li>
+    
+      <li>
   <a href="/tags/#liteide-ref"> liteide <span>22</span></a>
 </li>
-		
-		  <li>
-  <a href="/tags/#setting-ref"> setting <span>1</span></a>
-</li>
-		
-		</ul>
-	</div>
-</div>
+    
+    </ul>
   </div>
 </div>
 

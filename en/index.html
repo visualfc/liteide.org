@@ -127,6 +127,64 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X35-Released/">LiteIDE X35 Released</a> <span class="date">2018-10-24</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X35 发布，新版本使用缓存加速了源码信息显示和跳转功能，修复了 Delve 插件调试 BUG，提供了对 Go modules 机制的完全支持。</p>
+
+<h3>2018.10.24 Ver X35</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>all support Go1.11 Go modules</li>
+<li>fast lookup types info by cache</li>
+<li>fix delve debug recurse set blocking</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>side window style enable move tool window to any left/right/bottom side.</li>
+<li>side window style output bar shortcut change to command+meta+number (macos) or ctrl+shift+number</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fast lookup types info by gocode cache</li>
+<li>find all usages support Go modules work dir</li>
+<li>refactor symbol support Go module work dir</li>
+</ul></li>
+<li>GolangAst
+
+<ul>
+<li>support import path gopath/vendor/modules doc view</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>add automatically add breakpoint main.main when debugging option (default disable)</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix dlv list variables blocking, change LoadConfig recurse to 3</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>update gosrc.xml for support custom target workdir</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X35-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/Golang-fast-module-parser/">Golang fast module parser</a> <span class="date">2018-10-12</span></h3>
 
   <h3>LiteIDE and Go1.11 modules</h3>
@@ -294,87 +352,6 @@ Go 为了支持 Go modules, 实现了 <code>golang.org/x/tools/go/packages</code
 
   <div class="more">
     <a href="/blog/LiteIDE-X34.1-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X34-Released/">LiteIDE X34 Released</a> <span class="date">2018-07-26</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X34 发布, 新版本支持 go1.11beta2 的 Go modules 机制。
-更新了 gotools 和 gocode (github.com/visualfc/gocode) 以支持 Go modules 机制。</p>
-
-<h3>2018.07.26 Ver X34</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>update gotools support go1.11 modules</li>
-<li>update gocode for <a href="https://github.com/visualfc/gocode">https://github.com/visualfc/gocode</a> support go1.11 modules</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>refactor folder model code, remove depends</li>
-<li>fix dock widget for Qt5.9.6 bug</li>
-<li>move view godoc from folderview to litebuild</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>update BUILDARGS, remove -i for go1.11 build</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>change to github.com/visualfc/gocode for support go1.11 modules</li>
-</ul></li>
-<li>GolangDoc
-
-<ul>
-<li>pdoc support real ImportPath display for Go modules or vendor</li>
-<li>fix docs.html $.GoogleCN code</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>support go1.11 modules, view info / jump / find usages</li>
-<li>support parser import path for Go modules or vendor for godoc view</li>
-</ul></li>
-<li>GolangPackage
-
-<ul>
-<li>add pkg/mod tree for Go modules</li>
-</ul></li>
-<li>QuickOpen
-
-<ul>
-<li>fix view pos for editor manager</li>
-<li>support open file with fullpath on editor input</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>fix continue</li>
-</ul></li>
-<li>gotools
-
-<ul>
-<li>types support go1.11 modules</li>
-<li>add pkgcheck support modules or vendor check</li>
-</ul></li>
-<li>gocode
-
-<ul>
-<li>clone <a href="https://github.com/nsf/gocode">https://github.com/nsf/gocode</a> support go1.11 modules</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X34-Released/" class="btn">Read more</a>
   </div>
 </div>
 
