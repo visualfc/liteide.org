@@ -72,7 +72,7 @@
                         <li><a href="javascript:void(0);" onclick="GoHome(this)" url="en">English</a></li>
                      </ul>
                 </li>
-                <li><a href="https://visualfc.github.com/support" target="_blank">Donate</a></li>				
+                <li><a href="https://visualfc.github.com/support/" target="_blank">Donate</a></li>
             </ul>
         </div>
       </div>
@@ -123,6 +123,59 @@
 <p></p>
 
 <h2>Blog</h2>
+
+
+
+<div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X35.3-Released/">LiteIDE X35.3 Released</a> <span class="date">2018-12-22</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X35.3 发布，新版本对 gotools/gocode 进行更新和修复，改进编辑器滚动区域和 TAB 设置、优化文件查找功能。</p>
+
+<h3>2018.12.22 Ver X35.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>optimization gotools &amp; gocode, editor scroll and tabtospace, find plugin.</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix liteoutput antialias setup invalid</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>enable vertical scrollbar move last block to top viewport</li>
+<li>the cut action supports cut the current line if not selected</li>
+<li>add convert tab/spaces action</li>
+<li>set editor default use tabtospace</li>
+<li>tabtospace/tabwidth set by litapp/mimetype/liteeditor.xml or options</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>file search check and skip binary file</li>
+<li>add folders/filesystem context menu file search action</li>
+</ul></li>
+<li>GolangEdit, GolangCode, LiteBuild
+
+<ul>
+<li>fix process start with cmd contains space on macOS</li>
+</ul></li>
+<li>GolangDoc
+
+<ul>
+<li>support check go1.12 godoc remove -html, use text mode</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X35.3-Released/" class="btn">Read more</a>
+  </div>
+</div>
 
 
 
@@ -307,67 +360,6 @@ Go 为了支持 Go modules, 实现了 <code>golang.org/x/tools/go/packages</code
 
   <div class="more">
     <a href="/blog/LiteIDE-X34.3-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X34.2-Released/">LiteIDE X34.2 Released</a> <span class="date">2018-09-15</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X34.2 发布, 新版本对 X34.1 进行修复和更新，以更好的支持 Go1.11 modules。</p>
-
-<h3>2018.09.15 Ver X34.2</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>fix gotools &amp; gocode support go1.11 modules sub folder</li>
-<li>support custom GO111MODULE setup</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>fix #939 display right margin at column wrong</li>
-<li>change mime type check fullname first</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>fix #970 goplay editor cgo crash</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>find usages / rename symbol add skip GOROOT actions</li>
-</ul></li>
-<li>GolangPackage
-
-<ul>
-<li>add custom GO111MODULE setup</li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>add extra mouse navagite go back and forward</li>
-<li>add gomod.xml for go.mod syntax</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>add gomod.xml for go.mod build command</li>
-</ul></li>
-<li>gotools &amp; gocode
-
-<ul>
-<li>fix go1.11 modules sub folder</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X34.2-Released/" class="btn">Read more</a>
   </div>
 </div>
 

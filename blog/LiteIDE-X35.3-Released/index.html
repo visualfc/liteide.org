@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X33.2 Instructions and thanks</title>
+    <title>LiteIDE X35.3 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,51 +83,65 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X33.2 Instructions and thanks </h1>
+  <h1>LiteIDE X35.3 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>LiteIDE X33.2 在 2.14 日正式发布。但直到昨天所有版本 macOS / Linux / Windows 才上传完毕，在此记录说明，并对大家一直以来的关心和帮助表示感谢。</p>
+    <p>Go 语言开发工具 LiteIDE X35.3 发布，新版本对 gotools/gocode 进行更新和修复，改进编辑器滚动区域和 TAB 设置、优化文件查找功能。</p>
 
-<p><strong>macOS</strong> LiteIDE 的日常开发一直是使用老大赠送的 macbook air 进行，而各个平台上的编译测试和发布则在台式机上完成。由于年前离职的原因没有了原来的台式电脑，现在 LiteIDE 的发布编译工作也放在 macbook air 上进行了。因此最初的时候 LiteIDE x33.2 只有 macOS 版本发布。</p>
-
-<p><strong>Linux</strong> 年后通过在 macOS 上使用 VirtualBox 安装了 Ubuntu 16.04 的 64位和 32位版本，编译了 LiteIDE X33 的 linux 版本并上传。</p>
-
-<p><strong>Windows</strong> 由于受 macbook 空间和资源所限，无法在 VBOX 虚拟机中安装和运行 win7 64 系统, 所以只能安装了 Window XP 和 Qt4, 编译了 LiteIDE Qt4 for Windows 版本上传，未能完成 Qt5 版本编译。一直到昨天，在网友的启发下，测试了官方的 Qt5.6.2 可以在 Windows XP 上安装，终于完成 LiteIDE Qt5 for Windows 版本的编译上传。</p>
-
-<p><strong>Thanks</strong> LiteIDE 从 2011 年开始开发公布，到目前已经开发了八年时间，发布过 70 多个版本，版本号目前达到 X33，期间很多人都给予了帮助，感谢所有曾经帮助过我的人。</p>
-
-<p><strong>Last</strong> 最后附上 LiteIDE 的捐赠列表，感谢所有我认识和不认识的人。
-<a href="http://visualfc.github.io/support/">http://visualfc.github.io/support/</a></p>
-
-<h3>2018.02.14 Ver X33.2</h3>
+<h3>2018.12.22 Ver X35.3</h3>
 
 <ul>
 <li>LiteIDE
 
 <ul>
-<li>add folder tool window split mode swith</li>
-<li>add archlinux makepkg</li>
-<li>add tcl syntax and build</li>
+<li>optimization gotools &amp; gocode, editor scroll and tabtospace, find plugin.</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix liteoutput antialias setup invalid</li>
 </ul></li>
 <li>LiteEditor
 
 <ul>
-<li>support function color, thanks <a href="https://github.com/discoverfly">discoverfly</a></li>
-<li>add default-func color theme</li>
-<li>add style for scroll bars in sublime.qss, thanks <a href="https://github.com/hauke96">hauke96</a></li>
-<li>add marks for selections and findings, thanks <a href="https://github.com/jinq0123">jinq0123</a></li>
+<li>enable vertical scrollbar move last block to top viewport</li>
+<li>the cut action supports cut the current line if not selected</li>
+<li>add convert tab/spaces action</li>
+<li>set editor default use tabtospace</li>
+<li>tabtospace/tabwidth set by litapp/mimetype/liteeditor.xml or options</li>
 </ul></li>
 <li>LiteFind
 
 <ul>
-<li>fix editor regexp replace</li>
+<li>file search check and skip binary file</li>
+<li>add folders/filesystem context menu file search action</li>
 </ul></li>
-<li>LiteBuild
+<li>GolangEdit, GolangCode, LiteBuild
 
 <ul>
-<li>add context menu go tool action</li>
+<li>fix process start with cmd contains space on macOS</li>
+</ul></li>
+
+<li><p>GolangDoc</p>
+
+<ul>
+<li>support check go1.12 godoc remove -html, use text mode</li>
+</ul></li>
+
+<li><p>gotools &amp; gocode</p>
+
+<ul>
+<li>fix lookup named method embedded</li>
+<li>optimization, check save/load pkgconfig</li>
+<li>add godoc command for check go1.12 use text mode</li>
+</ul></li>
+
+<li><p>gocode</p>
+
+<ul>
+<li>fixed global var completion</li>
 </ul></li>
 </ul>
 
@@ -136,14 +150,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X33.3-Released/" title="LiteIDE X33.3 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X33.2-Released/" title="LiteIDE X33.2 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X35.2-Released/" title="LiteIDE X35.2 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -169,7 +183,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2018-03-06</span></div>
+    <div class="date"><span>2018-12-22</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
