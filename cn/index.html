@@ -127,6 +127,48 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X35.5-Released/">LiteIDE X35.5 Released</a> <span class="date">2019-02-05</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X35.5 发布，BUG 修复版本，
+修复了 Golang 代码查找重构时对同一行存在多项内容的替换功能，
+修复了对中文变量的查找重构功能。</p>
+
+<h3>2019.02.05 Ver X35.5</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>bug fix version</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix cursor selections usages lookup</li>
+<li>add byteOffsetToColumn to fix gotools/guru output byte offset to editor offset</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>add allow vertical scrolling to the last line option</li>
+<li>check file writed size != data.size and show error message</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>update search result item text for all same linenumber</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X35.5-Released/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X35.4-Released/">LiteIDE X35.4 Released</a> <span class="date">2019-01-30</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X35.4 发布，新版本增强了代码导航和代码完成功能，在源代码存在错误情况下也可利用文本信息实现部分导航功能。增强了 Golang 导入行的代码完成功能，支持模糊完成，对于 Go Module 项目，显示 go.mod 依赖包以及项目本地包的 import path，对于 GOPATH 项目，使用源码分析显示所有包的 import path。</p>
@@ -334,29 +376,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X35-Released/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/Golang-fast-module-parser/">Golang fast module parser</a> <span class="date">2018-10-12</span></h3>
-
-  <h3>LiteIDE and Go1.11 modules</h3>
-
-<p>Go1.11 modules 出来后，LiteIDE 的 gotools &amp; gocode 作了相应的支持处理。
-Go 为了支持 Go modules, 实现了 <code>golang.org/x/tools/go/packages</code> 包(内部使用 <code>go list -json -deps</code> 实现),
-而 LiteIDE 使用的 gotools/types 没有使用这个包，内部使用 <code>go list -m -json all</code> 实现对 Go modules 的解析。
-使用 <code>go list -e -json pkgname</code> 对 deps 包进行解析.</p>
-
-<h3>issues</h3>
-
-<p>在 LiteIDE X34.2 发布后，gohugoio/hugo 作者提出问题 <a href="https://github.com/visualfc/liteide/issues/986，">https://github.com/visualfc/liteide/issues/986，</a>
-即 LiteIDE 对于类似 gohugoio/hugo 这种有上百个包依赖的 Go modules 项目解析过于缓慢。</p>
-
-
-  <div class="more">
-    <a href="/blog/Golang-fast-module-parser/" class="btn">阅读全文</a>
   </div>
 </div>
 
