@@ -127,6 +127,55 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X36-Released/">LiteIDE X36 Released</a> <span class="date">2019-03-15</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X36 发布，新增了编辑器路径导航工具栏，重构了 QuickOpen 插件，优化了快速打开文件和目录功能。</p>
+
+<h3>2019.03.15 Ver X36</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>add new editor path navigation toolbar</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>quickopenfile filter text length less than 3 use editor files, otherwise search in folder files.</li>
+<li>add new quickfilesystem filter</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>use new quickfilesystem for import jump</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>add new path navigation toolbar (use quickfilesystem)</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>fix number+dot issues completer</li>
+</ul></li>
+<li>FileUtil
+
+<ul>
+<li>show in Finder fast on macOS</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X36-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X35.5-Released/">LiteIDE X35.5 Released</a> <span class="date">2019-02-05</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X35.5 发布，BUG 修复版本，
@@ -318,64 +367,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X35.2-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X35-Released/">LiteIDE X35 Released</a> <span class="date">2018-10-24</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X35 发布，新版本使用缓存加速了源码信息显示和跳转功能，修复了 Delve 插件调试 BUG，提供了对 Go modules 机制的完全支持。</p>
-
-<h3>2018.10.24 Ver X35</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>all support Go1.11 Go modules</li>
-<li>fast lookup types info by cache</li>
-<li>fix delve debug recurse set blocking</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>side window style enable move tool window to any left/right/bottom side.</li>
-<li>side window style output bar shortcut change to command+meta+number (macos) or ctrl+shift+number</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>fast lookup types info by gocode cache</li>
-<li>find all usages support Go modules work dir</li>
-<li>refactor symbol support Go module work dir</li>
-</ul></li>
-<li>GolangAst
-
-<ul>
-<li>support import path gopath/vendor/modules doc view</li>
-</ul></li>
-<li>LiteDebug
-
-<ul>
-<li>add automatically add breakpoint main.main when debugging option (default disable)</li>
-</ul></li>
-<li>DlvDebugger
-
-<ul>
-<li>fix dlv list variables blocking, change LoadConfig recurse to 3</li>
-</ul></li>
-<li>LiteBuild
-
-<ul>
-<li>update gosrc.xml for support custom target workdir</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X35-Released/" class="btn">Read more</a>
   </div>
 </div>
 

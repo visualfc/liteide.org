@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>支持 gomodifytags</title>
+    <title>LiteIDE X36 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,96 +83,62 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>支持 gomodifytags </h1>
+  <h1>LiteIDE X36 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <!-- ## 实现 gomodifytags -->
+    <p>Go 语言开发工具 LiteIDE X36 发布，新增了编辑器路径导航工具栏，重构了 QuickOpen 插件，优化了快速打开文件和目录功能。</p>
 
-<p>在 LiteIDE 最新的开发版本中，加入了对 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 的支持，
-gomodifytags 的主要功能是对 Go语言结构体字段 (go struct field) 的 tags 进行增删和修改，比如 json, xml 以及其他自定义 tag 。</p>
-
-<h3>结构体的选择</h3>
+<h3>2019.03.15 Ver X36</h3>
 
 <ul>
-<li>当光标于结构内部时，Add Tags 和 Remove Tags 功能对应于当前光标下的整个结构体进行操作。</li>
-<li>当光标对结构体中字段进行选择时，Add Tags 和 Remove Tags 功能对于于光标所选中的行范围内字段进行操作。</li>
+<li>LiteIDE
+
+<ul>
+<li>add new editor path navigation toolbar</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>quickopenfile filter text length less than 3 use editor files, otherwise search in folder files.</li>
+<li>add new quickfilesystem filter</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>use new quickfilesystem for import jump</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>add new path navigation toolbar (use quickfilesystem)</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>fix number+dot issues completer</li>
+</ul></li>
+<li>FileUtil
+
+<ul>
+<li>show in Finder fast on macOS</li>
+</ul></li>
 </ul>
-
-<p>在 LiteIDE 中的 Add Tags Dialog / Remove Tags Dialog 中会有相应的提示。</p>
-
-<h3>为结构体字段增加和修改 Tags</h3>
-
-<p>以下面结构体为例</p>
-
-<pre><code>type Server struct {
-    Name        string
-    Port        int
-    EnableLogs  bool
-    BaseDomain  string
-    Credentials struct {
-        Username string
-        Password string
-    }
-}
-</code></pre>
-
-<p>在 LiteIDE 中将光标置于 Name 到 } 结尾之间任意一处， 编辑菜单或右键调用 Add Tags 将对 Server 结构体全部字段进行操作。
-如下图所示，选中 json 和 xml :
-<img src="/assets/media/2017-12-02-gomodifytags/goaddtags1.png" alt="" width="600"></p>
-
-<p>确认将获得下面结果</p>
-
-<pre><code>type Server struct {
-    Name        string `json:&quot;name&quot; xml:&quot;name&quot;`
-    Port        int    `json:&quot;port&quot; xml:&quot;port&quot;`
-    EnableLogs  bool   `json:&quot;enable_logs&quot; xml:&quot;enable_logs&quot;`
-    BaseDomain  string `json:&quot;base_domain&quot; xml:&quot;base_domain&quot;`
-    Credentials struct {
-        Username string `json:&quot;username&quot; xml:&quot;username&quot;`
-        Password string `json:&quot;password&quot; xml:&quot;password&quot;`
-    } `json:&quot;credentials&quot; xml:&quot;credentials&quot;`
-}
-</code></pre>
-
-<p>json 和 xml 都可以自定义选项，多个选项以 , 作为分隔。</p>
-
-<h3>删除结构体字段的 Tags</h3>
-
-<p>如果要删除上例中的 xml tags，同样将光标位于 Name 到 } 之间任意一处，编辑菜单或右键调用 Remove Tags 命令进行操作。
-如下图所示，选中 json
-<img src="/assets/media/2017-12-02-gomodifytags/goremovetags1.png" alt="" width="600"></p>
-
-<p>确认将删除 xml tags， 所下图所示。</p>
-
-<pre><code>type Server struct {
-    Name        string `json:&quot;name&quot;`
-    Port        int    `json:&quot;port&quot;`
-    EnableLogs  bool   `json:&quot;enable_logs&quot;`
-    BaseDomain  string `json:&quot;base_domain&quot;`
-    Credentials struct {
-        Username string `json:&quot;username&quot;`
-        Password string `json:&quot;password&quot;`
-    } `json:&quot;credentials&quot;`
-}
-</code></pre>
-
-<p>删除也可以删除 tags 对应的选项，根据需要操作即可。</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" title="支持 Quick Open Command">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/fix-liteide-libpng-warning/" title="fix liteide libpng warning">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X35.5-Released/" title="LiteIDE X35.5 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -198,17 +164,13 @@ gomodifytags 的主要功能是对 Go语言结构体字段 (go struct field) 的
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-12-02</span></div>
+    <div class="date"><span>2019-03-15</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
   <a href="/categories/#blog-ref"> blog <span>27</span></a>
-</li>
-    
-      <li>
-  <a href="/categories/#dev-ref"> dev <span>4</span></a>
 </li>
     
       <li>
