@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>15 Mar 19 22:34 CST</pubDate>
+    <pubDate>09 Apr 19 10:21 CST</pubDate>
+    <item>
+      <title>ATK - Another Golang Tcl/Tk binding GUI ToolKit</title>
+      <link>https://visualfc.github.io/blog/ATK---Another-Golang-Tcl%2FTk-binding-GUI-ToolKit/</link>
+      <pubDate>2019-03-15 12:00:00 +0800</pubDate>
+      <description>&lt;h1&gt;atk&lt;/h1&gt;&#xA;&#xA;&lt;p&gt;Another Golang Tcl/Tk binding GUI ToolKit&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;go get github.com/visualfc/atk&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;h3&gt;Install Tcl/Tk&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.tcl-lang.org&#34;&gt;http://www.tcl-lang.org&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;p&gt;MacOS X, Windows&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.activestate.com/activetcl/downloads&#34;&gt;https://www.activestate.com/activetcl/downloads&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;Ubuntu&lt;/p&gt;&#xA;&#xA;&lt;p&gt;$ sudo apt install tk-dev&lt;/p&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;CentOS&lt;/p&gt;&#xA;&#xA;&lt;p&gt;$ sudo yum install tk-devel&lt;/p&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;h3&gt;Demo&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/visualfc/atk_demo&#34;&gt;https://github.com/visualfc/atk_demo&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;Sample&lt;/h3&gt;&#xA;&#xA;&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main&#xA;&#xA;import (&#xA;&#x9;&amp;quot;github.com/visualfc/atk/tk&amp;quot;&#xA;)&#xA;&#xA;type Window struct {&#xA;&#x9;*tk.Window&#xA;}&#xA;&#xA;func NewWindow() *Window {&#xA;&#x9;mw := &amp;amp;Window{tk.RootWindow()}&#xA;&#x9;lbl := tk.NewLabel(mw, &amp;quot;Hello ATK&amp;quot;)&#xA;&#x9;btn := tk.NewButton(mw, &amp;quot;Quit&amp;quot;)&#xA;&#x9;btn.OnCommand(func() {&#xA;&#x9;&#x9;tk.Quit()&#xA;&#x9;})&#xA;&#x9;tk.NewVPackLayout(mw).AddWidgets(lbl, tk.NewLayoutSpacer(mw, 0, true), btn)&#xA;&#x9;mw.ResizeN(300, 200)&#xA;&#x9;return mw&#xA;}&#xA;&#xA;func main() {&#xA;&#x9;tk.MainLoop(func() {&#xA;&#x9;&#x9;mw := NewWindow()&#xA;&#x9;&#x9;mw.SetTitle(&amp;quot;ATK Sample&amp;quot;)&#xA;&#x9;&#x9;mw.Center()&#xA;&#x9;&#x9;mw.ShowNormal()&#xA;&#x9;})&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+    </item>
     <item>
       <title>LiteIDE X36 Released</title>
       <link>https://visualfc.github.io/blog/LiteIDE-X36-Released/</link>

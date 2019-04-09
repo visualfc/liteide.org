@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X34.3 Released</title>
+    <title>ATK - Another Golang Tcl/Tk binding GUI ToolKit</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,66 +83,87 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X34.3 Released </h1>
+  <h1>ATK - Another Golang Tcl/Tk binding GUI ToolKit </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X34.3 发布, 新版本修复 BUG ，更好的支持 Go1.11 modules。</p>
+    <h1>atk</h1>
 
-<h3>2018.10.05 Ver X34.3</h3>
+<p>Another Golang Tcl/Tk binding GUI ToolKit</p>
 
-<ul>
-<li>LiteIDE
+<pre><code>go get github.com/visualfc/atk
+</code></pre>
 
-<ul>
-<li>fix support go1.11 modules</li>
-</ul></li>
-<li>GolangEdit
+<h3>Install Tcl/Tk</h3>
 
-<ul>
-<li>fix jump import line</li>
-<li>fix find usages for import line</li>
-</ul></li>
-<li>LiteEditor
+<p><a href="http://www.tcl-lang.org">http://www.tcl-lang.org</a></p>
 
 <ul>
-<li>fix gocode completer item kind update</li>
-</ul></li>
-<li>GolangCode
+<li><p>MacOS X, Windows</p>
 
-<ul>
-<li>enviroment changed to reset gocode</li>
-</ul></li>
-<li>gotools &amp; gocode
+<p><a href="https://www.activestate.com/activetcl/downloads">https://www.activestate.com/activetcl/downloads</a></p></li>
 
-<ul>
-<li>types: fix module-based project with several subpackages <a href="https://github.com/visualfc/liteide/issues/977">https://github.com/visualfc/liteide/issues/977</a></li>
-<li>types: fix redeclared file parser cursor first</li>
-<li>types: fix source file update check in stdin</li>
-<li>types: fix x test files check</li>
-<li>gomod: fix lookup module for go list</li>
-</ul></li>
-<li>gocode
+<li><p>Ubuntu</p>
 
-<ul>
-<li>fix gocode crash <a href="https://github.com/visualfc/liteide/issues/978">https://github.com/visualfc/liteide/issues/978</a></li>
-</ul></li>
+<p>$ sudo apt install tk-dev</p></li>
+
+<li><p>CentOS</p>
+
+<p>$ sudo yum install tk-devel</p></li>
 </ul>
+
+<h3>Demo</h3>
+
+<p><a href="https://github.com/visualfc/atk_demo">https://github.com/visualfc/atk_demo</a></p>
+
+<h3>Sample</h3>
+
+<pre><code class="language-go">package main
+
+import (
+	&quot;github.com/visualfc/atk/tk&quot;
+)
+
+type Window struct {
+	*tk.Window
+}
+
+func NewWindow() *Window {
+	mw := &amp;Window{tk.RootWindow()}
+	lbl := tk.NewLabel(mw, &quot;Hello ATK&quot;)
+	btn := tk.NewButton(mw, &quot;Quit&quot;)
+	btn.OnCommand(func() {
+		tk.Quit()
+	})
+	tk.NewVPackLayout(mw).AddWidgets(lbl, tk.NewLayoutSpacer(mw, 0, true), btn)
+	mw.ResizeN(300, 200)
+	return mw
+}
+
+func main() {
+	tk.MainLoop(func() {
+		mw := NewWindow()
+		mw.SetTitle(&quot;ATK Sample&quot;)
+		mw.Center()
+		mw.ShowNormal()
+	})
+}
+</code></pre>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/Golang-fast-module-parser/" title="Golang fast module parser">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X34.2-Released/" title="LiteIDE X34.2 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X36-Released/" title="LiteIDE X36 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -168,7 +189,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2018-10-05</span></div>
+    <div class="date"><span>2019-03-15</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
@@ -178,7 +199,11 @@
 </li>
     
       <li>
-  <a href="/categories/#liteide-ref"> liteide <span>27</span></a>
+  <a href="/categories/#gui-ref"> gui <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/categories/#atk-ref"> atk <span>1</span></a>
 </li>
     
     </ul>
@@ -191,7 +216,11 @@
 </li>
     
       <li>
-  <a href="/tags/#liteide-ref"> liteide <span>27</span></a>
+  <a href="/tags/#gui-ref"> gui <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#atk-ref"> atk <span>1</span></a>
 </li>
     
     </ul>
