@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>LiteIDE</title>
     <link>https://visualfc.github.io</link>
-    <pubDate>09 Apr 19 10:21 CST</pubDate>
+    <pubDate>29 Aug 19 13:53 CST</pubDate>
+    <item>
+      <title>LiteIDE X36.1 Released</title>
+      <link>https://visualfc.github.io/blog/LiteIDE-X36.1-Released/</link>
+      <pubDate>2019-08-28 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;Go 语言开发工具 LiteIDE X36.1 发布，在目录管理窗口中加入了文件复制/粘贴功能，修复了 _ 符号查找错误，更新了 gotools &amp;amp; gocode。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;2019.08.28 Ver X36.1&lt;/h3&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;p&gt;LiteIDE&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;folder view support copy and paste&lt;/li&gt;&#xA;&lt;li&gt;fix find usages and declinfo for _ start symbol&#xA;&lt;br /&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;LiteApp&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;multi folder view support copy and parse&lt;/li&gt;&#xA;&lt;li&gt;tool window support floating window action&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;LiteEditor&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;cached text layout, optimization long line paint&lt;/li&gt;&#xA;&lt;li&gt;check and disable document too long line (4096) syntax.&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;GolangEdit&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;fix findusage and declinfo for _ start symbol&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;GolangPackage&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;add custom GOPROXY setup&lt;/li&gt;&#xA;&lt;li&gt;update GO111MODULE env reload check&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;GolangDoc&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;remove godoc command, use gotools godoc&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;FileBorwser&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;folder view support copy and paste&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;Others&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;linux env add x-terminal-emulator&lt;/li&gt;&#xA;&lt;li&gt;update Russian translation, thanks Sergey Belyashov&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;gotools &amp;amp; gocode&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;fix mod priority vendor check&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&#xA;&lt;li&gt;&lt;p&gt;gotools&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;godoc add go doc -all flags&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+    </item>
     <item>
       <title>ATK - Another Golang Tcl/Tk binding GUI ToolKit</title>
       <link>https://visualfc.github.io/blog/ATK---Another-Golang-Tcl%2FTk-binding-GUI-ToolKit/</link>
