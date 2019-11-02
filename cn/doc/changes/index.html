@@ -93,6 +93,514 @@
 
 <p>LiteIDE is a simple, open source, cross-platform Go IDE.</p>
 
+<h3>2019.10.30 Ver X36.2</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>add new image viewer plugin</li>
+<li>folder view support multi copy &amp; paste</li>
+<li>folder view support move to trash</li>
+<li>fix gocode crash</li>
+<li>update uk (Ukrainian) translation, thanks for cl0ne</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix floating dock widet style</li>
+<li>add dock widget floating toolbar</li>
+<li>folder view support multi copy and paste</li>
+<li>folder view support move to trash action</li>
+</ul></li>
+<li>ImageEditor
+
+<ul>
+<li>add new image viewer plugin</li>
+<li>support image viewer and gif video play</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>support go1.13 number literal syntax highlight</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix bad parser crash</li>
+</ul></li>
+</ul>
+
+<h3>2019.08.28 Ver X36.1</h3>
+
+<ul>
+<li><p>LiteIDE</p>
+
+<ul>
+<li>folder view support copy and paste</li>
+<li>fix find usages and declinfo for _ start symbol
+<br /></li>
+</ul></li>
+
+<li><p>LiteApp</p>
+
+<ul>
+<li>multi folder view support copy and parse</li>
+<li>tool window support floating window action</li>
+</ul></li>
+
+<li><p>LiteEditor</p>
+
+<ul>
+<li>cached text layout, optimization long line paint</li>
+<li>check and disable document too long line (4096) syntax.</li>
+</ul></li>
+
+<li><p>GolangEdit</p>
+
+<ul>
+<li>fix findusage and declinfo for _ start symbol</li>
+</ul></li>
+
+<li><p>GolangPackage</p>
+
+<ul>
+<li>add custom GOPROXY setup</li>
+<li>update GO111MODULE env reload check</li>
+</ul></li>
+
+<li><p>GolangDoc</p>
+
+<ul>
+<li>remove godoc command, use gotools godoc</li>
+</ul></li>
+
+<li><p>FileBorwser</p>
+
+<ul>
+<li>folder view support copy and paste</li>
+</ul></li>
+
+<li><p>Others</p>
+
+<ul>
+<li>linux env add x-terminal-emulator</li>
+<li>update Russian translation, thanks Sergey Belyashov</li>
+</ul></li>
+
+<li><p>gotools &amp; gocode</p>
+
+<ul>
+<li>fix mod priority vendor check</li>
+</ul></li>
+
+<li><p>gotools</p>
+
+<ul>
+<li>godoc add go doc -all flags</li>
+</ul></li>
+</ul>
+
+<h3>2019.03.15 Ver X36</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>add new editor path navigation toolbar</li>
+</ul></li>
+<li>QuickOpen
+
+<ul>
+<li>quickopenfile filter text length less than 3 use editor files, otherwise search in folder files.</li>
+<li>add new quickfilesystem filter</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>use new quickfilesystem for import jump</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>add new path navigation toolbar (use quickfilesystem)</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>fix number+dot issues completer</li>
+</ul></li>
+<li>FileUtil
+
+<ul>
+<li>show in Finder fast on macOS</li>
+</ul></li>
+</ul>
+
+<h3>2019.02.05 Ver X35.5</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>bug fix version</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix cursor selections usages lookup</li>
+<li>add byteOffsetToColumn to fix gotools/guru output byte offset to editor offset</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>add allow vertical scrolling to the last line option</li>
+<li>check file writed size != data.size and show error message</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>update search result item text for all same linenumber</li>
+</ul></li>
+</ul>
+
+<h3>2019.01.30 Ver X35.4</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>source code navigation can be used in wrong source code</li>
+<li>imports completer support gomod depends and local imports for gomod project</li>
+<li>imports completer support lookup all imports by source for GOPATH project</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix vs-dark.qss menu icon bug for windows10</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>fuzzy golang imports completer</li>
+<li>fix complter imports offset</li>
+<li>fix enter auto insert tab or space check by previous line</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>fix receive imports line process</li>
+</ul></li>
+
+<li><p>GolangEdit</p>
+
+<ul>
+<li>support lookup types info wrong source code</li>
+<li>add jump to declaration toolbar</li>
+<li>fix jump to declaration save history</li>
+</ul></li>
+
+<li><p>gotools &amp; gocode</p>
+
+<ul>
+<li>source code navigation can be used in wrong source code</li>
+<li>lookup gomod depends and local imports for gomod project</li>
+<li>lookup all imports from source for GOPATH project</li>
+</ul></li>
+</ul>
+
+<h3>2018.12.22 Ver X35.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>optimization gotools &amp; gocode, update editor and find plugin.</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix liteoutput antialias setup invalid</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>enable vertical scrollbar move last block to top viewport</li>
+<li>add the cut current line operator for cut action if not selected</li>
+<li>add convert tab/spaces action</li>
+<li>add tabtospace/tabwidth set by litapp/mimetype/liteeditor.xml or options</li>
+<li>update line wrap mode for mimetype</li>
+<li>update tabtospace mode for mimetype</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>file search check and skip binary file</li>
+<li>add folders/filesystem context menu file search action</li>
+</ul></li>
+<li>GolangEdit, GolangCode, LiteBuild
+
+<ul>
+<li>fix process start with cmd contains space on macOS</li>
+</ul></li>
+
+<li><p>GolangDoc</p>
+
+<ul>
+<li>support check go1.12 godoc remove -html, use text mode</li>
+</ul></li>
+
+<li><p>gotools &amp; gocode</p>
+
+<ul>
+<li>fix lookup named method embedded</li>
+<li>optimization, check save/load pkgconfig</li>
+<li>add godoc command for check go1.12 use text mode</li>
+</ul></li>
+
+<li><p>gocode</p>
+
+<ul>
+<li>fixed global var completion</li>
+</ul></li>
+</ul>
+
+<h3>2018.11.12 Ver X35.2</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fixed types info jump position</li>
+<li>optimization types info lookup cache</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>single line comment set after white spaces and add space</li>
+<li>go.mod editor support comment action</li>
+<li>color scheme support MatchBrackets background, default gray #808080</li>
+</ul></li>
+<li>Bookmarks
+
+<ul>
+<li>sort bookmark model by name/line, add context menu goto/remove/removeThisFile/removeAllFiles action</li>
+</ul></li>
+<li>GolangDoc
+
+<ul>
+<li>fix mod package godoc import path view</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix lookup types info by gocode cache</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fixed types jump info position</li>
+<li>optimization types info lookup cache</li>
+</ul></li>
+</ul>
+
+<h3>2018.10.24 Ver X35.1</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>BUG fixed, gocode code jump and import line jump</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix jump def for import line</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix types jump</li>
+</ul></li>
+</ul>
+
+<h3>2018.10.24 Ver X35</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>all support Go1.11 Go modules</li>
+<li>fast lookup types info by cache</li>
+<li>fix delve debug recurse set blocking</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>side window style enable move tool window to any left/right/bottom side.</li>
+<li>side window style output bar shortcut change to command+meta+number (macos) or ctrl+shift+number</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fast lookup types info by gocode cache</li>
+<li>find all usages support Go modules work dir</li>
+<li>refactor symbol support Go module work dir</li>
+</ul></li>
+<li>GolangAst
+
+<ul>
+<li>support import path gopath/vendor/modules doc view</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>add automatically add breakpoint main.main when debugging option (default disable)</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix dlv list variables blocking, change LoadConfig recurse to 3</li>
+</ul></li>
+
+<li><p>LiteBuild</p>
+
+<ul>
+<li>update gosrc.xml for support custom target workdir</li>
+</ul></li>
+
+<li><p>gotools &amp; gocode</p>
+
+<ul>
+<li>import <a href="https://github/visualfc/fastmod">https://github/visualfc/fastmod</a> for fast parse go.mod depends</li>
+<li>fast parse Go modules and fix issues <a href="https://github.com/visualfc/liteide/issues/986">https://github.com/visualfc/liteide/issues/986</a></li>
+</ul></li>
+
+<li><p>gotools</p>
+
+<ul>
+<li>find all usages support Go module work dir</li>
+</ul></li>
+
+<li><p>gotools</p>
+
+<ul>
+<li>fast completer for Go module project</li>
+<li>provide types info for liteide by cache</li>
+</ul></li>
+</ul>
+
+<h3>2018.10.05 Ver X34.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fix support go1.11 modules</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix jump import line</li>
+<li>fix find usages for import line</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>fix gocode completer item kind update</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>enviroment changed to reset gocode</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>types: fix module-based project with several subpackages <a href="https://github.com/visualfc/liteide/issues/977">https://github.com/visualfc/liteide/issues/977</a></li>
+<li>types: fix redeclared file parser cursor first</li>
+<li>types: fix source file update check in stdin</li>
+<li>types: fix x test files check</li>
+<li>gomod: fix lookup module for go list</li>
+</ul></li>
+<li>gocode
+
+<ul>
+<li>fix gocode crash <a href="https://github.com/visualfc/liteide/issues/978">https://github.com/visualfc/liteide/issues/978</a></li>
+</ul></li>
+</ul>
+
+<h3>2018.09.15 Ver X34.2</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fix gotools &amp; gocode support go1.11 modules sub folder</li>
+<li>support custom GO111MODULE setup</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>fix #939 display right margin at column wrong</li>
+<li>change mime type check fullname first</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>fix #970 goplay editor cgo crash</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>find usages / rename symbol add skip GOROOT actions</li>
+</ul></li>
+<li>GolangPackage
+
+<ul>
+<li>add custom GO111MODULE setup</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>add extra mouse navagite go back and forward</li>
+<li>add gomod.xml for go.mod syntax</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>add gomod.xml for go.mod build command</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix go1.11 modules sub folder</li>
+</ul></li>
+</ul>
+
+<h3>2018.08.12 Ver X34.1</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>update gotools support go1.11 modules</li>
+<li>update gocode support go1.11 modules and vendor</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>enable open binary file for editor</li>
+<li>change widget readonly by binary file (ignore text file)</li>
+</ul></li>
+<li>gocode
+
+<ul>
+<li>change parser by source use gotools/types</li>
+<li>fix parser vendor &amp; modules</li>
+</ul></li>
+</ul>
+
 <h3>2018.07.26 Ver X34</h3>
 
 <ul>
