@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X33.1 Released</title>
+    <title>LiteIDE X37.1 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,59 +83,73 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X33.1 Released </h1>
+  <h1>LiteIDE X37.1 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X33.1 正式发布。
-新版本对菜单进行调整和规范，新增了工具菜单，编辑菜单保持可见，重命名了部分工具窗口。
-修复了编辑器内查找功能的全文替换错误，
-对快速打开文件操作 ( ctrl+p / command+p ) 改用线程方式重新实现，新增了快速打开命令功能 ( ctrl+shift+p / command+shift+p )，集成了 <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> 并提供GUI界面实现对结构体 Tags 的快速增删功能。</p>
+    <p>Go 语言开发工具 LiteIDE X37.1 发布，在这个版本中提供集成终端插件，初步实现内置终端功能。更新 gotools &amp; gocode 以支持 Go 1.14。</p>
 
-<p>LiteIDE X33.1 使用 go1.10beta1 编译, 支持 Go1.9 / Go1.10beta1 或者更低的 Go 版本。</p>
-
-<h3>2017.12.12 Ver X33.1</h3>
+<h3>2020.04.24 Ver X37.1</h3>
 
 <ul>
 <li>LiteIDE
 
 <ul>
-<li>support quick open command</li>
-<li>support gomodifytags</li>
-<li>fix libpng warning on qt5 build</li>
+<li>add new integrated terminal plugin</li>
+<li>change LiteApi, IToolWindowManager and IFileManager api</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>new terminal plugin</li>
+<li>export open in integrated terminal action</li>
+<li>support open multiple shells (/etc/shells) on unix</li>
+<li>support open cmd/powershell/git bash on window</li>
+<li>support dark mode</li>
+<li>support login mode --login (unix)</li>
+<li>load enviroment from LiteIDE action (unix)</li>
+<li>tab style multiple terminal</li>
+<li>auto save / restore terminal info</li>
+<li>ctrl+c key interrupt support</li>
+<li>mouse to select, enter key copy to clipboard (ctrl+c/command+c)</li>
+<li>ctrl+v / command+v to paste from clipboard</li>
 </ul></li>
 <li>LiteApp
 
 <ul>
-<li>add tools menu for quick open actions</li>
-<li>standard and rename tool window title</li>
-<li>enable edit menu anytime, fix edit menu disable on editor lost focus.</li>
-<li>fix editor load large file bad_alloc recover</li>
-</ul></li>
-<li>LiteEnv
-
-<ul>
-<li>add select env to tools menu<br /></li>
+<li>folder add open integrated terminal action</li>
+<li>update hide tool window action icon.</li>
+<li>folder view enable create folder in files</li>
+<li>fix SideWindowStyle::moveToolWindow crash</li>
+<li>fix #1106, options widget add ScrollArea, enable resize, init check screen size</li>
 </ul></li>
 <li>LiteEditor
 
 <ul>
-<li>check and not open large file</li>
-<li>fix edit hide edit sub menu &lsquo;setup&rsquo; on macos</li>
+<li>change copy/paste/cut/selectall/undo/redo unregister shortcut for macos</li>
+</ul></li>
+<li>FileBorwser:
+
+<ul>
+<li>add open integrated terminal action</li>
+<li>enable create folder in files</li>
+<li>simple, remove litefind/terminal depends</li>
 </ul></li>
 <li>LiteFind
 
 <ul>
-<li>fix find editor replace all wrap around* GolangEdit</li>
-<li>Integrated <a href="https://github.com/fatih/gomodifytags">gomodifytags</a> and gui tools support gomodifytags all options</li>
+<li>SearchResultWidget add expandAll and collapseAll button</li>
 </ul></li>
-<li>QuickOpen
+<li>GolangEdit
 
 <ul>
-<li>add quick open command action (ctrl+shift+p/command+shift+p)</li>
-<li>quickopenfiles use thread for fast and cancel</li>
-<li>fix quickopenfile cancel loading for esc or liteapp quit</li>
+<li>fix fold by GO_ELSE</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix &amp; update for Go 1.14</li>
 </ul></li>
 </ul>
 
@@ -144,14 +158,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/%E8%A7%A3%E5%86%B3%E5%8D%87%E7%BA%A7-xcode-%E5%90%8E-Qt5.6.3-%E4%B8%8D%E8%83%BD%E7%BC%96%E8%AF%91%E7%9A%84%E9%97%AE%E9%A2%98/" title="解决升级 xcode 后 Qt5.6.3 不能编译的问题">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/%E6%94%AF%E6%8C%81-Quick-Open-Command/" title="支持 Quick Open Command">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X36.3-Released/" title="LiteIDE X36.3 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -177,7 +191,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-12-12</span></div>
+    <div class="date"><span>2020-04-24</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">

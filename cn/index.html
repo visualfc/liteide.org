@@ -128,6 +128,82 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X37.1-Released/">LiteIDE X37.1 Released</a> <span class="date">2020-04-24</span></h3>
+
+  <p>Go 语言开发工具 LiteIDE X37.1 发布，在这个版本中提供集成终端插件，初步实现内置终端功能。更新 gotools &amp; gocode 以支持 Go 1.14。</p>
+
+<h3>2020.04.24 Ver X37.1</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>add new integrated terminal plugin</li>
+<li>change LiteApi, IToolWindowManager and IFileManager api</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>new terminal plugin</li>
+<li>export open in integrated terminal action</li>
+<li>support open multiple shells (/etc/shells) on unix</li>
+<li>support open cmd/powershell/git bash on window</li>
+<li>support dark mode</li>
+<li>support login mode --login (unix)</li>
+<li>load enviroment from LiteIDE action (unix)</li>
+<li>tab style multiple terminal</li>
+<li>auto save / restore terminal info</li>
+<li>ctrl+c key interrupt support</li>
+<li>mouse to select, enter key copy to clipboard (ctrl+c/command+c)</li>
+<li>ctrl+v / command+v to paste from clipboard</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>folder add open integrated terminal action</li>
+<li>update hide tool window action icon.</li>
+<li>folder view enable create folder in files</li>
+<li>fix SideWindowStyle::moveToolWindow crash</li>
+<li>fix #1106, options widget add ScrollArea, enable resize, init check screen size</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>change copy/paste/cut/selectall/undo/redo unregister shortcut for macos</li>
+</ul></li>
+<li>FileBorwser:
+
+<ul>
+<li>add open integrated terminal action</li>
+<li>enable create folder in files</li>
+<li>simple, remove litefind/terminal depends</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>SearchResultWidget add expandAll and collapseAll button</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix fold by GO_ELSE</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix &amp; update for Go 1.14</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X37.1-Released/" class="btn">阅读全文</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X36.3-Released/">LiteIDE X36.3 Released</a> <span class="date">2020-01-15</span></h3>
 
   <p>Go 语言开发工具 LiteIDE X36.3 发布，新版本修复错误，重构了配置系统，更新 gotools &amp; gocode 以更好地支持 Go Module 功能。。</p>
@@ -340,55 +416,6 @@
 
   <div class="more">
     <a href="/blog/ATK---Another-Golang-Tcl%2FTk-binding-GUI-ToolKit/" class="btn">阅读全文</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X36-Released/">LiteIDE X36 Released</a> <span class="date">2019-03-15</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X36 发布，新增了编辑器路径导航工具栏，重构了 QuickOpen 插件，优化了快速打开文件和目录功能。</p>
-
-<h3>2019.03.15 Ver X36</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>add new editor path navigation toolbar</li>
-</ul></li>
-<li>QuickOpen
-
-<ul>
-<li>quickopenfile filter text length less than 3 use editor files, otherwise search in folder files.</li>
-<li>add new quickfilesystem filter</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>use new quickfilesystem for import jump</li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>add new path navigation toolbar (use quickfilesystem)</li>
-</ul></li>
-<li>GolangCode
-
-<ul>
-<li>fix number+dot issues completer</li>
-</ul></li>
-<li>FileUtil
-
-<ul>
-<li>show in Finder fast on macOS</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X36-Released/" class="btn">阅读全文</a>
   </div>
 </div>
 
