@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>LiteIDE X32.2 Released</title>
+    <title>LiteIDE X37.3 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,36 +83,65 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>LiteIDE X32.2 Released </h1>
+  <h1>LiteIDE X37.3 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Go 语言开发工具 LiteIDE X32.2 正式发布，这个版本解决了编辑器监控外部文件多次修改后监控失效的问题，调试插件启用了保存断点功能，修复了调试测试用例功能，修复了 Dlv 调试进程工作路径问题。</p>
+    <p>LiteIDE X37.3 正式发布，这个版本为 BUG 修复版本。更新 gotools 和 gocode 以更好支持 GOMOD，修复了 delve 退出错误，新增了 win64 mingw 编译版本下载。</p>
 
-<h3>2017.7.18 Ver X32.2</h3>
+<h3>2020.10.10 Ver X37.3</h3>
 
 <ul>
+<li>LiteIDE
+
+<ul>
+<li>fix dlv debug exit crash on window</li>
+<li>support mingw-64 build for window</li>
+</ul></li>
 <li>LiteApp
 
 <ul>
-<li>fix editor file watcher is invalid for many change</li>
+<li>update icon for hight-dpi</li>
 </ul></li>
-<li>GolangEdit
+<li>LiteBuild:
 
 <ul>
-<li>fix TODO/BUG/FIXME comment syntax</li>
+<li>gosrc.xml add tool cover html command</li>
+<li>gosrc.xml add make command</li>
+</ul></li>
+<li>LiteEditor:
+
+<ul>
+<li>add dark-gray.xml color scheme, thanks for qAison</li>
+<li>fix showlink tooltip bug for Qt5.12</li>
+</ul></li>
+<li>GolangEdit:
+
+<ul>
+<li>add find usages skip tests action</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>fix winpty load for Q_OS_WIN64</li>
+<li>add closeall action</li>
 </ul></li>
 <li>DlvDebugger
 
 <ul>
-<li>fix dlv headless process workdir</li>
+<li>fix exit crash on window</li>
+<li>fix handle response regexp</li>
 </ul></li>
-<li>LiteDebug
+<li>gotools &amp; gocode
 
 <ul>
-<li>fix debug tests action</li>
-<li>fix load and save breakpoint for editor</li>
+<li>update fastmod for go1.14 GOMOD</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>types add skip tests flag</li>
 </ul></li>
 </ul>
 
@@ -121,14 +150,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/LiteIDE-X33-Released/" title="LiteIDE X33 Released">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X32.1-Released/" title="LiteIDE X32.1 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X37.1-Released/" title="LiteIDE X37.1 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -154,7 +183,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-07-18</span></div>
+    <div class="date"><span>2020-10-10</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
