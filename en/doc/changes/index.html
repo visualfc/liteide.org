@@ -93,6 +93,217 @@
 
 <p>LiteIDE is a simple, open source, cross-platform Go IDE.</p>
 
+<h3>2021.03.02 Ver X37.4</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>move to trash use api on macos</li>
+<li>fix find&amp;replace repaint</li>
+<li>update terminal action</li>
+<li>add copy fullpath action</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>editor context menu add integrated terminal action</li>
+<li>folder view update integrated terminal action</li>
+<li>folder view add copy full path action</li>
+<li>move to trash use api on macos</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>fix find&amp;replace editor repaint</li>
+<li>fix file search replace repaint</li>
+<li>windows fileserach shortcuts add ctrl+atl+f</li>
+</ul></li>
+<li>LiteEditor:
+
+<ul>
+<li>gomod.xml add retract</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>move to core plugin</li>
+</ul></li>
+<li>DlvDebugger:
+
+<ul>
+<li>add pass flags options</li>
+</ul></li>
+</ul>
+
+<h3>2020.10.10 Ver X37.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fix dlv debug exit crash on window</li>
+<li>support mingw-64 build for window</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>update icon for hight-dpi</li>
+</ul></li>
+<li>LiteBuild:
+
+<ul>
+<li>gosrc.xml add tool cover html command</li>
+<li>gosrc.xml add make command</li>
+</ul></li>
+<li>LiteEditor:
+
+<ul>
+<li>add dark-gray.xml color scheme, thanks for qAison</li>
+<li>fix showlink tooltip bug for Qt5.12</li>
+</ul></li>
+<li>GolangEdit:
+
+<ul>
+<li>add find usages skip tests action</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>fix winpty load for Q_OS_WIN64</li>
+<li>add closeall action</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix exit crash on window</li>
+<li>fix handle response regexp</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>update fastmod for go1.14 GOMOD</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>types add skip tests flag
+<br /></li>
+</ul></li>
+</ul>
+
+<h3>2020.04.24 Ver X37.1</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>add new integrated terminal plugin</li>
+<li>change LiteApi, IToolWindowManager and IFileManager api</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>new terminal plugin</li>
+<li>export open in integrated terminal action</li>
+<li>support open multiple shells (/etc/shells) on unix</li>
+<li>support open cmd/powershell/git bash on window</li>
+<li>support dark mode</li>
+<li>support login mode --login (unix)</li>
+<li>load enviroment from LiteIDE action (unix)</li>
+<li>tab style multiple terminal</li>
+<li>auto save / restore terminal info</li>
+<li>ctrl+c key interrupt support</li>
+<li>mouse to select, enter key copy to clipboard (ctrl+c/command+c)</li>
+<li>ctrl+v / command+v to paste from clipboard</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>folder add open integrated terminal action</li>
+<li>update hide tool window action icon.</li>
+<li>folder view enable create folder in files</li>
+<li>fix SideWindowStyle::moveToolWindow crash</li>
+<li>fix #1106, options widget add ScrollArea, enable resize, init check screen size</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>change copy/paste/cut/selectall/undo/redo unregister shortcut for macos</li>
+</ul></li>
+<li>FileBorwser:
+
+<ul>
+<li>add open integrated terminal action</li>
+<li>enable create folder in files</li>
+<li>simple, remove litefind/terminal depends</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>SearchResultWidget add expandAll and collapseAll button</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>fix fold by GO_ELSE</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix &amp; update for Go 1.14</li>
+</ul></li>
+</ul>
+
+<h3>2020.01.15 Ver X36.3</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fix and update gotools&amp;gocode for support Go Module.</li>
+<li>refactor option, update all plugin option page</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>refactor option page, load/save and keep option page.</li>
+</ul></li>
+<li>LiteEditor
+
+<ul>
+<li>fix code complete escape for Qt5.12</li>
+</ul></li>
+<li>Markdown
+
+<ul>
+<li>add CommonMark/cmark for markdown to html, replace sundown</li>
+</ul></li>
+<li>GolangPackage
+
+<ul>
+<li>add GOPRIVATE,GONOPROXY,GONOSUMDB option</li>
+<li>add goproxy.cn for GOPROXY list</li>
+<li>merge GOPATH/GoModule setup to global options.</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>add <code>go mod vendor</code> action</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>update stack frame to RPC api</li>
+</ul></li>
+<li>gotools &amp; gocode
+
+<ul>
+<li>fix fastmod match full version, example <code>github.com/mypkg/v2</code></li>
+<li>types check add basic type</li>
+</ul></li>
+</ul>
+
 <h3>2019.10.30 Ver X36.2</h3>
 
 <ul>
