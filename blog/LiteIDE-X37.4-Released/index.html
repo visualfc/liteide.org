@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>fix liteide libpng warning</title>
+    <title>LiteIDE X37.4 Released</title>
       
     <link rel="shortcut icon" href="/assets/media/liteide.ico">
     <meta name="author" content="visualfc">
@@ -83,91 +83,69 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>fix liteide libpng warning </h1>
+  <h1>LiteIDE X37.4 Released </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <!-- ## fix liteide libpng warning -->
+    <p>LiteIDE X37.4 发布，此版本为功能修复版本。在 macOS 上删除到回收站功能改用本地 API实现；修复了查找/替换/重构时的编辑器刷新显示问题；重新规划了复制粘贴、复制路径、集成终端等功能的右键菜单显示。</p>
 
-<h3>liteide issues #867</h3>
+<h3>2021.03.02 Ver X37.4</h3>
 
-<p>Start LiteIDE build for Qt5 version suggests libpng warning. <a href="https://github.com/visualfc/liteide/issues/867">liteide issues #867</a></p>
+<ul>
+<li>LiteIDE
 
-<pre><code>libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
-libpng warning: iCCP: known incorrect sRGB profile
-libpng warning: iCCP: cHRM chunk does not match sRGB
-libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
-libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
-libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
-libpng warning: iCCP: profile 'ICC profile': 'GRAY': Gray color space not permitted on RGB PNG
-...
-</code></pre>
+<ul>
+<li>move to trash use api on macos</li>
+<li>fix find&amp;replace repaint</li>
+<li>update terminal action</li>
+<li>add copy fullpath action</li>
+</ul></li>
+<li>LiteApp
 
-<blockquote>
-<p>CraigAD:<br />
-I found this description of the problem that suggests a possible solution:<br />
-<a href="https://stackoverflow.com/questions/43374187/qt-open-a-jpg-file-with-warning-image-format-not-supported">https://stackoverflow.com/questions/43374187/qt-open-a-jpg-file-with-warning-image-format-not-supported</a></p>
+<ul>
+<li>editor context menu add integrated terminal action</li>
+<li>folder view update integrated terminal action</li>
+<li>folder view add copy full path action</li>
+<li>move to trash use api on macos</li>
+</ul></li>
+<li>LiteFind
 
-<p>PNG has many Formats some old, some not standard for Qt. see more History_and_development(<a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics#History_and_development">https://en.wikipedia.org/wiki/Portable_Network_Graphics#History_and_development</a>) You need to use Standard format in Qt.</p>
-</blockquote>
+<ul>
+<li>fix find&amp;replace editor repaint</li>
+<li>fix file search replace repaint</li>
+<li>windows fileserach shortcuts add ctrl+atl+f</li>
+</ul></li>
+<li>LiteEditor:
 
-<p>I wrote a new go tool <strong>check_png</strong> for convert liteide all png to standard png and fix this issues.</p>
+<ul>
+<li>gomod.xml add retract</li>
+</ul></li>
+<li>Terminal:
 
-<h3>check_png tool</h3>
+<ul>
+<li>move to core plugin</li>
+</ul></li>
+<li>DlvDebugger:
 
-<p><a href="https://github.com/visualfc/liteide/blob/master/liteidex/src/tools/check_png/main.go">https://github.com/visualfc/liteide/blob/master/liteidex/src/tools/check_png/main.go</a></p>
-
-<p>code: convert png file to NRGBA format.</p>
-
-<pre><code>func (p *Process) ProcessPng(path string) error {
-    f, err := os.Open(path)
-    if err != nil {
-        return err
-    }
-    stat, err := f.Stat()
-    if err != nil {
-        return err
-    }
-    var buf bytes.Buffer
-    srcImage, err := png.Decode(f)
-    if err != nil {
-        return err
-    }
-
-    dstImage := image.NewNRGBA(srcImage.Bounds())
-    draw.Draw(dstImage, dstImage.Bounds(), srcImage, srcImage.Bounds().Min, draw.Src)
-
-    err = png.Encode(&amp;buf, dstImage)
-    if err != nil {
-        return err
-    }
-
-    data, err := ioutil.ReadFile(path)
-    if err != nil {
-        return err
-    }
-    if bytes.Compare(data, buf.Bytes()) != 0 {
-        log.Println(&quot;update png&quot;, path, len(data), buf.Len())
-        ioutil.WriteFile(path, buf.Bytes(), stat.Mode())
-    }
-    return nil
-}
-</code></pre>
+<ul>
+<li>add pass flags options</li>
+</ul></li>
+</ul>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/%E6%94%AF%E6%8C%81-gomodifytags/" title="支持 gomodifytags">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <!-- <li><a href="/blog">Blog</a></li> -->
 
           
-            <li class="next"><a href="/blog/LiteIDE-X33-Released/" title="LiteIDE X33 Released">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/LiteIDE-X37.3-Released/" title="LiteIDE X37.3 Released">Next &rarr;</a></li>
           
           
         </ul>
@@ -193,17 +171,13 @@ I found this description of the problem that suggests a possible solution:<br />
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2017-11-23</span></div>
+    <div class="date"><span>2021-03-02</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
   <a href="/categories/#blog-ref"> blog <span>34</span></a>
-</li>
-    
-      <li>
-  <a href="/categories/#dev-ref"> dev <span>4</span></a>
 </li>
     
       <li>

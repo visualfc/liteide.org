@@ -127,6 +127,62 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X37.4-Released/">LiteIDE X37.4 Released</a> <span class="date">2021-03-02</span></h3>
+
+  <p>LiteIDE X37.4 发布，此版本为功能修复版本。在 macOS 上删除到回收站功能改用本地 API实现；修复了查找/替换/重构时的编辑器刷新显示问题；重新规划了复制粘贴、复制路径、集成终端等功能的右键菜单显示。</p>
+
+<h3>2021.03.02 Ver X37.4</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>move to trash use api on macos</li>
+<li>fix find&amp;replace repaint</li>
+<li>update terminal action</li>
+<li>add copy fullpath action</li>
+</ul></li>
+<li>LiteApp
+
+<ul>
+<li>editor context menu add integrated terminal action</li>
+<li>folder view update integrated terminal action</li>
+<li>folder view add copy full path action</li>
+<li>move to trash use api on macos</li>
+</ul></li>
+<li>LiteFind
+
+<ul>
+<li>fix find&amp;replace editor repaint</li>
+<li>fix file search replace repaint</li>
+<li>windows fileserach shortcuts add ctrl+atl+f</li>
+</ul></li>
+<li>LiteEditor:
+
+<ul>
+<li>gomod.xml add retract</li>
+</ul></li>
+<li>Terminal:
+
+<ul>
+<li>move to core plugin</li>
+</ul></li>
+<li>DlvDebugger:
+
+<ul>
+<li>add pass flags options</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X37.4-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X37.3-Released/">LiteIDE X37.3 Released</a> <span class="date">2020-10-10</span></h3>
 
   <p>LiteIDE X37.3 正式发布，这个版本为 BUG 修复版本。更新 gotools 和 gocode 以更好支持 GOMOD，修复了 delve 退出错误，新增了 win64 mingw 编译版本下载。</p>
@@ -378,89 +434,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X36.2-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X36.1-Released/">LiteIDE X36.1 Released</a> <span class="date">2019-08-28</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X36.1 发布，在目录管理窗口中加入了文件复制/粘贴功能，修复了以 _ 开始符号查找错误，更新了 gotools &amp; gocode。</p>
-
-<h3>2019.08.28 Ver X36.1</h3>
-
-<ul>
-<li><p>LiteIDE</p>
-
-<ul>
-<li>folder view support copy and paste</li>
-<li>fix find usages and declinfo for _ start symbol
-<br /></li>
-</ul></li>
-
-<li><p>LiteApp</p>
-
-<ul>
-<li>multi folder view support copy and parse</li>
-<li>tool window support floating window action</li>
-</ul></li>
-
-<li><p>LiteEditor</p>
-
-<ul>
-<li>cached text layout, optimization long line paint</li>
-<li>check and disable document too long line (4096) syntax.</li>
-</ul></li>
-
-<li><p>GolangEdit</p>
-
-<ul>
-<li>fix findusage and declinfo for _ start symbol</li>
-</ul></li>
-
-<li><p>GolangPackage</p>
-
-<ul>
-<li>add custom GOPROXY setup</li>
-<li>update GO111MODULE env reload check</li>
-</ul></li>
-
-<li><p>GolangDoc</p>
-
-<ul>
-<li>remove godoc command, use gotools godoc</li>
-</ul></li>
-
-<li><p>FileBorwser</p>
-
-<ul>
-<li>folder view support copy and paste</li>
-</ul></li>
-
-<li><p>Others</p>
-
-<ul>
-<li>linux env add x-terminal-emulator</li>
-<li>update Russian translation, thanks Sergey Belyashov</li>
-</ul></li>
-
-<li><p>gotools &amp; gocode</p>
-
-<ul>
-<li>fix mod priority vendor check</li>
-</ul></li>
-
-<li><p>gotools</p>
-
-<ul>
-<li>godoc add go doc -all flags</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X36.1-Released/" class="btn">Read more</a>
   </div>
 </div>
 
