@@ -127,6 +127,87 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/LiteIDE-X38.2-Released/">LiteIDE X38.2 Released</a> <span class="date">2023-02-14</span></h3>
+
+  <p>LiteIDE X38.2 正式发布。</p>
+
+<ul>
+<li>更新 gotools &amp; gocode，修复泛型代码查找和代码完成。</li>
+<li>重构 Go 类视图和大纲视图，支持泛型显示。</li>
+<li>更新 Delve 调试插件，增加反汇编视图，修复 windows 下退出错误。</li>
+</ul>
+
+<h3>2023.02.14 Ver X38.2</h3>
+
+<ul>
+<li>LiteIDE
+
+<ul>
+<li>fix and update gotools &amp; gocode</li>
+<li>refactor astview outline</li>
+<li>update dlv debugger plugin</li>
+</ul></li>
+<li>GolangAst
+
+<ul>
+<li>new outline view by pos</li>
+<li>support typeparams</li>
+</ul></li>
+<li>LiteDebug
+
+<ul>
+<li>add disassemble view</li>
+</ul></li>
+<li>DlvDebugger
+
+<ul>
+<li>fix generics func sync</li>
+<li>fix dlv process exit on windows</li>
+<li>refactor gorountines model</li>
+<li>support disassemble model</li>
+</ul></li>
+<li>LiteBuild
+
+<ul>
+<li>gosrc.xml TARGETNAME use BUILD_DIR_PATH</li>
+</ul></li>
+<li>GolangEdit
+
+<ul>
+<li>support any and comparable</li>
+</ul></li>
+<li>GolangCode
+
+<ul>
+<li>support any and comparable</li>
+</ul></li>
+<li>gotools
+
+<ul>
+<li>types fix find obj field</li>
+<li>types fix object string</li>
+<li>gotest fix run test file use -run mode</li>
+<li>astview add new -outline for outline</li>
+<li>astview add new -tp for typeparams</li>
+<li>astview fix interface embedded type</li>
+</ul></li>
+<li>gocode
+
+<ul>
+<li>fix identifier comparable</li>
+<li>update lookup object</li>
+</ul></li>
+</ul>
+
+
+  <div class="more">
+    <a href="/blog/LiteIDE-X38.2-Released/" class="btn">Read more</a>
+  </div>
+</div>
+
+
+
+<div class="post">
   <h3 class="title"><a href="/blog/LiteIDE-X38.1-Released/">LiteIDE X38.1 Released</a> <span class="date">2023-01-22</span></h3>
 
   <p>LiteIDE X38.1 正式发布，支持 Go1.18 泛型。</p>
@@ -411,82 +492,6 @@
 
   <div class="more">
     <a href="/blog/LiteIDE-X37.3-Released/" class="btn">Read more</a>
-  </div>
-</div>
-
-
-
-<div class="post">
-  <h3 class="title"><a href="/blog/LiteIDE-X37.1-Released/">LiteIDE X37.1 Released</a> <span class="date">2020-04-24</span></h3>
-
-  <p>Go 语言开发工具 LiteIDE X37.1 发布，在这个版本中提供集成终端插件，初步实现内置终端功能。更新 gotools &amp; gocode 以支持 Go 1.14。</p>
-
-<h3>2020.04.24 Ver X37.1</h3>
-
-<ul>
-<li>LiteIDE
-
-<ul>
-<li>add new integrated terminal plugin</li>
-<li>change LiteApi, IToolWindowManager and IFileManager api</li>
-</ul></li>
-<li>Terminal:
-
-<ul>
-<li>new terminal plugin</li>
-<li>export open in integrated terminal action</li>
-<li>support open multiple shells (/etc/shells) on unix</li>
-<li>support open cmd/powershell/git bash on window</li>
-<li>support dark mode</li>
-<li>support login mode --login (unix)</li>
-<li>load enviroment from LiteIDE action (unix)</li>
-<li>tab style multiple terminal</li>
-<li>auto save / restore terminal info</li>
-<li>ctrl+c key interrupt support</li>
-<li>mouse to select, enter key copy to clipboard (ctrl+c/command+c)</li>
-<li>ctrl+v / command+v to paste from clipboard</li>
-</ul></li>
-<li>LiteApp
-
-<ul>
-<li>folder add open integrated terminal action</li>
-<li>update hide tool window action icon.</li>
-<li>folder view enable create folder in files</li>
-<li>fix SideWindowStyle::moveToolWindow crash</li>
-<li>fix #1106, options widget add ScrollArea, enable resize, init check screen size</li>
-</ul></li>
-<li>LiteEditor
-
-<ul>
-<li>change copy/paste/cut/selectall/undo/redo unregister shortcut for macos</li>
-</ul></li>
-<li>FileBorwser:
-
-<ul>
-<li>add open integrated terminal action</li>
-<li>enable create folder in files</li>
-<li>simple, remove litefind/terminal depends</li>
-</ul></li>
-<li>LiteFind
-
-<ul>
-<li>SearchResultWidget add expandAll and collapseAll button</li>
-</ul></li>
-<li>GolangEdit
-
-<ul>
-<li>fix fold by GO_ELSE</li>
-</ul></li>
-<li>gotools &amp; gocode
-
-<ul>
-<li>fix &amp; update for Go 1.14</li>
-</ul></li>
-</ul>
-
-
-  <div class="more">
-    <a href="/blog/LiteIDE-X37.1-Released/" class="btn">Read more</a>
   </div>
 </div>
 
